@@ -1,5 +1,16 @@
-[gd_scene format=3 uid="uid://cetlcnevlmuq6"]
+[gd_scene load_steps=3 format=3 uid="uid://cetlcnevlmuq6"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[ext_resource type="Texture2D" uid="uid://5kf4mplv5dqe" path="res://scenes/player/player.png" id="1_nvvou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q0tje"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nvvou")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_q0tje")
