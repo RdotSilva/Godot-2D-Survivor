@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+const MAX_SPEED = 75
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,7 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var direction = get_direction_to_player()
+	velocity = directtion * MAX_SPEED
+	move_and_slide()
 
 
 func get_direction_to_player():
