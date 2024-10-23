@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var direction = get_direction_to_player()
-	velocity = directtion * MAX_SPEED
+	velocity = direction * MAX_SPEED
 	move_and_slide()
 
 
