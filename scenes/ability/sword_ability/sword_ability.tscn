@@ -3,19 +3,31 @@
 [ext_resource type="Texture2D" uid="uid://d1eq5wea73bi8" path="res://scenes/ability/sword_ability/sword.png" id="1_kd2pd"]
 
 [sub_resource type="Animation" id="Animation_owl6c"]
-length = 0.3
-step = 0.1
+length = 0.75
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.2982, 0.4982),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 3.14159]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2982, 0.448291, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.25, 1.25), Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_bwoix"]
@@ -49,5 +61,6 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("1_kd2pd")
 offset = Vector2(0, -4)
