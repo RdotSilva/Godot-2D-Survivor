@@ -59,6 +59,7 @@ _data = {
 libraries = {
 "": SubResource("AnimationLibrary_au8oe")
 }
+autoplay = "RESET"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -0.174533
