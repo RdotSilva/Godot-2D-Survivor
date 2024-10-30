@@ -19,9 +19,28 @@ func on_timer_timeout():
 	if player == null:
 		return
 
+	var enemies = get_tree().get_nodes_in_group("enemy")
+
+	# Filter out all enemies that are farther than 150 pixels from the player
+	enemies = enemies.filter(func(enemy: Node2D):
+		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
+	)
+
+	if enemies.size() == 0:
+		return
+
+	# Sort enemies by distance
+	enemies.sort_custom(func(a: Node2D, b: Node2D):
+		var a_distance = a.global_position.distance_squared_to(player.global_position)
+		var b_distance = b.global_position.distance_squared_to(player.global_position)
+
+		return a_distance < b_distance
+	)
+
 	var sword_instance = sword_ability.instantiate() as Node2D
 	
 	player.get_parent().add_child(sword_instance)
 
-	sword_instance.global_position = player.global_position
+	# The first enemy in the sorted array will be where the sword spawns
+	sword_instance.global_position = enemies[0].global_position
 	
