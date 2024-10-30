@@ -1,5 +1,10 @@
 extends Node
 
+const MAX_RANGE = 150
+
+# Make max range configuratble in UI
+# @export var max_range: float
+
 @export var sword_ability: PackedScene
 
 # Called when the node enters the scene tree for the first time.
