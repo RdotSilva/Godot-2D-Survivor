@@ -23,3 +23,8 @@ collision_layer = 0
 position = Vector2(351, 238)
 collision_layer = 0
 script = ExtResource("5_bm4iw")
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("4_vm6ys")]
+position = Vector2(236, 299)
+collision_layer = 0
+script = ExtResource("5_bm4iw")
