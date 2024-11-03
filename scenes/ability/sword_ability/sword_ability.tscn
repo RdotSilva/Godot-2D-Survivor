@@ -85,7 +85,7 @@ _data = {
 libraries = {
 "": SubResource("AnimationLibrary_au8oe")
 }
-autoplay = "RESET"
+autoplay = "swing"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kd2pd")
