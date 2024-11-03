@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy8bfxjsfcqp8"]
+[gd_scene load_steps=6 format=3 uid="uid://dy8bfxjsfcqp8"]
 
 [ext_resource type="Texture2D" uid="uid://d1eq5wea73bi8" path="res://scenes/ability/sword_ability/sword.png" id="1_kd2pd"]
 
@@ -93,6 +93,9 @@ _data = {
 "swing": SubResource("Animation_bwoix")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sgrf"]
+size = Vector2(30, 30)
+
 [node name="SwordAbility" type="Node2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -103,3 +106,9 @@ autoplay = "swing"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kd2pd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_0sgrf")
