@@ -44,3 +44,7 @@ func on_timer_timeout():
 	# The first enemy in the sorted array will be where the sword spawns
 	sword_instance.global_position = enemies[0].global_position
 	
+	# Take enemy position and point at enemy position from the sword position
+	var enemy_direction = enemies[0].global_position - sword_instance.global_position
+
+	sword_instance.rotation = enemy_direction.angle()
