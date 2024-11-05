@@ -25,6 +25,31 @@ collision_layer = 0
 script = ExtResource("5_bm4iw")
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(236, 299)
+position = Vector2(234, 256)
+collision_layer = 0
+script = ExtResource("5_bm4iw")
+
+[node name="BasicEnemy3" parent="." instance=ExtResource("4_vm6ys")]
+position = Vector2(155, 155)
+collision_layer = 0
+script = ExtResource("5_bm4iw")
+
+[node name="BasicEnemy4" parent="." instance=ExtResource("4_vm6ys")]
+position = Vector2(54, 147)
+collision_layer = 0
+script = ExtResource("5_bm4iw")
+
+[node name="BasicEnemy5" parent="." instance=ExtResource("4_vm6ys")]
+position = Vector2(367, 325)
+collision_layer = 0
+script = ExtResource("5_bm4iw")
+
+[node name="BasicEnemy6" parent="." instance=ExtResource("4_vm6ys")]
+position = Vector2(239, 154)
+collision_layer = 0
+script = ExtResource("5_bm4iw")
+
+[node name="BasicEnemy7" parent="." instance=ExtResource("4_vm6ys")]
+position = Vector2(85, 291)
 collision_layer = 0
 script = ExtResource("5_bm4iw")
