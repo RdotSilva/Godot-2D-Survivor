@@ -43,6 +43,9 @@ func on_timer_timeout():
 
 	# The first enemy in the sorted array will be where the sword spawns
 	sword_instance.global_position = enemies[0].global_position
+
+	# Randomize the rotation of the vector from 0 - 360 degrees
+	sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
 	
 	# Take enemy position and point at enemy position from the sword position
 	var enemy_direction = enemies[0].global_position - sword_instance.global_position
