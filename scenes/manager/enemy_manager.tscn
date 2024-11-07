@@ -6,3 +6,6 @@
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_iy882")
 basic_enemy_scene = ExtResource("2_e7xoo")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
