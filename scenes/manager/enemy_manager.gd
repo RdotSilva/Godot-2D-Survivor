@@ -17,8 +17,17 @@ func on_timer_timeout():
 	if player == null:
 		return
 
+	# Get a random direction and rotate
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
 	
+	# Take player position with the direction
 	var spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 
+	# Create the node
+	var enemy = basic_enemy_scene.instantiate() as Node2D
 
+	# Add node to scene tree (under which parent)
+	get_parent().add_child(enemy)
+
+	# Assign global position for the enemy
+	enemy.global_position = spawn_position
