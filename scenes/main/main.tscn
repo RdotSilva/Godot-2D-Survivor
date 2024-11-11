@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bif1is5fthxbt"]
+[gd_scene load_steps=5 format=3 uid="uid://bif1is5fthxbt"]
 
 [ext_resource type="PackedScene" uid="uid://cyg516wn5syhj" path="res://scenes/manager/enemy_manager.tscn" id="1_et0tq"]
 [ext_resource type="PackedScene" uid="uid://cetlcnevlmuq6" path="res://scenes/player/player.tscn" id="1_grfab"]
 [ext_resource type="PackedScene" uid="uid://dpmu5kqum7usq" path="res://scenes/game_camera/game_camera.tscn" id="1_hn8lh"]
 [ext_resource type="TileSet" uid="uid://b5b2ow5nthbsr" path="res://resources/tileset.tres" id="1_x1fco"]
-[ext_resource type="PackedScene" uid="uid://bur28u6vqx534" path="res://scenes/basic_enemy/basic_enemy.tscn" id="4_vm6ys"]
-[ext_resource type="Script" path="res://scenes/basic_enemy/basic_enemy.gd" id="5_bm4iw"]
 
 [node name="Main" type="Node"]
 
@@ -21,38 +19,3 @@ layer_0/tile_data = PackedInt32Array(1441831, 0, 4, 1376295, 0, 4, 1310759, 0, 4
 [node name="Player" parent="." instance=ExtResource("1_grfab")]
 position = Vector2(181, 229)
 collision_layer = 0
-
-[node name="BasicEnemy" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(351, 238)
-collision_layer = 0
-script = ExtResource("5_bm4iw")
-
-[node name="BasicEnemy2" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(234, 256)
-collision_layer = 0
-script = ExtResource("5_bm4iw")
-
-[node name="BasicEnemy3" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(155, 155)
-collision_layer = 0
-script = ExtResource("5_bm4iw")
-
-[node name="BasicEnemy4" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(54, 147)
-collision_layer = 0
-script = ExtResource("5_bm4iw")
-
-[node name="BasicEnemy5" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(367, 325)
-collision_layer = 0
-script = ExtResource("5_bm4iw")
-
-[node name="BasicEnemy6" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(239, 154)
-collision_layer = 0
-script = ExtResource("5_bm4iw")
-
-[node name="BasicEnemy7" parent="." instance=ExtResource("4_vm6ys")]
-position = Vector2(85, 291)
-collision_layer = 0
-script = ExtResource("5_bm4iw")
