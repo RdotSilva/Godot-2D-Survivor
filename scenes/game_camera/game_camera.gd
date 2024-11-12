@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	aquire_target()
 
 	# Formula used to create smooth "lerping"
-	var framerate_smoothing_formula = 1.0 - exp(-delta * 10)
+	var framerate_smoothing_formula = 1.0 - exp(-delta * 20)
 
 	global_position = global_position.lerp(target_position, framerate_smoothing_formula)
 	
