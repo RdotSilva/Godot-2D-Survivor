@@ -1,7 +1,7 @@
 extends Node
 
 # Viewport is 640 and half of that is 320 (+10 for buffer)
-const SPAWN_RADIUS = 330
+const SPAWN_RADIUS = 370
 
 @export var basic_enemy_scene: PackedScene
 
