@@ -9,3 +9,7 @@ func _ready() -> void:
 
 
 # TODO: Implement loot pool generation
+func generate_loot_pool() -> void:
+	var itemType = ['armor', 'weapon']
+
+	var quality = get_gear_quality()
