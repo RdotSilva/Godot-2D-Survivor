@@ -15,3 +15,5 @@ func generate_loot_pool() -> void:
 	var quality = get_gear_quality()
 
 # TODO: Implement quality function
+func get_gear_quality() -> void:
+	var quality = ['poor', 'common']
