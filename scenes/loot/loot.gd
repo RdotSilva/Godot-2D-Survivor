@@ -21,3 +21,9 @@ func get_item_quality() -> void:
 
 func get_item_type() -> void:
 	var itemTypes = ['armor', 'weapon']
+
+
+func get_item_slot() -> void:
+	# Check for wespon
+
+	# Check for armor
