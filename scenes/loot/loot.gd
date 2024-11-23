@@ -25,3 +25,5 @@ func get_item_slot() -> void:
 	# Check for wespon
 
 	# Check for armor
+
+func get_weapon_slot() -> void:
