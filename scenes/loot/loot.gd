@@ -8,13 +8,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# TODO: Implement loot pool generation
 func generate_loot_pool() -> void:
 	var itemType = get_item_type()
 
 	var quality = get_item_quality()
 
-# TODO: Implement quality function
 func get_item_quality() -> void:
 	var quality = ['poor', 'common']
 
