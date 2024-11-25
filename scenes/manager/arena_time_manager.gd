@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 
 # Get the total amount of time elapsed
 func get_time_elapsed():
-	return $Timer.wait_time - $Timer.time_left
+	return timer.wait_time - timer.time_left
