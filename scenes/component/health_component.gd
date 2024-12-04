@@ -1,11 +1,20 @@
 extends Node
 
+signal died
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var max_health: float = 10
+var current_health
+
+func _ready():
+	current_health = max_health
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func damage(damge: float):
+	# Health should never be negative
+	current_health = max(current_health - damage, 0)
+
+	if current_health == 0:
+		died.emit()
+		
+		# Owner is the node that constitutes the root of the scene that this node exists in
+		owner.queue_free()
