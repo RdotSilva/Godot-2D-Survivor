@@ -1,4 +1,5 @@
 extends Node
+class_name HealthComponent
 
 signal died
 
@@ -9,9 +10,9 @@ func _ready():
 	current_health = max_health
 
 
-func damage(damge: float):
+func damage(damage_amount: float):
 	# Health should never be negative
-	current_health = max(current_health - damage, 0)
+	current_health = max(current_health - damage_amount, 0)
 
 	if current_health == 0:
 		died.emit()
