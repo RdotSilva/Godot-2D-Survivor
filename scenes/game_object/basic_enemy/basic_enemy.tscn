@@ -20,6 +20,7 @@ script = ExtResource("1_dqudf")
 [node name="HealthComponent" parent="." instance=ExtResource("2_n3hpd")]
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_54w5n")]
+drop_percent = null
 health_component = NodePath("../HealthComponent")
 
 [node name="Area2D" type="Area2D" parent="."]
