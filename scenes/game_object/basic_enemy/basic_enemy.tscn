@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bur28u6vqx534"]
+[gd_scene load_steps=8 format=3 uid="uid://bur28u6vqx534"]
 
 [ext_resource type="Texture2D" uid="uid://cqpnbo8gj5fyb" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_70ohu"]
 [ext_resource type="Script" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_dqudf"]
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="2_n3hpd"]
 [ext_resource type="PackedScene" uid="uid://cosc0jkymi4tm" path="res://scenes/component/vial_drop_component.tscn" id="3_54w5n"]
 [ext_resource type="PackedScene" uid="uid://b3rsb0wbnl14" path="res://scenes/component/hurt_box_component.tscn" id="4_4bpjw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxj6s"]
+radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5jrk"]
 radius = 5.0
@@ -22,6 +25,10 @@ drop_percent = null
 health_component = NodePath("../HealthComponent")
 
 [node name="HurtBoxComponent" parent="." instance=ExtResource("4_4bpjw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_rxj6s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_70ohu")
