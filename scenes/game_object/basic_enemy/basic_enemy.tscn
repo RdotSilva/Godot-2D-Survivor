@@ -24,7 +24,8 @@ script = ExtResource("1_dqudf")
 drop_percent = null
 health_component = NodePath("../HealthComponent")
 
-[node name="HurtBoxComponent" parent="." instance=ExtResource("4_4bpjw")]
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_4bpjw")]
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
 position = Vector2(0, -9)
