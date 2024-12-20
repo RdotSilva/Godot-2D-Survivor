@@ -4,4 +4,5 @@ extends PanelContainer
 @onready var description_label: Label = $DescriptionLabel
 
 func set_ability_upgrade(upgrade: AbilityUpgrade):
-    pass
+    name_label.text = upgrade.name
+    description_label.text = upgrade.description
