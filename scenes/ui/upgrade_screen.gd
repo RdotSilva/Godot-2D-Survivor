@@ -1,5 +1,11 @@
 extends CanvasLayer
 
+@export var upgrade_card_scene: PackedScene
+
+@onready var card_container: HBoxContainer = $%CardContainer
+
 func set_ability_upgrades(upgrades: Array[AbilityUpgrade]):
-    pass
-    # TODO: Add implementation for setting upgrades
+    for upgrade in upgrades:
+        var card_instance = upgrade_card_scene.instantiate()
+        card_container.add_child(card_instance)
+        card_instance.set_ability_upgrade(upgrade)
