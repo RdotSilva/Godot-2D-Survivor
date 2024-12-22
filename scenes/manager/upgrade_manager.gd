@@ -2,6 +2,7 @@ extends Node
 
 @export var upgrade_pool: Array[AbilityUpgrade]
 @export var experience_manager: Node
+@export var upgrade_screen_scene: PackedScene
 
 var current_upgrades = {}
 
@@ -26,3 +27,7 @@ func on_level_up(current_level: int):
 		}
 	else:
 		current_upgrades[chosen_upgrade.id]["quantity"] += 1
+
+
+# TODO: Add functionality to apply upgrade
+func apply_upgrade(upgrade: AbilityUpgrade):
