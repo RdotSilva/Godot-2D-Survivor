@@ -16,18 +16,20 @@ func on_level_up(current_level: int):
 
 	if chosen_upgrade == null:
 		return
+	
+	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
+	add_child(upgrade_screen_instance)
+	upgrade_screen_instance.set_abilities_upgrades([chosen_upgrade])
 
-	var has_upgrade = current_upgrades.has(chosen_upgrade.id)
+
+func apply_upgrade(upgrade: AbilityUpgrade):
+	var has_upgrade = current_upgrades.has(upgrade.id)
 
 	# Check if we already have the upgrade and can increment or if we need to add it for the first time
 	if !has_upgrade:
-		current_upgrades[chosen_upgrade.id] = {
-			"resource": chosen_upgrade,
+		current_upgrades[upgrade.id] = {
+			"resource": upgrade,
 			"quantity": 1
 		}
 	else:
-		current_upgrades[chosen_upgrade.id]["quantity"] += 1
-
-
-# TODO: Add functionality to apply upgrade
-func apply_upgrade(upgrade: AbilityUpgrade):
+		current_upgrades[upgrade.id]["quantity"] += 1
