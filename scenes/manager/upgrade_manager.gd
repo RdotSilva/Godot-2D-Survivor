@@ -19,7 +19,7 @@ func on_level_up(current_level: int):
 	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
 	add_child(upgrade_screen_instance)
-	upgrade_screen_instance.set_abilities_upgrades([chosen_upgrade])
+	upgrade_screen_instance.set_abilities_upgrades([chosen_upgrade] as Array[AbilityUpgrade])
 
 
 func apply_upgrade(upgrade: AbilityUpgrade):
