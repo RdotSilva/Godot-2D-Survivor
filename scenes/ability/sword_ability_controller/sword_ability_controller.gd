@@ -10,11 +10,19 @@ const MAX_RANGE = 150
 # Default damage
 var damage = 5
 
+var base_wait_time
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	base_wait_time = $Timer.wait_time
+
 	# get_node("Timer")
 
 	$Timer.timeout.connect(on_timer_timeout)
+
+	# act on the game event to connect to the ability upgrade
+	GameEvents.ability_upgrade_added.connect(on_ability_added)
+
 
 func on_timer_timeout():
 	var player = get_tree().get_first_node_in_group("player") as Node2D
@@ -57,3 +65,5 @@ func on_timer_timeout():
 	var enemy_direction = enemies[0].global_position - sword_instance.global_position
 
 	sword_instance.rotation = enemy_direction.angle()
+
+
