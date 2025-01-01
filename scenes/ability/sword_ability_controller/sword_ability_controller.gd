@@ -52,7 +52,7 @@ func on_timer_timeout():
 
 	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
 	
-	foreground_layer.get_parent().add_child(sword_instance)
+	foreground_layer.add_child(sword_instance)
 
 	# Assign the damage
 	sword_instance.hitbox_component.damage = damage
