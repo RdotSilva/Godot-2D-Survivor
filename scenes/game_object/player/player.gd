@@ -3,10 +3,12 @@ extends CharacterBody2D
 const MAX_SPEED = 125
 const ACCELERATION_SMOOTHING = 25
 
+var number_colliding_bodies = 0
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	$CollisionArea2D.body_entered.connect(on_body_entered)
+	$CollisionArea2D.body_exited.connect(on_body_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,4 +26,4 @@ func get_movement_vector():
 	var x_movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 
-	return Vector2(x_movement, y_movement)
+	return Vector2(x_movement, y_movement)S
