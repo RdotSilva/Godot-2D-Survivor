@@ -29,6 +29,9 @@ func get_movement_vector():
 	return Vector2(x_movement, y_movement)
 
 
-
 func on_body_entered(other_body: Node2D):
 	number_colliding_bodies += 1
+
+
+func on_body_excited(other_body: Node2D):
+	number_colliding_bodies -= 1
