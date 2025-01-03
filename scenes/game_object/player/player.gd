@@ -33,5 +33,5 @@ func on_body_entered(other_body: Node2D):
 	number_colliding_bodies += 1
 
 
-func on_body_excited(other_body: Node2D):
+func on_body_exited(other_body: Node2D):
 	number_colliding_bodies -= 1
