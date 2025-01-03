@@ -25,6 +25,10 @@ script = ExtResource("1_50myj")
 
 [node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_h7t5r")]
 
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [node name="PickupArea2D" type="Area2D" parent="."]
 position = Vector2(0, -6)
 collision_layer = 16
