@@ -11,6 +11,7 @@ var number_colliding_bodies = 0
 func _ready() -> void:
 	$CollisionArea2D.body_entered.connect(on_body_entered)
 	$CollisionArea2D.body_exited.connect(on_body_exited)
+	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,10 +37,11 @@ func check_deal_damage():
 		return
 	$HealthComponent.damage(1)
 	damage_interval_timer.start()
-	
+
 
 func on_body_entered(other_body: Node2D):
 	number_colliding_bodies += 1
+	check_deal_damage()
 
 
 func on_body_exited(other_body: Node2D):
