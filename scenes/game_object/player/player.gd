@@ -3,6 +3,8 @@ extends CharacterBody2D
 const MAX_SPEED = 125
 const ACCELERATION_SMOOTHING = 25
 
+@onready var damage_interval_timer = $DamageIntervalTimer
+
 var number_colliding_bodies = 0
 
 
@@ -30,10 +32,11 @@ func get_movement_vector():
 
 
 func check_deal_damage():
-	if number_colliding_bodies == 0:
+	if number_colliding_bodies == 0 || !damage_interval_timer.is_stopped():
 		return
 	$HealthComponent.damage(1)
-	$DamageIntervalTimer.start()
+	damage_interval_timer.start()
+	
 
 func on_body_entered(other_body: Node2D):
 	number_colliding_bodies += 1
