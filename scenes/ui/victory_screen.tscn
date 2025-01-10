@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/ui/victory_screen.gd" id="1_7q5rd"]
 
 [node name="VictoryScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_7q5rd")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
