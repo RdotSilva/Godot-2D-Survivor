@@ -5,7 +5,7 @@
 
 [node name="ArenaTimeManager" type="Node"]
 script = ExtResource("1_5spql")
-victory_screen_scene = ExtResource("2_du5by")
+end_screen_scene = ExtResource("2_du5by")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
