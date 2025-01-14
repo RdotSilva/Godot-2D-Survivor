@@ -1,12 +1,18 @@
 extends Node
 
+const DIFFICULTY_INTERVAL = 5
+
 @export var end_screen_scene: PackedScene
+
+var arena_difficulty = 0
+var previous_time = 0
 
 # Shorthand for assigning a node to a variable when the node becomes ready
 @onready var timer = $Timer
 
 
 func _ready():
+	previous_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 
 
