@@ -1,6 +1,6 @@
 extends Node
 
-signal arena_difficulty_increased
+signal arena_difficulty_increased(arena_difficulty: int)
 
 const DIFFICULTY_INTERVAL = 5
 
@@ -21,8 +21,7 @@ func _process(delta: float):
 	var next_time_target = timer.wait_time - ((arena_difficulty + 1) * DIFFICULTY_INTERVAL)
 	if timer.time_left <= next_time_target:
 		arena_difficulty += 1
-		arena_difficulty_increased.emit()
-		print(arena_difficulty)
+		arena_difficulty_increased.emit(arena_difficulty)
 
 
 # Get the total amount of time elapsed
