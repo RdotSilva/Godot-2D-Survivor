@@ -4,10 +4,12 @@ extends Node
 const SPAWN_RADIUS = 370
 
 @export var basic_enemy_scene: PackedScene
+@export var arena_time_manager: Node
 
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
 	$Timer.timeout.connect(on_timer_timeout)
+	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
 
 # Spawn the enemy outside the view of the player
 func on_timer_timeout():
