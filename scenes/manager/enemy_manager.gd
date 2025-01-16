@@ -44,3 +44,13 @@ func on_timer_timeout():
 	# Assign global position for the enemy
 	enemy.global_position = spawn_position
 
+
+func on_arena_difficulty_increased(arena_difficulty: int):
+	# 5 seconds per difficulty increase
+	var time_off = (.1 / 12) * arena_difficulty
+
+	# Cap the max spawn rate to avoid spawning too fast
+	time_off = min(time_off, .7)
+
+	print(time_off)
+	timer.wait_time = base_spawn_time - time_off
