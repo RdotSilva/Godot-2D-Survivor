@@ -52,5 +52,4 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	# Cap the max spawn rate to avoid spawning too fast
 	time_off = min(time_off, .7)
 
-	print(time_off)
 	timer.wait_time = base_spawn_time - time_off
