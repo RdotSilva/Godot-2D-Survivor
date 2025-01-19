@@ -17,6 +17,21 @@ func _ready() -> void:
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
 
 
+func get_spawn_position():
+	var player = get_tree().get_first_node_in_group("player") as Node2D
+
+	if player == null:
+		return Vector2.ZERO
+
+	# Get a random direction and rotate
+	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
+	
+	# Take player position with the direction
+	var spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
+
+	return spawn_position
+
+
 # Spawn the enemy outside the view of the player
 func on_timer_timeout():
 	# Timer restarted after the potential timer difficulty increase happens
