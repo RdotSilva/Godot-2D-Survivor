@@ -29,7 +29,16 @@ func get_spawn_position():
 	# Take player position with the direction
 	var spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 
-	return spawn_position
+	# Raycast collisions
+	var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1)
+	var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
+
+	if result == null:
+		# We are clear
+		return spawn_position
+	else:
+		# We have a collision
+		return player.global_position
 
 
 # Spawn the enemy outside the view of the player
