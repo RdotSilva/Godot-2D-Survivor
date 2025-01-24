@@ -3,6 +3,13 @@ extends Node2D
 # This is the furthest away the axe can be from the player
 const MAX_RADIUS = 100
 
+
+func _ready():
+    # A tween is a way to define an animation
+    var tween = create_tween()
+    tween.tween_method(tween_method, 0.0, 2.0, 3)
+
+
 func tween_method(rotations: float):
     var percent = (rotations / 2)
     var current_radius = percent * MAX_RADIUS
