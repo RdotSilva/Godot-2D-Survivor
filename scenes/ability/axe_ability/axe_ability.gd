@@ -16,11 +16,10 @@ func tween_method(rotations: float):
     var current_direction = Vector2.RIGHT.rotated(rotations * TAU)
 
     # Positioning logic for the axe
-    var root_position = Vector2.ZERO
+
     var player = get_tree().get_first_node_in_group("player")
     if player == null:
-        root_position = global_position
-    else:
-        root_position = player.global_position
+       return
 
-    global_position = root_position + (current_direction * current_radius)
+    # Offset the axe positioning
+    global_position = player.global_position + (current_direction * current_radius)
