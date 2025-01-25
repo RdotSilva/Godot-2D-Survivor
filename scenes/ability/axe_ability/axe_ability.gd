@@ -8,6 +8,7 @@ func _ready():
     # A tween is a way to define an animation
     var tween = create_tween()
     tween.tween_method(tween_method, 0.0, 2.0, 3)
+    tween.tween_callback(queue_free)
 
 
 func tween_method(rotations: float):
