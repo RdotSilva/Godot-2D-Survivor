@@ -3,6 +3,7 @@ extends Node2D
 # This is the furthest away the axe can be from the player
 const MAX_RADIUS = 100
 
+@onready var hitbox_component = $HitboxComponent
 
 func _ready():
     # A tween is a way to define an animation
