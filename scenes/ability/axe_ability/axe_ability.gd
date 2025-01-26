@@ -5,7 +5,12 @@ const MAX_RADIUS = 100
 
 @onready var hitbox_component = $HitboxComponent
 
+var base_rotation = Vector2.RIGHT
+
 func _ready():
+    # Randomize the rotation
+    base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))
+
     # A tween is a way to define an animation
     var tween = create_tween()
     tween.tween_method(tween_method, 0.0, 2.0, 3)
@@ -15,7 +20,7 @@ func _ready():
 func tween_method(rotations: float):
     var percent = (rotations / 2)
     var current_radius = percent * MAX_RADIUS
-    var current_direction = Vector2.RIGHT.rotated(rotations * TAU)
+    var current_direction = base_rotation.rotated(rotations * TAU)
 
     # Positioning logic for the axe
 
