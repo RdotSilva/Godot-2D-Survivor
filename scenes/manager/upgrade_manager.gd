@@ -24,6 +24,17 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 
 	GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
 
+func pick_upgrades():
+	var chosen_upgrades = []
+	var filtered_upgrades = upgrade_pool.duplicate() 
+
+	for i in 2:
+		var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
+		chosen_upgrades.append(chosen_upgrade)
+		filtered_upgrades = filtered_upgrades.filter(func (upgrade): return upgrade.id != chosen_upgrade.id)
+
+	return chosen_upgrades
+	
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):
 	apply_upgrade(upgrade)
