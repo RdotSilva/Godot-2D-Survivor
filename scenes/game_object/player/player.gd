@@ -7,6 +7,7 @@ const ACCELERATION_SMOOTHING = 25
 @onready var health_component = $HealthComponent
 @onready var health_bar = $HealthBar
 @onready var abilities = $Abilities
+@onready var animation_player = $AnimationPlayer
 
 var number_colliding_bodies = 0
 
@@ -29,6 +30,12 @@ func _process(delta: float) -> void:
 	velocity = velocity.lerp(target_velocity, 1 - exp(-delta *  ACCELERATION_SMOOTHING))
 	
 	move_and_slide()
+
+	# Play animation only when player is moving
+	if movement_vector.x != 0 || movement_vector.y != 0:
+		animation_player.play("walk")
+	else:
+		animation_player.play("RESET")
 
 # Return the input state used for movement
 func get_movement_vector():
