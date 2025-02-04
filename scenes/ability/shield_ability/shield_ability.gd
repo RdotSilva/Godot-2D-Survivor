@@ -6,4 +6,4 @@ extends Node2D
 var shield_level = 100
 
 func _ready:
-    pass
+    passr
