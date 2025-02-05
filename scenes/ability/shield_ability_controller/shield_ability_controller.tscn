@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://ccrobaylw332l"]
+
+[node name="ShieldAbilityController" type="Node2D"]
