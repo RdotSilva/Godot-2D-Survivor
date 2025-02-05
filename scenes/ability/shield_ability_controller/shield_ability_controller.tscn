@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://ccrobaylw332l"]
+[gd_scene load_steps=2 format=3 uid="uid://ccrobaylw332l"]
+
+[ext_resource type="Script" path="res://scenes/ability/shield_ability_controller/shield_ability_controller.gd" id="1_ygdtn"]
 
 [node name="ShieldAbilityController" type="Node2D"]
+script = ExtResource("1_ygdtn")
