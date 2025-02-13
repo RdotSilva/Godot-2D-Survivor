@@ -64,11 +64,11 @@ curve = SubResource("Curve_81d4k")
 particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
 spread = 30.0
-initial_velocity_min = 125.0
-initial_velocity_max = 200.0
-angular_velocity_min = -720.0
-angular_velocity_max = 720.0
-gravity = Vector3(0, 400, 0)
+initial_velocity_min = 175.0
+initial_velocity_max = 250.0
+angular_velocity_min = -1440.0
+angular_velocity_max = 1440.0
+gravity = Vector3(0, 800, 0)
 scale_curve = SubResource("CurveTexture_1i3gv")
 
 [node name="DeathComponent" type="Node2D"]
@@ -84,7 +84,7 @@ emitting = false
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_micgw")
 texture = ExtResource("1_vxk7k")
-lifetime = 0.65
+lifetime = 0.5
 one_shot = true
 fixed_fps = 0
 interpolate = false
