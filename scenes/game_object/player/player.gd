@@ -41,9 +41,8 @@ func _process(delta: float) -> void:
 	# Logic to flip the player animation based on moving direction
 	var move_sign = sign(movement_vector.x)
 
-	if move_sign == 0:
-		visuals.scale = Vector2.ONE
-	else:
+	# Face place in correct location
+	if move_sign != 0:
 		visuals.scale = Vector2(move_sign, 1)
 
 # Return the input state used for movement
