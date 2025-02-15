@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="2_mg6lj"]
 [ext_resource type="PackedScene" uid="uid://dguw3gbjrktng" path="res://scenes/component/death_component.tscn" id="3_soafk"]
 
-[node name="WizardEnemy" type="Node2D"]
+[node name="WizardEnemy" type="CharacterBody2D"]
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_mg6lj")]
 max_health = 30.0
