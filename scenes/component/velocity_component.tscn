@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://behakfm55dh6t"]
+
+[node name="VelocityComponent" type="Node"]
