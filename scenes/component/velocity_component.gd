@@ -26,3 +26,9 @@ func accelerate_in_direction(direction: Vector2):
     velocity = velocity.lerp(desired_velocity, 1 - exp(-acceleration * get_process_delta_time()))
 
 
+func move(character_body: CharacterBody2D):
+    character_body.velocity = velocity
+    character_body.move_and_slide()
+
+    # If character doesn't collide after move_and_slide then velocity should not change
+    velocity = character_body.velocity
