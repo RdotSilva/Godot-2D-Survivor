@@ -6,7 +6,19 @@ extends Node
 var velocity = Vector2.ZERO
 
 
+func accelerate_to_player():
+    var owner_node2d = owner as Node2D
 
+    if owner_node2d == null:
+        return
+
+    var player = get_tree().get_first_node_in_group("player")
+
+    # Normalize the vector because it returns a unit vector
+    var direction = (player.global_position - owner_node2d.global_position).normalize()
+
+    accelerate_in_direction(direction)
+    
 
 func accelerate_in_direction(direction: Vector2):
     var desired_velocity = direction * max_speed
