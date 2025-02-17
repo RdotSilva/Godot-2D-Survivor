@@ -12,10 +12,10 @@ func accelerate_to_player():
     if owner_node2d == null:
         return
 
-    var player = get_tree().get_first_node_in_group("player")
+    var player = get_tree().get_first_node_in_group("player") as Node2D
 
     # Normalize the vector because it returns a unit vector
-    var direction = (player.global_position - owner_node2d.global_position).normalize()
+    var direction = (player.global_position - owner_node2d.global_position).normalized()
 
     accelerate_in_direction(direction)
     
