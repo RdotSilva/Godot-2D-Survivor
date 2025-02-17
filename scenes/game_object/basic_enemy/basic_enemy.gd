@@ -1,15 +1,12 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 40
-
-@onready var health_component: HealthComponent = $HealthComponent
 @onready var visuals = $Visuals
+@onready var velocity_component = $VelocityComponent
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var direction = get_direction_to_player()
-	velocity = direction * MAX_SPEED
-	move_and_slide()
+	velocity_component.accelerate_to_player()
+	velocity_component.move(self)
 
 	# Face enemy in correct location
 	var move_sign = sign(velocity.x)
