@@ -26,9 +26,11 @@ acceleration = 2.0
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("3_soafk")]
 health_component = NodePath("../HealthComponent")
-sprite = NodePath("../Sprite2D")
+sprite = NodePath("../Visuals/Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("1_qpi7n")
 offset = Vector2(0, -8)
 
