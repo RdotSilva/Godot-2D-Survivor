@@ -4,11 +4,11 @@ extends CharacterBody2D
 @onready var visuals = $Visuals
 
 
-func _process(delta: float):
-    velocity_component.accelerate_to_player()
-    velocity_component.move(self)
+func _process(delta: float) -> void:
+	velocity_component.accelerate_to_player()
+	velocity_component.move(self)
 
-    # Face enemy in correct location
+	# Face enemy in correct location
 	var move_sign = sign(velocity.x)
 	if move_sign != 0:
 		visuals.scale = Vector2(-move_sign, 1)
