@@ -4,6 +4,7 @@ extends Node
 const SPAWN_RADIUS = 370
 
 @export var basic_enemy_scene: PackedScene
+@export var wizard_enemy_scene: PackedScene
 @export var arena_time_manager: Node
 
 @onready var timer = $Timer

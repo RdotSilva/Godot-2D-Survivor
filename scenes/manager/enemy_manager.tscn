@@ -6,6 +6,7 @@
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_qntvc")
 basic_enemy_scene = ExtResource("2_s3jsf")
+wizard_enemy_scene = ExtResource("2_s3jsf")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
