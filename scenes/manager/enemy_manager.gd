@@ -82,3 +82,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	time_off = min(time_off, .7)
 
 	timer.wait_time = base_spawn_time - time_off
+
+	# 30 seconds into the game we will start spawning the wizard with a higher weight
+	if arena_difficulty == 6:
+		enemy_table.add_item(wizard_enemy_scene, 20)
