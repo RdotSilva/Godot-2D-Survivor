@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bicpqrbh1g6ov"]
+[gd_scene load_steps=12 format=3 uid="uid://bicpqrbh1g6ov"]
 
 [ext_resource type="Script" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_qg8pl"]
 [ext_resource type="Texture2D" uid="uid://dolu10ycfseyg" path="res://scenes/game_object/wizard_enemy/wizard_enemy.png" id="1_qpi7n"]
@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://b3rsb0wbnl14" path="res://scenes/component/hurt_box_component.tscn" id="4_bxgy2"]
 [ext_resource type="PackedScene" uid="uid://behakfm55dh6t" path="res://scenes/component/velocity_component.tscn" id="5_a22w8"]
 [ext_resource type="PackedScene" uid="uid://cosc0jkymi4tm" path="res://scenes/component/vial_drop_component.tscn" id="7_vl6oy"]
+
+[sub_resource type="Animation" id="Animation_ffanc"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejlav"]
+_data = {
+"walk": SubResource("Animation_ffanc")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fdepo"]
 radius = 8.0
@@ -19,12 +27,17 @@ collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_qg8pl")
 
-[node name="HealthComponent" parent="." instance=ExtResource("2_mg6lj")]
-max_health = 30.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ejlav")
+}
 
 [node name="VelocityComponent" parent="." instance=ExtResource("5_a22w8")]
 max_speed = 60
 acceleration = 2.0
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_mg6lj")]
+max_health = 30.0
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_vl6oy")]
 drop_percent = 0.35
@@ -41,6 +54,7 @@ texture = ExtResource("1_qpi7n")
 offset = Vector2(0, -8)
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_bxgy2")]
+visible = false
 position = Vector2(0, -7)
 health_component = NodePath("../HealthComponent")
 
@@ -48,5 +62,6 @@ health_component = NodePath("../HealthComponent")
 shape = SubResource("CircleShape2D_fdepo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_036y8")
