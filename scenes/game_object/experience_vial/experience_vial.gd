@@ -6,6 +6,13 @@ func _ready() -> void:
 	$Area2D.area_entered.connect(on_area_entered)
 
 
-func on_area_entered(other_area: Area2D):
+func tween_collect(percent: float, start_position: Vector2):
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player == null:
+		return
+
+	global_position = start_position.lerp(player.global_position, percent)
+
 	GameEvents.emit_experience_vial_collected(1)
 	queue_free()
