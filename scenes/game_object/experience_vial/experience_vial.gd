@@ -14,5 +14,6 @@ func tween_collect(percent: float, start_position: Vector2):
 
 	global_position = start_position.lerp(player.global_position, percent)
 
+func collect():
 	GameEvents.emit_experience_vial_collected(1)
 	queue_free()
