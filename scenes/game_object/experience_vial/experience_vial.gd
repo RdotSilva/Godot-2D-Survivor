@@ -14,6 +14,10 @@ func tween_collect(percent: float, start_position: Vector2):
 
 	global_position = start_position.lerp(player.global_position, percent)
 
+	# Add rotation to vial once picked up
+	var direction_from_start = global_position - start_position
+	rotation = direction_from_start.angle()
+
 
 func collect():
 	GameEvents.emit_experience_vial_collected(1)
