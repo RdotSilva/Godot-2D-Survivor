@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var collision_shape_2d = $Area2D/Area2D/CollisionShape2D
+@onready var collision_shape_2d = $Area2D/CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,12 +16,14 @@ func tween_collect(percent: float, start_position: Vector2):
 	global_position = start_position.lerp(player.global_position, percent)
 
 	# Add rotation to vial once picked up
-	var direction_from_start = global_position - start_position
-	rotation_degrees = rad_to_deg(direction_from_start.angle()) + 90
+	var direction_from_start = player.global_position - start_position
+
+	var target_rotation = direction_from_start.angle() + deg_to_rad(90)
+	rotation = lerp_angle(rotation, target_rotation, 1- exp(-2 * get_process_delta_time()))
 
 
 func collect():
-	GameEvents.emit_experience_vial_collected(1)
+	# GameEvents.emit_experience_vial_collected(1)
 	queue_free()
 
 
@@ -30,7 +32,7 @@ func disable_collision():
 
 
 func on_area_entered(other_area: Area2D):
-	Callable(disable_collision()).call_deferred()
+	Callable(disable_collision).call_deferred()
 
 	var tween = create_tween()
 	
