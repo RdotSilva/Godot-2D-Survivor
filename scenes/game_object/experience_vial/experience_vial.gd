@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var collision_shape_2d = $Area2D/Area2D/CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,7 +25,13 @@ func collect():
 	queue_free()
 
 
+func disable_collision():
+	collision_shape_2d.disabled = true
+
+
 func on_area_entered(other_area: Area2D):
+	Callable(disable_collision()).call_deferred()
+
 	var tween = create_tween()
 	
 	tween.tween_method(tween_collect.bind(global_position), 0.0, 1.0, 0.5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
