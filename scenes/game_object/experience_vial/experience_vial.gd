@@ -16,7 +16,7 @@ func tween_collect(percent: float, start_position: Vector2):
 
 	# Add rotation to vial once picked up
 	var direction_from_start = global_position - start_position
-	rotation = direction_from_start.angle()
+	rotation_degrees = rad_to_deg(direction_from_start.angle()) + 90
 
 
 func collect():
