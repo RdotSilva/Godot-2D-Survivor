@@ -7,6 +7,7 @@
 radius = 16.0
 
 [node name="ExperienceVial" type="Node2D"]
+position = Vector2(-2, 1)
 script = ExtResource("1_4ej3a")
 
 [node name="Area2D" type="Area2D" parent="."]
