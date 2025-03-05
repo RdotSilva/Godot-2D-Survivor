@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://7wm5r4poki1y"]
+[gd_scene load_steps=2 format=3 uid="uid://7wm5r4poki1y"]
+
+[ext_resource type="Script" path="res://scenes/ui/floating_text.gd" id="1_wijqq"]
 
 [node name="FloatingText" type="Node2D"]
+script = ExtResource("1_wijqq")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(100, 32)
