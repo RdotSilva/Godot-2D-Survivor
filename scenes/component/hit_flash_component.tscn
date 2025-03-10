@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://blifqb2ew1acb"]
+[gd_scene load_steps=5 format=3 uid="uid://blifqb2ew1acb"]
 
 [ext_resource type="Script" path="res://scenes/component/hit_flash_component.gd" id="1_qkajm"]
 [ext_resource type="Texture2D" uid="uid://dolu10ycfseyg" path="res://scenes/game_object/wizard_enemy/wizard_enemy.png" id="2_cmeoc"]
+[ext_resource type="Shader" path="res://scenes/component/hit_flash_component.gdshader" id="2_pde0h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnbd1"]
+shader = ExtResource("2_pde0h")
 
 [node name="HitFlashComponent" type="Node2D"]
 script = ExtResource("1_qkajm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fnbd1")
 texture = ExtResource("2_cmeoc")
