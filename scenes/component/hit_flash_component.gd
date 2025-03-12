@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export var health_component: Node
 @export var sprite: Sprite2D
