@@ -109,7 +109,9 @@ health_component = NodePath("../HealthComponent")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("7_ob1fm")]
 
-[node name="HitFlashComponent" parent="." instance=ExtResource("8_l4d8s")]
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_l4d8s")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_ttqog")]
 health_component = NodePath("../HealthComponent")
