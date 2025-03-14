@@ -3,5 +3,6 @@
 [ext_resource type="Shader" path="res://scenes/component/hit_flash_component.gdshader" id="1_41f11"]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_41f11")
 shader_parameter/lerp_percent = 0.0
