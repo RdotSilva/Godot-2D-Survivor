@@ -13,7 +13,6 @@ func _ready():
     sprite.material = hit_flash_material
 
 
-# TODO: Implement logic to emit a flash when the enemy is hit. This will require a shader.
 func on_health_changed():
     # Prevent multiple tweens running when enemy is hit
     if hit_flash_tween!= null && hit_flash_tween.is_valid():
