@@ -37,7 +37,13 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 		if current_quantity == upgrade.max_quantity:
 			upgrade_pool = upgrade_pool.filter(func (pool_upgrade): return pool_upgrade.id != upgrade.id )
 
+	update_upgrade_pool(upgrade)
+
 	GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
+
+func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
+	if chosen_upgrade.id == upgrade_axe.id:
+		upgrade_pool.add_item(upgrade_axe_damage, 10)
 
 func pick_upgrades():
 	var chosen_upgrades: Array[AbilityUpgrade] = []
