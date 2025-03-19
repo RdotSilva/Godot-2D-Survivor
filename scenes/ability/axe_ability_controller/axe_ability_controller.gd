@@ -2,10 +2,13 @@ extends Node
 
 @export var axe_ability_scene: PackedScene
 
-var damage = 10
+var base_damage = 10
+var additional_damage_percent = 1
 
 func _ready():
     $Timer.timeout.connect(on_timer_timeout)
+    
+    GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 
 
 func on_timer_timeout():
@@ -19,7 +22,7 @@ func on_timer_timeout():
     if foreground == null:
         return
 
-    var axe_instance =  axe_ability_scene.instantiate() as Node2D
+    var axe_instance = axe_ability_scene.instantiate() as Node2D
     foreground.add_child(axe_instance)
     axe_instance.global_position = player.global_position
-    axe_instance.hitbox_component.damage = damage
+    axe_instance.hitbox_component.damage = base_damage * additional_damage_percent
