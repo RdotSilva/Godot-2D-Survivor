@@ -8,8 +8,8 @@ const MAX_RANGE = 150
 @export var sword_ability: PackedScene
 
 # Default damage
-var damage = 5
-
+var base_damage = 5
+var additional_damage_percent = 1
 var base_wait_time
 
 # Called when the node enters the scene tree for the first time.
@@ -55,7 +55,7 @@ func on_timer_timeout():
 	foreground_layer.add_child(sword_instance)
 
 	# Assign the damage
-	sword_instance.hitbox_component.damage = damage
+	sword_instance.hitbox_component.damage = base_damage * additional_damage_percent
 
 	# The first enemy in the sorted array will be where the sword spawns
 	sword_instance.global_position = enemies[0].global_position
