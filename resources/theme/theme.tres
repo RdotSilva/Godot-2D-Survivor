@@ -24,4 +24,5 @@ default_font = ExtResource("1_l8haj")
 default_font_size = 16
 AlternatePanelContainer/base_type = &"PanelContainer"
 AlternatePanelContainer/styles/panel = SubResource("StyleBoxTexture_luvdy")
+Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_11r52")
