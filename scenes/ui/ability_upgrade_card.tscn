@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm6wsaj3801uy"]
+[gd_scene load_steps=8 format=3 uid="uid://bm6wsaj3801uy"]
 
 [ext_resource type="Script" path="res://scenes/ui/ability_upgrade_card.gd" id="1_0wcwh"]
 
@@ -66,11 +66,39 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_5kjpr"]
 resource_name = "hover"
-length = 0.4
+length = 0.2
 step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_n75b7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q2wxs"]
 _data = {
+"RESET": SubResource("Animation_n75b7"),
 "hover": SubResource("Animation_5kjpr")
 }
 
@@ -82,6 +110,11 @@ script = ExtResource("1_0wcwh")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_xvtfl")
+}
+
+[node name="HoverAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q2wxs")
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -119,8 +152,3 @@ theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
 theme_override_constants/outline_size = 8
 text = "Write some description here"
 autowrap_mode = 2
-
-[node name="HoverAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_q2wxs")
-}
