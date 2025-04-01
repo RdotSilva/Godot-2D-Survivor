@@ -162,7 +162,7 @@ _data = {
 "hover": SubResource("Animation_5kjpr")
 }
 
-[node name="AbilityUpgradeCard" type="PanelContainer"]
+[node name="AbilityUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
 custom_minimum_size = Vector2(150, 150)
 pivot_offset = Vector2(75, 75)
 script = ExtResource("1_0wcwh")
