@@ -5,6 +5,8 @@ signal selected
 @onready var name_label: Label = %NameLabel
 @onready var description_label: Label = %DescriptionLabel
 
+var disabled = false
+
 
 func _ready():
 	gui_input.connect(on_gui_input)
@@ -24,10 +26,19 @@ func set_ability_upgrade(upgrade: AbilityUpgrade):
 
 
 func on_gui_input(event: InputEvent):
+	if disabled:
+		return
+
 	if event.is_action_pressed("left_click"):
+		disabled = true
 		$AnimationPlayer.play("selected")
+		
+		await $AnimationPlayer.animation_finished
 		selected.emit()
 
 
 func on_mouse_entered():
+	if disabled:
+		return
+		
 	$HoverAnimationPlayer.play("hover")
