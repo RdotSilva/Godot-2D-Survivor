@@ -19,6 +19,9 @@ func play_in(delay: float = 0.0):
 
 	$AnimationPlayer.play("in")
 
+func play_discard():
+	$AnimationPlayer.play("discard")
+
 
 func set_ability_upgrade(upgrade: AbilityUpgrade):
 	name_label.text = upgrade.name
@@ -27,6 +30,11 @@ func set_ability_upgrade(upgrade: AbilityUpgrade):
 func select_card():
 	disabled = true
 	$AnimationPlayer.play("selected")
+
+	for other_card in get_tree().get_nodes_in_group("upgrade_card"):
+		if other_card == self:
+			continue
+		other_card.play_discard()
 
 	await $AnimationPlayer.animation_finished
 	selected.emit()
