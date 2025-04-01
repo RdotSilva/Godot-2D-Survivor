@@ -24,17 +24,20 @@ func set_ability_upgrade(upgrade: AbilityUpgrade):
 	name_label.text = upgrade.name
 	description_label.text = upgrade.description
 
+func select_card():
+	disabled = true
+	$AnimationPlayer.play("selected")
+
+	await $AnimationPlayer.animation_finished
+	selected.emit()
+
 
 func on_gui_input(event: InputEvent):
 	if disabled:
 		return
 
 	if event.is_action_pressed("left_click"):
-		disabled = true
-		$AnimationPlayer.play("selected")
-		
-		await $AnimationPlayer.animation_finished
-		selected.emit()
+		select_card()
 
 
 func on_mouse_entered():
