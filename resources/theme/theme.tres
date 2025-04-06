@@ -48,6 +48,7 @@ default_font_size = 16
 AlternatePanelContainer/base_type = &"PanelContainer"
 AlternatePanelContainer/styles/panel = SubResource("StyleBoxTexture_luvdy")
 Button/colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+Button/colors/font_hover_color = Color(0.741176, 0.423529, 0.290196, 1)
 Button/styles/hover = SubResource("StyleBoxTexture_0iw7k")
 Button/styles/normal = SubResource("StyleBoxTexture_kls8n")
 Label/constants/line_spacing = 0
