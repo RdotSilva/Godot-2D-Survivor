@@ -1,14 +1,12 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 125
-const ACCELERATION_SMOOTHING = 25
-
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_component = $HealthComponent
 @onready var health_bar = $HealthBar
 @onready var abilities = $Abilities
 @onready var animation_player = $AnimationPlayer
 @onready var visuals = $Visuals
+@onready var velocity_component = $VelocityComponent
 
 var number_colliding_bodies = 0
 
@@ -28,7 +26,7 @@ func _process(delta: float) -> void:
 	var direction = movement_vector.normalized()
 	var target_velocity = direction * MAX_SPEED
 
-	velocity = velocity.lerp(target_velocity, 1 - exp(-delta *  ACCELERATION_SMOOTHING))
+	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
 	
 	move_and_slide()
 
