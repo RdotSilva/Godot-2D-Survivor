@@ -24,11 +24,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var movement_vector = get_movement_vector()
 	var direction = movement_vector.normalized()
-	var target_velocity = direction * MAX_SPEED
-
-	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
-	
-	move_and_slide()
+	velocity_component.accelerate_in_direction(direction)
+	velocity_component.move(self)
 
 	# Play animation only when player is moving
 	if movement_vector.x != 0 || movement_vector.y != 0:
