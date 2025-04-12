@@ -1,6 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjhdjpq63hey5"]
+[gd_scene load_steps=6 format=3 uid="uid://bjhdjpq63hey5"]
 
 [ext_resource type="Shader" path="res://scenes/ui/vignette.gdshader" id="1_0vi7f"]
+[ext_resource type="Script" path="res://scenes/ui/vignette.gd" id="1_qsa37"]
+
+[sub_resource type="Animation" id="Animation_33wg1"]
+resource_name = "hit"
+length = 0.4
+step = 0.05
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2mkhk"]
+_data = {
+"hit": SubResource("Animation_33wg1")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e5eil"]
 shader = ExtResource("1_0vi7f")
@@ -9,6 +20,12 @@ shader_parameter/vignette_opacity = 0.115
 shader_parameter/vignette_rgb = Color(0.247059, 0.14902, 0.192157, 1)
 
 [node name="Vignette" type="CanvasLayer"]
+script = ExtResource("1_qsa37")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2mkhk")
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_e5eil")
