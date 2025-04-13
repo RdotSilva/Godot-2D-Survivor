@@ -6,5 +6,4 @@ func _ready() -> void:
 
 
 func on_player_damaged():
-    # TODO: Add logic when player is damaged to show the vignette animation
-    pass
+    $AnimationPlayer.play("hit")
