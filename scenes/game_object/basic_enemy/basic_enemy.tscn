@@ -145,3 +145,4 @@ shape = SubResource("CircleShape2D_g5jrk")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_0lakw")
 max_distance = 300.0
+bus = &"sfx"
