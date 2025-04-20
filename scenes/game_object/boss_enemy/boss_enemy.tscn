@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d27vc4k0nhkph"]
+[gd_scene load_steps=4 format=3 uid="uid://d27vc4k0nhkph"]
 
 [ext_resource type="Script" path="res://scenes/game_object/boss_enemy/boss_enemy.gd" id="1_w1oh7"]
+[ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="2_ujli8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pguux"]
 radius = 5.0
@@ -11,3 +12,5 @@ script = ExtResource("1_w1oh7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_pguux")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_ujli8")]
