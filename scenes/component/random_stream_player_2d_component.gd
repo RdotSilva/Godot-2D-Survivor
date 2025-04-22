@@ -8,3 +8,4 @@ func play_random():
         return
 
     stream = streams.pick_random()
+    play()
