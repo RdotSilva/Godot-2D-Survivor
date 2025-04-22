@@ -19,4 +19,4 @@ func _process(delta: float) -> void:
 
 
 func on_hit():
-	$AudioStreamPlayer2D.play()
+	$RandomStreamPlayer2DComponent.play_random()
