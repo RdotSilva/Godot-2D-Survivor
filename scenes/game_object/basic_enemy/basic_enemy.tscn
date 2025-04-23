@@ -130,6 +130,10 @@ hit_flash_material = SubResource("ShaderMaterial_c65ef")
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
 
+[node name="HitRandomAudioPlayerComponent" parent="." instance=ExtResource("11_c27x1")]
+max_distance = 300.0
+streams = Array[AudioStream]([ExtResource("11_1r2xw"), ExtResource("12_qygax"), ExtResource("13_u3hkk"), ExtResource("14_tv7s7"), ExtResource("15_1h0ac")])
+
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_4bpjw")]
 health_component = NodePath("../HealthComponent")
 
@@ -146,7 +150,3 @@ offset = Vector2(0, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_g5jrk")
-
-[node name="HitRandomAudioPlayerComponent" parent="." instance=ExtResource("11_c27x1")]
-max_distance = 300.0
-streams = Array[AudioStream]([ExtResource("11_1r2xw"), ExtResource("12_qygax"), ExtResource("13_u3hkk"), ExtResource("14_tv7s7"), ExtResource("15_1h0ac")])
