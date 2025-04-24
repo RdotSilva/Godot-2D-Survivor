@@ -23,3 +23,7 @@ func _process(delta: float) -> void:
 
 func set_is_moving(moving: bool):
 	is_moving = moving
+
+
+func on_hit():
+	$HitRandomAudioPlayerComponent.play_random()
