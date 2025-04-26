@@ -20,7 +20,7 @@ func tween_collect(percent: float, start_position: Vector2):
 	var direction_from_start = player.global_position - start_position
 
 	var target_rotation = direction_from_start.angle() + deg_to_rad(90)
-	rotation = lerp_angle(rotation, target_rotation, 1- exp(-2 * get_process_delta_time()))
+	rotation = lerp_angle(rotation, target_rotation, 1 - exp(-2 * get_process_delta_time()))
 
 
 func collect():
@@ -44,3 +44,5 @@ func on_area_entered(other_area: Area2D):
 	# Wait for all parallel tweens to finish before moving to collect callback
 	tween.chain()
 	tween.tween_callback(collect)
+
+	$RandomStreamPlayer2DComponent.play_random()
