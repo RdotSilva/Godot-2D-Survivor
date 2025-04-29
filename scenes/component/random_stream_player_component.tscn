@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bq62jimw0nqlv"]
+
+[node name="RandomStreamPlayerComponent" type="AudioStreamPlayer2D"]
