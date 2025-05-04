@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://7tu0dfrlj5d1"]
+[gd_scene load_steps=3 format=3 uid="uid://7tu0dfrlj5d1"]
 
 [ext_resource type="Script" path="res://scenes/ui/sound_button.gd" id="1_sr1iq"]
+[ext_resource type="PackedScene" uid="uid://dnl61p5k1722t" path="res://scenes/component/random_stream_player_component.tscn" id="2_lsexu"]
 
 [node name="SoundButton" type="Button"]
 offset_right = 6.0
 offset_bottom = 6.0
 script = ExtResource("1_sr1iq")
+
+[node name="RandomStreamPlayerComponent" parent="." instance=ExtResource("2_lsexu")]
