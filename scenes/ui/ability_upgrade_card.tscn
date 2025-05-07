@@ -1,7 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://bm6wsaj3801uy"]
+[gd_scene load_steps=21 format=3 uid="uid://bm6wsaj3801uy"]
 
 [ext_resource type="Script" path="res://scenes/ui/ability_upgrade_card.gd" id="1_0wcwh"]
 [ext_resource type="PackedScene" uid="uid://dnl61p5k1722t" path="res://scenes/component/random_stream_player_component.tscn" id="2_3i2ev"]
+[ext_resource type="AudioStream" uid="uid://cpyppweodca10" path="res://assets/audio/switch3.ogg" id="3_vr5j6"]
+[ext_resource type="AudioStream" uid="uid://bsoiyitwymmgh" path="res://assets/audio/switch4.ogg" id="4_mma2x"]
+[ext_resource type="AudioStream" uid="uid://c5m5upx1di2yp" path="res://assets/audio/switch5.ogg" id="5_ca0fd"]
+[ext_resource type="AudioStream" uid="uid://dfokrnnyalbn3" path="res://assets/audio/switch6.ogg" id="6_temx7"]
+[ext_resource type="AudioStream" uid="uid://ievp1xbvqpl2" path="res://assets/audio/switch7.ogg" id="7_q2r42"]
+[ext_resource type="AudioStream" uid="uid://5ft50oxyonke" path="res://assets/audio/switch8.ogg" id="8_k5fym"]
+[ext_resource type="AudioStream" uid="uid://d2p32rwt6w4m0" path="res://assets/audio/switch9.ogg" id="9_1n5hv"]
+[ext_resource type="AudioStream" uid="uid://ckdkpomncxf66" path="res://assets/audio/switch10.ogg" id="10_r57dm"]
+[ext_resource type="AudioStream" uid="uid://thmwnivatnoi" path="res://assets/audio/switch1.ogg" id="11_s6fka"]
+[ext_resource type="AudioStream" uid="uid://clhh4wndbdcgx" path="res://assets/audio/switch2.ogg" id="12_7jtji"]
 
 [sub_resource type="Animation" id="Animation_e82gr"]
 length = 0.001
@@ -169,8 +179,11 @@ pivot_offset = Vector2(75, 75)
 script = ExtResource("1_0wcwh")
 
 [node name="HoverPlayerComponent" parent="." instance=ExtResource("2_3i2ev")]
+volume_db = -8.0
+streams = Array[AudioStream]([ExtResource("3_vr5j6"), ExtResource("4_mma2x"), ExtResource("5_ca0fd"), ExtResource("6_temx7"), ExtResource("7_q2r42"), ExtResource("8_k5fym"), ExtResource("9_1n5hv"), ExtResource("10_r57dm")])
 
 [node name="ClickPlayerComponent" parent="." instance=ExtResource("2_3i2ev")]
+streams = Array[AudioStream]([ExtResource("11_s6fka"), ExtResource("12_7jtji"), ExtResource("3_vr5j6"), ExtResource("4_mma2x"), ExtResource("5_ca0fd"), ExtResource("6_temx7"), ExtResource("7_q2r42"), ExtResource("8_k5fym"), ExtResource("9_1n5hv"), ExtResource("10_r57dm")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
