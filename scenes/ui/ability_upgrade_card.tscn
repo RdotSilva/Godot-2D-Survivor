@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm6wsaj3801uy"]
+[gd_scene load_steps=11 format=3 uid="uid://bm6wsaj3801uy"]
 
 [ext_resource type="Script" path="res://scenes/ui/ability_upgrade_card.gd" id="1_0wcwh"]
+[ext_resource type="PackedScene" uid="uid://dnl61p5k1722t" path="res://scenes/component/random_stream_player_component.tscn" id="2_3i2ev"]
 
 [sub_resource type="Animation" id="Animation_e82gr"]
 length = 0.001
@@ -166,6 +167,10 @@ _data = {
 custom_minimum_size = Vector2(150, 150)
 pivot_offset = Vector2(75, 75)
 script = ExtResource("1_0wcwh")
+
+[node name="HoverPlayerComponent" parent="." instance=ExtResource("2_3i2ev")]
+
+[node name="ClickPlayerComponent" parent="." instance=ExtResource("2_3i2ev")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
