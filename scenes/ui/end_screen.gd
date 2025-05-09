@@ -20,6 +20,13 @@ func set_defeat():
 	$%DescriptionLabel.text = "You lost!"
 
 
+func play_jingle(defeat: bool = false):
+	if defeat:
+		$DefeatStreamPlayer.play()
+	else:
+		$VictoryStreamPlayer.play()
+
+
 func on_restart_button_pressed():
 	get_tree().paused = false
 	# Change root node that is running the game
