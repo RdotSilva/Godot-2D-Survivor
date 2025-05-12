@@ -4,8 +4,9 @@
 [ext_resource type="Script" path="res://scenes/autoload/music_player.gd" id="2_rbs5u"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_1uwpy")
-volume_db = -5.0
+volume_db = -20.0
 autoplay = true
 bus = &"music"
 script = ExtResource("2_rbs5u")
