@@ -30,3 +30,7 @@ text = "The Arena"
 [node name="PlayButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_uqvfo")]
 layout_mode = 2
 text = "Play"
+
+[node name="QuitButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_uqvfo")]
+layout_mode = 2
+text = "Quit"
