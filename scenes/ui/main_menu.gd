@@ -3,7 +3,7 @@ extends CanvasLayer
 
 func _ready():
     $%PlayButton.pressed.connect(on_play_pressed)
-    $%OptionsyButton.pressed.connect(on_options_pressed)
+    $%OptionsButton.pressed.connect(on_options_pressed)
     $%QuitButton.pressed.connect(on_quit_pressed)
 
 
