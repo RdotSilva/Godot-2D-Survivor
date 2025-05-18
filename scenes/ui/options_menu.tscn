@@ -64,6 +64,19 @@ text = "Music Volume"
 [node name="HSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MusicOptionContainer"]
 layout_mode = 2
 
+[node name="WindowOptionContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/WindowOptionContainer"]
+layout_mode = 2
+text = "Window Mode"
+
+[node name="SoundButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/WindowOptionContainer" instance=ExtResource("3_7byiv")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sound Button"
+
 [node name="BackButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_7byiv")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
