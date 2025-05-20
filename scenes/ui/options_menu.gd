@@ -2,6 +2,8 @@ extends CanvasLayer
 
 
 @onready var window_button: Button = $%WindowButton
+@onready var sfx_slider = $%SfxSlider
+@onready var music_slider = $%MusicSlider
 
 
 func _ready():
@@ -13,6 +15,9 @@ func update_display():
 
     if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
         window_button.text = "Fullscreen"
+
+    sfx_slider.value = get_bus_volume_percent("sfx")
+    music_slider.value = get_bus_volume_percent("music")
 
 
 func get_bus_volume_percent(bus_name: String):
