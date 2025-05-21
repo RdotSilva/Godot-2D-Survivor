@@ -9,6 +9,11 @@ extends CanvasLayer
 func _ready():
     $%WindowButton.pressed.connect(_on_window_button_pressed)
 
+    sfx_slider.value_changed.connect(on_audio_slider_changed.bind("sfx"))
+    music_slider.value_changed.connect(on_audio_slider_changed.bind("music"))
+
+    update_display()
+
 
 func update_display():
     window_button.text = "Windowed"
@@ -27,6 +32,13 @@ func get_bus_volume_percent(bus_name: String):
     return db_to_linear(volume_db)
 
 
+func set_bus_volume_percent(bus_name: String, percent: float):
+    var bus_index = AudioServer.get_bus_index(bus_name)
+    var volume_db = linear_to_db(percent)
+
+    AudioServer.set_bus_volume_db(bus_index, volume_db)
+
+
 func _on_window_button_pressed():
     var mode = DisplayServer.window_get_mode()
 
@@ -36,3 +48,7 @@ func _on_window_button_pressed():
         DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
     update_display()
+
+
+func on_audio_slider_changed(value: float, bus_name: String):
+    set_bus_volume_percent(bus_name, value)
