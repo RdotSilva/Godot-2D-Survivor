@@ -1,12 +1,16 @@
 extends CanvasLayer
 
+signal back_pressed
 
 @onready var window_button: Button = $%WindowButton
 @onready var sfx_slider = $%SfxSlider
 @onready var music_slider = $%MusicSlider
+@onready var back_button: Button = $%BackButton
 
 
 func _ready():
+    back_button.pressed.connect(on_back_pressed)
+
     $%WindowButton.pressed.connect(_on_window_button_pressed)
 
     sfx_slider.value_changed.connect(on_audio_slider_changed.bind("sfx"))
@@ -52,3 +56,7 @@ func _on_window_button_pressed():
 
 func on_audio_slider_changed(value: float, bus_name: String):
     set_bus_volume_percent(bus_name, value)
+
+
+func on_back_pressed():
+    back_pressed.emit()
