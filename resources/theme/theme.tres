@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://d3fbhdj83srb3"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://d3fbhdj83srb3"]
 
 [ext_resource type="Texture2D" uid="uid://b3g8smumml6bu" path="res://assets/ui/ui.png" id="1_100xy"]
 [ext_resource type="FontFile" uid="uid://df7pexcp57l4l" path="res://resources/theme/Rockboxcond12.ttf" id="1_l8haj"]
@@ -32,6 +32,12 @@ texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 region_rect = Rect2(4, 20, 8, 8)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rholy"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kht16"]
+size = Vector2(0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3m20s"]
 bg_color = Color(0.458824, 0.890196, 1, 1)
@@ -71,6 +77,8 @@ Button/colors/font_pressed_color = Color(0.247059, 0.14902, 0.192157, 1)
 Button/styles/focus = SubResource("StyleBoxEmpty_8ouie")
 Button/styles/hover = SubResource("StyleBoxTexture_0iw7k")
 Button/styles/normal = SubResource("StyleBoxTexture_kls8n")
+HSlider/icons/grabber = SubResource("PlaceholderTexture2D_rholy")
+HSlider/icons/grabber_highlight = SubResource("PlaceholderTexture2D_kht16")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_3m20s")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_3m20s")
 HSlider/styles/slider = SubResource("StyleBoxFlat_kam3o")
