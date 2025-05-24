@@ -39,6 +39,7 @@ theme_override_constants/separation = 24
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
 theme_override_font_sizes/font_size = 32
 text = "Options"
 horizontal_alignment = 1
@@ -52,6 +53,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SfxOptionContainer"]
 layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
 text = "SFX Volume"
 
 [node name="SfxSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SfxOptionContainer"]
@@ -65,6 +67,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MusicOptionContainer"]
 layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
 text = "Music Volume"
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MusicOptionContainer"]
@@ -78,6 +81,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/WindowOptionContainer"]
 layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
 text = "Window Mode"
 
 [node name="WindowButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/WindowOptionContainer" instance=ExtResource("3_7byiv")]
