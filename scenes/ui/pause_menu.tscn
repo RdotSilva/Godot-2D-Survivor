@@ -1,8 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://br4pn1x2yof8l"]
+[gd_scene load_steps=5 format=3 uid="uid://br4pn1x2yof8l"]
 
 [ext_resource type="PackedScene" uid="uid://7tu0dfrlj5d1" path="res://scenes/ui/sound_button.tscn" id="3_2kqr3"]
 
+[sub_resource type="Animation" id="Animation_3yq8o"]
+resource_name = "in"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tef64"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hh8f3"]
+_data = {
+"RESET": SubResource("Animation_tef64"),
+"in": SubResource("Animation_3yq8o")
+}
+
 [node name="PauseMenu" type="CanvasLayer"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hh8f3")
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
