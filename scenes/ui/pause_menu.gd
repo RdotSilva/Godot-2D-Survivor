@@ -3,6 +3,9 @@ extends CanvasLayer
 @onready var paneL_container = %PanelContainer
 
 
+var is_closing = false
+
+
 func _ready():
     get_tree().paused = true
     $%ResumeButton.pressed.connect(_on_resume_pressed)
@@ -14,7 +17,18 @@ func _ready():
     tween.tween_property(paneL_container, "scale", Vector2.ONE, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 
 
-func _on_resume_pressed():
+func _unhandled_input(event):
+    if event.is_action_pressed("pause"):
+        close()
+        get_tree().root.set_input_as_handled()
+
+
+func close():
+    if is_closing:
+        return
+
+
+    is_closing = true
     $AnimationPlayer.play_backwards("default")
 
     var tween = create_tween()
@@ -25,3 +39,7 @@ func _on_resume_pressed():
 
     get_tree().paused = false
     queue_free()
+
+
+func _on_resume_pressed():
+    close()
