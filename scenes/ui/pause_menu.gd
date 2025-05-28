@@ -8,6 +8,8 @@ var is_closing = false
 
 func _ready():
     get_tree().paused = true
+    paneL_container.pivot_offset = paneL_container.size / 2
+
     $%ResumeButton.pressed.connect(_on_resume_pressed)
 
     $AnimationPlayer.play("default")
