@@ -10,7 +10,9 @@ func _ready():
     get_tree().paused = true
     paneL_container.pivot_offset = paneL_container.size / 2
 
-    $%ResumeButton.pressed.connect(_on_resume_pressed)
+    $%ResumeButton.pressed.connect(on_resume_pressed)
+    $%QuitButton.pressed.connect(on_quit_pressed)
+    
 
     $AnimationPlayer.play("default")
 
@@ -43,5 +45,9 @@ func close():
     queue_free()
 
 
-func _on_resume_pressed():
+func on_resume_pressed():
     close()
+
+
+func on_quit_pressed():
+    get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
