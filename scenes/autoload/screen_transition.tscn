@@ -5,7 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y7w82"]
 shader = ExtResource("1_j4dlw")
-shader_parameter/percent = null
+shader_parameter/transition_color = Color(0.247059, 0.14902, 0.192157, 1)
+shader_parameter/percent = 0.0
 shader_parameter/transition_texture = ExtResource("2_hy7oo")
 
 [node name="ScreenTransition" type="CanvasLayer"]
