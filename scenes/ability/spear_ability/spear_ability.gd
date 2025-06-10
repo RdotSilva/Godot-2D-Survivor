@@ -17,3 +17,16 @@ func _ready():
     tween.tween_callback(queue_free)
 
 
+func tween_method(rotations: float):
+    var percent = (rotations / 2)
+    var current_radius = percent * MAX_RADIUS
+    var current_direction = base_rotation.rotated(rotations * TAU)
+
+    # Positioning logic for the axe
+
+    var player = get_tree().get_first_node_in_group("player")
+    if player == null:
+       return
+
+    # Offset the axe positioning
+    global_position = player.global_position + (current_direction * current_radius)
