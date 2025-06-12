@@ -1,7 +1,7 @@
 extends Node2D
 
-# This is the furthest away the axe can be from the player
-const MAX_RADIUS = 100
+# This is the furthest away the spear can be from the player
+const MAX_RADIUS = 20
 
 @onready var hitbox_component = $HitboxComponent
 
@@ -22,11 +22,11 @@ func tween_method(rotations: float):
     var current_radius = percent * MAX_RADIUS
     var current_direction = base_rotation.rotated(rotations * TAU)
 
-    # Positioning logic for the axe
+    # Positioning logic for the spear
 
     var player = get_tree().get_first_node_in_group("player")
     if player == null:
        return
 
-    # Offset the axe positioning
+    # Offset the spear positioning
     global_position = player.global_position + (current_direction * current_radius)
