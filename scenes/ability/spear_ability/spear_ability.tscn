@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4fvqtua7rckq"]
+[gd_scene load_steps=3 format=3 uid="uid://b4fvqtua7rckq"]
 
 [ext_resource type="Script" path="res://scenes/ability/spear_ability/spear_ability.gd" id="1_3dq6j"]
+[ext_resource type="Texture2D" uid="uid://cfv140bnqmiqx" path="res://scenes/ability/spear_ability/spear.png" id="2_n4urt"]
 
 [node name="SpearAbility" type="Node2D"]
 script = ExtResource("1_3dq6j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n4urt")
