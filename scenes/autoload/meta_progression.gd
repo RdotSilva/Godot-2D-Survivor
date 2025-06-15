@@ -1,5 +1,8 @@
 extends Node
 
+# Shorthand for pointing to user directory
+const SAVE_FILE_PATH = "user://game.save"
+
 var save_data: Dictionary = {
 	"meta_upgrade_currency": 0,
 	"meta_upgrades": {}
@@ -8,6 +11,15 @@ var save_data: Dictionary = {
 
 func _ready():
 	GameEvents.experience_vial_collected.connect(on_experience_collected)
+	load_save_file()
+
+
+func load_save_file():
+	if !FileAccess.file_exists(SAVE_FILE_PATH):
+		return
+	else:
+		var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
+		save_data = file.get_var()
 
 
 func add_meta_upgrade(upgrade: MetaUpgrade):
