@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bn30hqpfyu01j"]
+[gd_scene load_steps=21 format=3 uid="uid://bn30hqpfyu01j"]
 
 [ext_resource type="Script" path="res://scenes/ui/meta_upgrade_card.gd" id="1_1i16g"]
 [ext_resource type="PackedScene" uid="uid://dnl61p5k1722t" path="res://scenes/component/random_stream_player_component.tscn" id="2_gjfgj"]
@@ -183,6 +183,16 @@ _data = {
 "hover": SubResource("Animation_5kjpr")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6inxt"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.458824, 0.890196, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
 [node name="MetaUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
 custom_minimum_size = Vector2(150, 150)
 pivot_offset = Vector2(75, 75)
@@ -239,6 +249,13 @@ layout_mode = 2
 theme_type_variation = &"BlueOutlineLabel"
 text = "Write some description here"
 autowrap_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_6inxt")
+max_value = 1.0
+value = 0.5
+show_percentage = false
 
 [node name="PurchaseButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
