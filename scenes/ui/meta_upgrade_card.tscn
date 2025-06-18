@@ -250,6 +250,15 @@ theme_type_variation = &"BlueOutlineLabel"
 text = "Write some description here"
 autowrap_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_6inxt")
