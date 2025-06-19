@@ -195,7 +195,7 @@ border_width_bottom = 2
 border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="MetaUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(170, 0)
 pivot_offset = Vector2(75, 75)
 script = ExtResource("1_1i16g")
 
@@ -248,11 +248,12 @@ autowrap_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"BlueOutlineLabel"
-text = "Write some description here"
+text = "Write some description here as you write a very long description"
 autowrap_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = -1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
@@ -263,6 +264,7 @@ horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
