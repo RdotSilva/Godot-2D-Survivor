@@ -4,10 +4,6 @@ extends PanelContainer
 @onready var name_label: Label = %NameLabel
 @onready var description_label: Label = %DescriptionLabel
 
-@onready var gui_input: Input = %GuiInput
-@onready var animation_player: AnimationPlayer = %AnimationPlayer
-
-
 func _ready():
 	gui_input.connect(on_gui_input)
 
