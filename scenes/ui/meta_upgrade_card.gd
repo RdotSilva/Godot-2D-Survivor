@@ -19,13 +19,3 @@ func select_card():
 func on_gui_input(event: InputEvent):
 	if event.is_action_pressed("left_click"):
 		select_card()
-
-
-func on_upgrade_selected():
-	$AnimationPlayer.play("selected")
-	emit_signal("upgrade_selected", self)
-
-
-func on_card_closed():
-	$AnimationPlayer.play("closed")
-	emit_signal("card_closed", self)
