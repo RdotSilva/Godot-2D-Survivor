@@ -12,6 +12,7 @@ func set_meta_upgrade(upgrade: MetaUpgrade):
 	name_label.text = upgrade.name
 	description_label.text = upgrade.description
 
+
 func select_card():
 	$AnimationPlayer.play("selected")
 
