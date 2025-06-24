@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgxunqqipocc2"]
 
-[ext_resource type="Script" path="res://scenes/ui/options_menu.gd" id="1_1kwee"]
 [ext_resource type="TileSet" uid="uid://b5b2ow5nthbsr" path="res://resources/tileset.tres" id="2_cqqbe"]
+[ext_resource type="PackedScene" uid="uid://bn30hqpfyu01j" path="res://scenes/ui/meta_upgrade_card.tscn" id="3_nhkki"]
 [ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/vignette.tscn" id="4_a11np"]
 
 [node name="MetaMenu" type="CanvasLayer"]
 layer = 2
-script = ExtResource("1_1kwee")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_cqqbe")
@@ -19,6 +18,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="MetaUpgradeCard" parent="MarginContainer/GridContainer" instance=ExtResource("3_nhkki")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard2" parent="MarginContainer/GridContainer" instance=ExtResource("3_nhkki")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard3" parent="MarginContainer/GridContainer" instance=ExtResource("3_nhkki")]
+layout_mode = 2
 
 [node name="Vignette" parent="." instance=ExtResource("4_a11np")]
 layer = 3
