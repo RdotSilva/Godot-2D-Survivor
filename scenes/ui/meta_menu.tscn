@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgxunqqipocc2"]
+[gd_scene load_steps=6 format=3 uid="uid://bgxunqqipocc2"]
 
+[ext_resource type="Script" path="res://scenes/ui/meta_menu.gd" id="1_8eb0n"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_cjwbn"]
 [ext_resource type="TileSet" uid="uid://b5b2ow5nthbsr" path="res://resources/tileset.tres" id="2_cqqbe"]
+[ext_resource type="Resource" uid="uid://088lv3hrwlfm" path="res://resources/meta_upgrades/experience_gain.tres" id="3_xegsm"]
 [ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/vignette.tscn" id="4_a11np"]
 
 [node name="MetaMenu" type="CanvasLayer"]
 layer = 2
+script = ExtResource("1_8eb0n")
+upgrades = Array[ExtResource("2_cjwbn")]([ExtResource("3_xegsm")])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_cqqbe")
@@ -23,6 +28,7 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 16
