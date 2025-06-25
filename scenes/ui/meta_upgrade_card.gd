@@ -1,8 +1,9 @@
 extends PanelContainer
 
 
-@onready var name_label: Label = %NameLabel
-@onready var description_label: Label = %DescriptionLabel
+@onready var name_label: Label = $%NameLabel
+@onready var description_label: Label = $%DescriptionLabel
+@onready var progress_bar = %ProgressBar
 
 func _ready():
 	gui_input.connect(on_gui_input)
