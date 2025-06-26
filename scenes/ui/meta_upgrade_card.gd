@@ -15,7 +15,7 @@ func _ready():
 
 func set_meta_upgrade(upgrade: MetaUpgrade):
 	self.upgrade = upgrade
-	name_label.text = upgrade.name
+	name_label.text = upgrade.title
 	description_label.text = upgrade.description
 	update_progress()
 
