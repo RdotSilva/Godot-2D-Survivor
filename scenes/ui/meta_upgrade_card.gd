@@ -6,6 +6,7 @@ extends PanelContainer
 @onready var progress_bar = %ProgressBar
 @onready var purchase_button = $%PurchaseButton
 @onready var progress_label = $%ProgressLabel
+@onready var count_label = $%CountLabel
 
 var upgrade: MetaUpgrade
 
@@ -27,6 +28,9 @@ func update_progress():
 	progress_bar.value = percent
 	purchase_button.disabled = percent < 1
 	progress_label.text = str(currency) + "/" + str(upgrade.experience_cost)
+
+	# Update the count of the upgrade
+	count_label.text = "x%d" % MetaProgression.save_data["meta_upgrades"][upgrade.id]["quantity"]
 
 
 func select_card():
