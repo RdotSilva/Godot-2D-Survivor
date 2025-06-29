@@ -4,6 +4,7 @@ var options_scene = preload("res://scenes/ui/options_menu.tscn")
 
 func _ready():
     $%PlayButton.pressed.connect(on_play_pressed)
+    $%UpgradesButton.pressed.connect(on_upgrades_pressed)
     $%OptionsButton.pressed.connect(on_options_pressed)
     $%QuitButton.pressed.connect(on_quit_pressed)
 
