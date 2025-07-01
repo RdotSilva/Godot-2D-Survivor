@@ -3,11 +3,14 @@ extends CanvasLayer
 @export var upgrades: Array[MetaUpgrade] = []
 
 @onready var grid_container = $%GridContainer
+@onready var back_button = $%BackButton
 
 var meta_upgrade_card_scene = preload("res://scenes/ui/meta_upgrade_card.tscn")
 
 
 func _ready():
+    back_button.pressed.connect(on_back_pressed)
+
     # This will allow us to keep 3 instances of the card for developer purposes and will clear them when the scene loads
     for child in grid_container.get_children():
         child.queue_free()
