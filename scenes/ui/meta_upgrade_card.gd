@@ -25,7 +25,7 @@ func update_progress():
 	var current_quantity = 0
 
 	if MetaProgression.save_data["meta_upgrades"].has(upgrade.id):
-		current_quantity = MetaProgression.save_data["meta_upgrades"][upgrade.id]
+		current_quantity = MetaProgression.save_data["meta_upgrades"][upgrade.id]["quantity"]
 
 	var is_maxed = current_quantity >= upgrade.max_quantity
 	var currency = MetaProgression.save_data["meta_upgrade_currency"]
