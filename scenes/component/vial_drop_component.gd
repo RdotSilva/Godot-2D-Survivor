@@ -7,7 +7,7 @@ extends Node
 func _ready():
 	(health_component as HealthComponent).died.connect(on_died)
 
-
+## Function that is called whenever an entity dies
 func on_died():
 	var adjusted_drop_percent = drop_percent
 	var experience_gain_upgrade_count = MetaProgression.get_upgrade_count("experience_gain")
