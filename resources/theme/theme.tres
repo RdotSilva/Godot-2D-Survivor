@@ -81,7 +81,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.8, 0.8, 0.8, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt4nh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubdi1"]
 bg_color = Color(0.996078, 0.682353, 0.203922, 1)
 border_width_left = 2
 border_width_top = 2
@@ -124,5 +124,5 @@ PanelContainer/styles/panel = SubResource("StyleBoxTexture_11r52")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_kmuig")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_1uxji")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_sv1l7")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_nt4nh")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_ubdi1")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_p4ckx")
