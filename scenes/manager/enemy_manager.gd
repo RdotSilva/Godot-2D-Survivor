@@ -29,7 +29,7 @@ func get_spawn_position():
 		return Vector2.ZERO
 
 	
-	var spawn_position =  Vector2.ZERO
+	var spawn_position = Vector2.ZERO
 
 	# Get a random direction and rotate
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
@@ -38,8 +38,11 @@ func get_spawn_position():
 		# Take player position with the direction
 		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 
+		# Additional offset to ensure monsters don't spawn in the wall
+		var additional_check_offset = random_direction * 20
+
 		# Raycast collisions
-		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1)
+		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1)
 		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
 
 		if result.is_empty():
@@ -48,7 +51,6 @@ func get_spawn_position():
 			random_direction = random_direction.rotated(deg_to_rad(90))
 
 	return spawn_position
-
 
 
 # Spawn the enemy outside the view of the player
