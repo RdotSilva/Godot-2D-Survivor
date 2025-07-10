@@ -53,6 +53,7 @@ func get_spawn_position():
 	return spawn_position
 
 
+# TODO: Check this to ensure enemies are not spawned outside of the walls
 # Spawn the enemy outside the view of the player
 func on_timer_timeout():
 	# Timer restarted after the potential timer difficulty increase happens
