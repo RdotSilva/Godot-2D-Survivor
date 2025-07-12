@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cfeftuxaht2ay" path="res://assets/audio/footstep_carpet_002.ogg" id="11_3clwb"]
 [ext_resource type="AudioStream" uid="uid://bxjwt4a0466xi" path="res://assets/audio/footstep_carpet_003.ogg" id="12_8r1pp"]
 [ext_resource type="AudioStream" uid="uid://l0nwyfkbevw2" path="res://assets/audio/footstep_carpet_004.ogg" id="13_puf38"]
-[ext_resource type="Texture2D" uid="uid://dolu10ycfseyg" path="res://scenes/game_object/wizard_enemy/wizard_enemy.png" id="14_0ibel"]
+[ext_resource type="Texture2D" uid="uid://dysttpj37h67e" path="res://scenes/game_object/bat_enemy/bat.png" id="14_7b745"]
 [ext_resource type="PackedScene" uid="uid://b3rsb0wbnl14" path="res://scenes/component/hurt_box_component.tscn" id="15_slmqa"]
 
 [sub_resource type="Animation" id="Animation_5s5qj"]
@@ -125,10 +125,10 @@ resource_local_to_scene = true
 shader = ExtResource("6_8id1s")
 shader_parameter/lerp_percent = 0.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fdepo"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0n0k"]
 radius = 8.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_036y8"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8g48"]
 radius = 4.0
 
 [node name="BatEnemy" type="CharacterBody2D" groups=["enemy"]]
@@ -143,8 +143,8 @@ libraries = {
 autoplay = "walk"
 
 [node name="VelocityComponent" parent="." instance=ExtResource("2_etvwt")]
-max_speed = 60
-acceleration = 20.0
+max_speed = 90
+acceleration = 0.75
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_nas3w")]
 max_health = 30.0
@@ -168,18 +168,17 @@ streams = Array[AudioStream]([ExtResource("9_ryfco"), ExtResource("10_tt0qi"), E
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-texture = ExtResource("14_0ibel")
+texture = ExtResource("14_7b745")
 offset = Vector2(0, -8)
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("15_slmqa")]
-visible = false
 position = Vector2(0, -7)
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
-shape = SubResource("CircleShape2D_fdepo")
+shape = SubResource("CircleShape2D_u0n0k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_036y8")
+shape = SubResource("CircleShape2D_s8g48")
