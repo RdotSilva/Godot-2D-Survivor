@@ -5,6 +5,7 @@ const SPAWN_RADIUS = 370
 
 @export var basic_enemy_scene: PackedScene
 @export var wizard_enemy_scene: PackedScene
+@export var bat_enemy_scene: PackedScene
 @export var arena_time_manager: Node
 
 @onready var timer = $Timer
@@ -16,6 +17,7 @@ var enemy_table = WeightedTable.new()
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
 	enemy_table.add_item(basic_enemy_scene, 10)
+	enemy_table.add_item(bat_enemy_scene, 1000)
 
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
