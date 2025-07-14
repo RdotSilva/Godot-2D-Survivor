@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://b7wm4lvkqt5sc"]
 
-[ext_resource type="Script" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_60sf8"]
+[ext_resource type="Script" path="res://scenes/game_object/bat_enemy/bat_enemy.gd" id="1_emlnx"]
 [ext_resource type="PackedScene" uid="uid://behakfm55dh6t" path="res://scenes/component/velocity_component.tscn" id="2_etvwt"]
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="3_nas3w"]
 [ext_resource type="PackedScene" uid="uid://cosc0jkymi4tm" path="res://scenes/component/vial_drop_component.tscn" id="4_ovj5h"]
@@ -93,7 +93,7 @@ radius = 4.0
 [node name="BatEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
 collision_mask = 9
-script = ExtResource("1_60sf8")
+script = ExtResource("1_emlnx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
