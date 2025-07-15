@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4wdhi02g4mi0"]
+
+[ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
+
+[node name="AnvilAbility" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rsacr")
+offset = Vector2(0, -7)
