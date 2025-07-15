@@ -17,7 +17,6 @@ var enemy_table = WeightedTable.new()
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
 	enemy_table.add_item(basic_enemy_scene, 10)
-	enemy_table.add_item(bat_enemy_scene, 1000)
 
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
@@ -88,6 +87,8 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 
 	timer.wait_time = base_spawn_time - time_off
 
-	# 30 seconds into the game we will start spawning the wizard with a higher weight
+	# 30 seconds into the game we will start spawning the wizard with a higher weight and then later we spawn bats
 	if arena_difficulty == 6:
-		enemy_table.add_item(wizard_enemy_scene, 20)
+		enemy_table.add_item(wizard_enemy_scene, 15)
+	elif arena_difficulty == 18:
+		enemy_table.add_item(bat_enemy_scene, 8)
