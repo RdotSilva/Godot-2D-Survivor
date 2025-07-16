@@ -1,12 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4wdhi02g4mi0"]
+[gd_scene load_steps=7 format=3 uid="uid://b4wdhi02g4mi0"]
 
 [ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
 [ext_resource type="Script" path="res://scenes/component/hitbox_component.gd" id="2_pf24f"]
+
+[sub_resource type="Animation" id="Animation_o2tvg"]
+resource_name = "default"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 2.14),
+"update": 0,
+"values": [Vector2(0, -96), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xggyy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgpiv"]
+_data = {
+"RESET": SubResource("Animation_xggyy"),
+"default": SubResource("Animation_o2tvg")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ka6od"]
 radius = 24.0
 
 [node name="AnvilAbility" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fgpiv")
+}
+autoplay = "default"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rsacr")
