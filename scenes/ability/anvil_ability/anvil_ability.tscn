@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4wdhi02g4mi0"]
+[gd_scene load_steps=4 format=3 uid="uid://b4wdhi02g4mi0"]
 
 [ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
+[ext_resource type="Script" path="res://scenes/component/hitbox_component.gd" id="2_pf24f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ka6od"]
+radius = 24.0
 
 [node name="AnvilAbility" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rsacr")
 offset = Vector2(0, -7)
+
+[node name="HitboxComponent" type="Area2D" parent="Sprite2D"]
+script = ExtResource("2_pf24f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitboxComponent"]
+shape = SubResource("CircleShape2D_ka6od")
+disabled = true
