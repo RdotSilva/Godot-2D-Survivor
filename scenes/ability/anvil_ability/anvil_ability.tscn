@@ -121,7 +121,6 @@ texture = ExtResource("1_rsacr")
 offset = Vector2(0, -7)
 
 [node name="HitboxComponent" type="Area2D" parent="."]
-scale = Vector2(1e-05, 1e-05)
 script = ExtResource("2_pf24f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
