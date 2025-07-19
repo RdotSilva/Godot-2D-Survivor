@@ -43,6 +43,7 @@ func get_spawn_position():
 		var additional_check_offset = random_direction * 20
 
 		# Raycast collisions
+		# TODO: Look into additional_check_offset to see if its needed (confirm within code base)
 		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1)
 		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
 
