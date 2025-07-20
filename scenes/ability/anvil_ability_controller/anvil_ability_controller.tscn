@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://v5r4xcuedp8a"]
+[gd_scene load_steps=2 format=3 uid="uid://v5r4xcuedp8a"]
+
+[ext_resource type="Script" path="res://scenes/ability/anvil_ability_controller/anvil_ability_controller.gd" id="1_f3g51"]
 
 [node name="AnvilAbilityController" type="Node"]
+script = ExtResource("1_f3g51")
 
 [node name="Timer" type="Timer" parent="."]
