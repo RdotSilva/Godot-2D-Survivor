@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4wdhi02g4mi0"]
+[gd_scene load_steps=8 format=3 uid="uid://b4wdhi02g4mi0"]
 
+[ext_resource type="Script" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_nsmsp"]
 [ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
-[ext_resource type="Script" path="res://scenes/component/hitbox_component.gd" id="2_pf24f"]
+[ext_resource type="PackedScene" uid="uid://vbaj4343o2wo" path="res://scenes/component/hitbox_component.tscn" id="3_jd7io"]
 
 [sub_resource type="Animation" id="Animation_xggyy"]
 length = 0.001
@@ -107,6 +108,7 @@ _data = {
 radius = 32.0
 
 [node name="AnvilAbility" type="Node2D"]
+script = ExtResource("1_nsmsp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -120,8 +122,7 @@ autoplay = "default"
 texture = ExtResource("1_rsacr")
 offset = Vector2(0, -7)
 
-[node name="HitboxComponent" type="Area2D" parent="."]
-script = ExtResource("2_pf24f")
+[node name="HitboxComponent" parent="." instance=ExtResource("3_jd7io")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_ka6od")
