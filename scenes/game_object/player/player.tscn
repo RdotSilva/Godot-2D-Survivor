@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://cetlcnevlmuq6"]
+[gd_scene load_steps=19 format=3 uid="uid://cetlcnevlmuq6"]
 
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_50myj"]
 [ext_resource type="Texture2D" uid="uid://5kf4mplv5dqe" path="res://scenes/game_object/player/player.png" id="1_nvvou"]
 [ext_resource type="PackedScene" uid="uid://cif0ruay3uu1a" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_h7t5r"]
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="2_jq20y"]
-[ext_resource type="PackedScene" uid="uid://v5r4xcuedp8a" path="res://scenes/ability/anvil_ability_controller/anvil_ability_controller.tscn" id="5_7chdm"]
 [ext_resource type="PackedScene" uid="uid://behakfm55dh6t" path="res://scenes/component/velocity_component.tscn" id="5_nmpj0"]
 [ext_resource type="AudioStream" uid="uid://dok2o2q4xpkk0" path="res://assets/audio/impactMining_000.ogg" id="6_pvnwo"]
 [ext_resource type="PackedScene" uid="uid://8r3frd0skkfr" path="res://scenes/component/random_stream_player_2d_component.tscn" id="6_sbrea"]
@@ -136,8 +135,6 @@ acceleration = 25.0
 [node name="Abilities" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="Abilities" instance=ExtResource("2_h7t5r")]
-
-[node name="AnvilAbilityController" parent="Abilities" instance=ExtResource("5_7chdm")]
 
 [node name="HitRandomStreamPlayer" parent="." instance=ExtResource("6_sbrea")]
 streams = Array[AudioStream]([ExtResource("6_pvnwo"), ExtResource("7_0ynrq"), ExtResource("8_kj5ch"), ExtResource("9_njvyt"), ExtResource("10_qr3aj")])
