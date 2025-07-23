@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://dtywyg8ctkrcb"]
 
-[ext_resource type="PackedScene" uid="uid://q28j0dgscsgo" path="res://scenes/ability/axe_ability_controller/axe_ability_controller.tscn" id="1_yihrs"]
+[ext_resource type="PackedScene" uid="uid://v5r4xcuedp8a" path="res://scenes/ability/anvil_ability_controller/anvil_ability_controller.tscn" id="1_letye"]
 [ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="2_6d47l"]
 
 [resource]
 script = ExtResource("2_6d47l")
-ability_controller_scene = ExtResource("1_yihrs")
+ability_controller_scene = ExtResource("1_letye")
 id = "anvil"
 max_quantity = 1
 name = "Anvil"
