@@ -46,6 +46,7 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
 
 
+# TODO: Double check this logic and make sure this works with all upgrades
 func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 	if chosen_upgrade.id == upgrade_axe.id:
 		upgrade_pool.add_item(upgrade_axe_damage, 10)
