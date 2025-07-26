@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var arena_time_manager: Node
+
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_component = $HealthComponent
 @onready var health_bar = $HealthBar
@@ -13,6 +15,7 @@ var base_speed = 0
 
 
 func _ready() -> void:
+	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
 	base_speed = velocity_component.max_speed
 
 	$CollisionArea2D.body_entered.connect(on_body_entered)
