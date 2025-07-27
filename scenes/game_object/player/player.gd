@@ -22,6 +22,7 @@ func _ready() -> void:
 	$CollisionArea2D.body_exited.connect(on_body_exited)
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_decreased.connect(on_health_decreased)
+	health_component.health_changed.connect(on_health_changed)
 
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	update_health_display()
@@ -83,6 +84,10 @@ func on_damage_interval_timer_timeout():
 func on_health_decreased():
 	GameEvents.emit_player_damaged()
 	$HitRandomStreamPlayer.play_random()
+
+
+func on_health_changed():
+	update_health_display()
 
 
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades: Dictionary):
