@@ -3,6 +3,7 @@ class_name HealthComponent
 
 signal died
 signal health_changed
+signal health_decreased
 
 @export var max_health: float = 10
 var current_health
@@ -17,6 +18,10 @@ func damage(damage_amount: float):
 
 	# Refactor this in future when adding health pots
 	health_changed.emit()
+
+	# Logic used for health regen
+	if damage_amount > 0:
+		health_decreased.emit()
 
 	Callable(check_death).call_deferred()
 
