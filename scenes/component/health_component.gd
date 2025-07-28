@@ -26,6 +26,10 @@ func damage(damage_amount: float):
 	Callable(check_death).call_deferred()
 
 
+func heal(heal_amount: float):
+	damage(-1)
+
+
 func get_health_percent():
 	if max_health <= 0:
 		return 0
