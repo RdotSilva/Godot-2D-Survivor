@@ -14,8 +14,8 @@ func _ready():
 
 func damage(damage_amount: float):
 	# Health should never be negative
-	current_health = max(current_health - damage_amount, 0)
-
+	current_health = clamp(current_health - damage_amount, 0, max_health)
+	
 	# Refactor this in future when adding health pots
 	health_changed.emit()
 
