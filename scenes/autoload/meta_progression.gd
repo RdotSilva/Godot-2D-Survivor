@@ -13,9 +13,6 @@ func _ready():
 	GameEvents.experience_vial_collected.connect(on_experience_collected)
 	load_save_file()
 
-	# TODO: Remove this after we have tested the health regen meta upgrade
-	on_experience_collected(10000)
-
 
 func load_save_file():
 	if !FileAccess.file_exists(SAVE_FILE_PATH):
