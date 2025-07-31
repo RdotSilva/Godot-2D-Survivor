@@ -5,9 +5,11 @@ const BASE_DAMAGE = 15
 
 @export var anvil_ability_scene: PackedScene
 
+var anvil_count = 0
 
 func _ready():
     $Timer.timeout.connect(on_timer_timeout)
+    GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 
 
 func on_timer_timeout():
