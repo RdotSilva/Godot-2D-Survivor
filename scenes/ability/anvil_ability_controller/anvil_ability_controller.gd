@@ -21,11 +21,12 @@ func on_timer_timeout():
 
     # This is required when we have more than 1 anvil spawning
     var additional_rotation_degrees = 360.0 / (anvil_count + 1)
-
+    var anvil_distance = randf_range(0, BASE_RANGE)
+    
     for i in anvil_count + 1:
         var adjusted_direction = direction.rotated(deg_to_rad(i * additional_rotation_degrees))
 
-        var spawn_position = player.global_position + (adjusted_direction * randf_range(0, BASE_RANGE))
+        var spawn_position = player.global_position + (adjusted_direction * anvil_distance)
 
         # Raycast collisions
         var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1)
