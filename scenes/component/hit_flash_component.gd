@@ -8,17 +8,17 @@ var hit_flash_tween: Tween
 
 
 func _ready():
-    health_component.decreased.connect(on_health_decreased)
+	health_component.health_decreased.connect(on_health_decreased)
 
-    sprite.material = hit_flash_material
+	sprite.material = hit_flash_material
 
 
 func on_health_decreased():
-    # Prevent multiple tweens running when enemy is hit
-    if hit_flash_tween != null && hit_flash_tween.is_valid():
-        hit_flash_tween.kill()
+	# Prevent multiple tweens running when enemy is hit
+	if hit_flash_tween != null && hit_flash_tween.is_valid():
+		hit_flash_tween.kill()
 
-    (sprite.material as ShaderMaterial).set_shader_parameter("lerp_percent", 1.0)
+	(sprite.material as ShaderMaterial).set_shader_parameter("lerp_percent", 1.0)
 
-    hit_flash_tween = create_tween()
-    hit_flash_tween.tween_property(sprite.material, "shader_parameter/lerp_percent", 0.0, 0.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	hit_flash_tween = create_tween()
+	hit_flash_tween.tween_property(sprite.material, "shader_parameter/lerp_percent", 0.0, 0.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
