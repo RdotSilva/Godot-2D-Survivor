@@ -17,7 +17,7 @@ var anvil_upgrade_count = preload("res://resources/upgrades/anvil_count.tres")
 
 func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
-	upgrade_pool.add_item(anvil_upgrade, 1000)
+	upgrade_pool.add_item(anvil_upgrade, 10)
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
 	upgrade_pool.add_item(upgrade_player_speed, 5)
