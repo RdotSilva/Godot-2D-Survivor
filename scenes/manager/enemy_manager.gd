@@ -12,6 +12,7 @@ const SPAWN_RADIUS = 370
 
 var base_spawn_time = 0
 var enemy_table = WeightedTable.new()
+var number_to_spawn = 1
 
 
 # Called when the node enters the scene tree for the first time
@@ -66,17 +67,18 @@ func on_timer_timeout():
 	if player == null:
 		return
 
-	var enemy_scene = enemy_table.pick_item()
-	var enemy = enemy_scene.instantiate() as Node2D
+	for i in number_to_spawn:
+		var enemy_scene = enemy_table.pick_item()
+		var enemy = enemy_scene.instantiate() as Node2D
 
-	# This should always exist
-	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
+		# This should always exist
+		var entities_layer = get_tree().get_first_node_in_group("entities_layer")
 
-	# Add node to scene tree (under which parent)
-	entities_layer.add_child(enemy)
+		# Add node to scene tree (under which parent)
+		entities_layer.add_child(enemy)
 
-	# Assign global position for the enemy
-	enemy.global_position = get_spawn_position()
+		# Assign global position for the enemy
+		enemy.global_position = get_spawn_position()
 
 
 func on_arena_difficulty_increased(arena_difficulty: int):
