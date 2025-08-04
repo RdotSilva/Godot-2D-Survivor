@@ -95,3 +95,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.add_item(wizard_enemy_scene, 15)
 	elif arena_difficulty == 18:
 		enemy_table.add_item(bat_enemy_scene, 8)
+
+	# 30 second interval - Increase the number of enemies to spawn
+	if (arena_difficulty % 6) == -0:
+		number_to_spawn += 1
