@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4wdhi02g4mi0"]
+[gd_scene load_steps=9 format=3 uid="uid://b4wdhi02g4mi0"]
 
 [ext_resource type="Script" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_nsmsp"]
 [ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
 [ext_resource type="PackedScene" uid="uid://vbaj4343o2wo" path="res://scenes/component/hitbox_component.tscn" id="3_jd7io"]
+[ext_resource type="Texture2D" uid="uid://di2g6ppca1upv" path="res://assets/particle.png" id="4_pb0xi"]
 
 [sub_resource type="Animation" id="Animation_xggyy"]
 length = 0.001
@@ -127,3 +128,6 @@ offset = Vector2(0, -7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_ka6od")
 disabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture = ExtResource("4_pb0xi")
