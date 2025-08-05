@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4wdhi02g4mi0"]
+[gd_scene load_steps=12 format=3 uid="uid://b4wdhi02g4mi0"]
 
 [ext_resource type="Script" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_nsmsp"]
 [ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
@@ -108,6 +108,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ka6od"]
 radius = 32.0
 
+[sub_resource type="Curve" id="Curve_rbno4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.162896, 1), 0.0, 0.0, 0, 0, Vector2(0.606335, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_gidcq"]
+curve = SubResource("Curve_rbno4")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ab6c2"]
 particle_flag_disable_z = true
 emission_shape = 1
@@ -116,8 +123,11 @@ spread = 180.0
 initial_velocity_min = 150.0
 initial_velocity_max = 250.0
 gravity = Vector3(0, 0, 0)
-damping_min = 500.0
+damping_min = 600.0
 damping_max = 750.0
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_gidcq")
 
 [node name="AnvilAbility" type="Node2D"]
 script = ExtResource("1_nsmsp")
