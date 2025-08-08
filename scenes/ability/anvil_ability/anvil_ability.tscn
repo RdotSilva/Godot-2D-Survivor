@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4wdhi02g4mi0"]
+[gd_scene load_steps=12 format=3 uid="uid://b4wdhi02g4mi0"]
 
 [ext_resource type="Script" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_nsmsp"]
 [ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
@@ -129,14 +129,6 @@ _data = {
 "default": SubResource("Animation_o2tvg")
 }
 
-[sub_resource type="Gradient" id="Gradient_p683x"]
-interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.305699)
-colors = PackedColorArray(0.545098, 0.607843, 0.705882, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0loyr"]
-gradient = SubResource("Gradient_p683x")
-
 [sub_resource type="Curve" id="Curve_rbno4"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.162896, 1), 0.0, 0.0, 0, 0, Vector2(0.606335, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
@@ -154,7 +146,6 @@ initial_velocity_max = 200.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 scale_curve = SubResource("CurveTexture_gidcq")
-color_initial_ramp = SubResource("GradientTexture1D_0loyr")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ka6od"]
 radius = 32.0
