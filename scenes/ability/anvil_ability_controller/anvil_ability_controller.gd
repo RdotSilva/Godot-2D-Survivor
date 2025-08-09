@@ -7,12 +7,12 @@ const BASE_DAMAGE = 15
 
 var anvil_count = 0
 
-func _ready():
+func _ready() -> void:
     $Timer.timeout.connect(on_timer_timeout)
     GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 
 
-func on_timer_timeout():
+func on_timer_timeout() -> void:
     var player = get_tree().get_first_node_in_group("player") as Node2D
     if player == null:
         return
@@ -40,6 +40,6 @@ func on_timer_timeout():
         anvil_ability.hitbox_component.damage = BASE_DAMAGE
 
 
-func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
     if upgrade.id == "anvil_count":
         anvil_count = current_upgrades["anvil_count"]["quantity"]
