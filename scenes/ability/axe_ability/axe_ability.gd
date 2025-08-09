@@ -7,7 +7,7 @@ const MAX_RADIUS = 100
 
 var base_rotation = Vector2.RIGHT
 
-func _ready():
+func _ready() -> void:
     # Randomize the rotation
     base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))
 
@@ -17,7 +17,7 @@ func _ready():
     tween.tween_callback(queue_free)
 
 
-func tween_method(rotations: float):
+func tween_method(rotations: float) -> void:
     var percent = (rotations / 2)
     var current_radius = percent * MAX_RADIUS
     var current_direction = base_rotation.rotated(rotations * TAU)
