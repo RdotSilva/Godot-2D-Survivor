@@ -36,7 +36,7 @@ func get_spawn_position():
 	# Get a random direction and rotate
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
 
-	for i in 4:
+	for i in 8:
 		# Take player position with the direction
 		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 
