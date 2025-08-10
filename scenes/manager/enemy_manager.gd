@@ -51,7 +51,7 @@ func get_spawn_position():
 		if result.is_empty():
 			break
 		else:
-			random_direction = random_direction.rotated(deg_to_rad(90))
+			random_direction = random_direction.rotated(deg_to_rad(45))
 
 	return spawn_position
 
