@@ -153,7 +153,6 @@ rotation = -0.000320065
 pivot_offset = Vector2(16, 3)
 theme_override_styles/fill = SubResource("StyleBoxFlat_byws2")
 max_value = 1.0
-step = 0.5
 show_percentage = false
 
 [node name="PickupArea2D" type="Area2D" parent="."]
