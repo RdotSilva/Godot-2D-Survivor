@@ -96,6 +96,11 @@ text = "Sound Button"
 [node name="SaveOptionContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SaveOptionContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
+text = "Save Data"
+
 [node name="SaveButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SaveOptionContainer" instance=ExtResource("3_7byiv")]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
