@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv5pjbrj2fbjy"]
+[gd_scene load_steps=5 format=3 uid="uid://bv5pjbrj2fbjy"]
 
 [ext_resource type="Script" path="res://scenes/ui/options_menu.gd" id="1_vtdqw"]
 [ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/vignette.tscn" id="2_bs3vd"]
 [ext_resource type="TileSet" uid="uid://b5b2ow5nthbsr" path="res://resources/tileset.tres" id="2_ha7nw"]
 [ext_resource type="PackedScene" uid="uid://7tu0dfrlj5d1" path="res://scenes/ui/sound_button.tscn" id="3_7byiv"]
-[ext_resource type="Script" path="res://scenes/ui/save_button.gd" id="4_hytgl"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 layer = 2
@@ -106,8 +105,7 @@ text = "Save Data"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Delete Save Data"
-script = ExtResource("4_hytgl")
+text = "Save Button"
 
 [node name="BackButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_7byiv")]
 unique_name_in_owner = true
