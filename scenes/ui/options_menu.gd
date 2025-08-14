@@ -11,6 +11,7 @@ signal back_pressed
 
 func _ready():
     back_button.pressed.connect(on_back_pressed)
+    save_button.pressed.connect(on_save_pressed)
 
     $%WindowButton.pressed.connect(_on_window_button_pressed)
 
