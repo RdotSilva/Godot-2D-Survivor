@@ -7,6 +7,7 @@ signal back_pressed
 @onready var music_slider = $%MusicSlider
 @onready var back_button: Button = $%BackButton
 @onready var save_button: Button = $%SaveButton
+@onready var delete_save_button: Button = $%DeleteSaveButton
 
 func _ready():
     back_button.pressed.connect(on_back_pressed)
