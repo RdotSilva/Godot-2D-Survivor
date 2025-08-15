@@ -67,3 +67,7 @@ func on_back_pressed():
     await ScreenTransition.transitioned_halfway
     
     back_pressed.emit()
+
+# TODO: Add manual save functionality
+func on_save_pressed():
+    pass
