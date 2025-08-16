@@ -78,3 +78,8 @@ func on_save_pressed():
 # TODO: Add manual save functionality
 func on_delete_save_pressed():
     pass
+
+
+func save():
+	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
+	file.store_var(save_data)
