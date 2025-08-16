@@ -9,6 +9,8 @@ signal back_pressed
 @onready var save_button: Button = $%SaveButton
 @onready var delete_save_button: Button = $%DeleteSaveButton
 
+const SAVE_FILE_PATH = "user://game.save"
+
 func _ready():
     back_button.pressed.connect(on_back_pressed)
     save_button.pressed.connect(on_save_pressed)
