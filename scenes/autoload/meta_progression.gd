@@ -1,4 +1,5 @@
 extends Node
+class_name MetaProgression
 
 # Shorthand for pointing to user directory
 const SAVE_FILE_PATH = "user://game.save"
