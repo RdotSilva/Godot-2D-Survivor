@@ -7,3 +7,6 @@
 Start the game and try to avoid enemies while attacking them with weapons.
 
 Collect vials and select upgrades.
+
+## Upgeades
+Purchase meta progression upgrades by collecting vials.
