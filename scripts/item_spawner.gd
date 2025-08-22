@@ -10,7 +10,7 @@ func increment_weight_sum(additional_weight: int):
 
 func add_item(item, weight: int):
     items.append({"item": item, "weight": weight})
-    weight_sum += weight
+    increment_weight_sum(weight)
 
 
 func remove_item(item_to_remove):
