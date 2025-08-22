@@ -4,6 +4,10 @@ var items: Array[Dictionary] = []
 var weight_sum = 0
 
 
+func increment_weight_sum(additional_weight: int):
+		weight_sum += additional_weight
+
+
 func add_item(item, weight: int):
     items.append({"item": item, "weight": weight})
     weight_sum += weight
