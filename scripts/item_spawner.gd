@@ -43,3 +43,8 @@ func pick_item(exclude: Array = []):
         iteration_sum += item["weight"]
         if chosen_weight <= iteration_sum:
             return item["item"]
+
+
+func clear_items():
+    items = []
+    weight_sum = 0
