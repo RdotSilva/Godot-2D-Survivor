@@ -48,3 +48,7 @@ func pick_item(exclude: Array = []):
 func clear_items():
     items = []
     weight_sum = 0
+
+
+func get_items():
+    return items
