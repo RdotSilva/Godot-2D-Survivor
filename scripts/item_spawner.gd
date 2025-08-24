@@ -52,3 +52,7 @@ func clear_items():
 
 func get_items():
     return items
+
+
+func get_weight_sum():
+    return weight_sum
