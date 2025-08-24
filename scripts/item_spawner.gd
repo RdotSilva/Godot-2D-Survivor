@@ -23,7 +23,7 @@ func remove_item(item_to_remove):
 
 func pick_item(exclude: Array = []):
     var adjusted_items: Array[Dictionary] = items
-    var adjusted_weight_sum = weight_sum
+    var adjusted_weight_sum = get_weight_sum()
 
     # TODO: Look into improving the performance of this (may not scale with massive numbers of upgrades)
     if exclude.size() > 0:
