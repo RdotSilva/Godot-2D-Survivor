@@ -14,11 +14,11 @@ config/name="2D Survivor"
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="2DSurvivor"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.247059, 0.14902, 0.192157, 1)
-boot_splash/image="res://icon.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://blifqb2ew1acb"]
 
-[ext_resource type="Script" path="res://scenes/component/hit_flash_component.gd" id="1_qkajm"]
+[ext_resource type="Script" uid="uid://bvm42x26ai6a" path="res://scenes/component/hit_flash_component.gd" id="1_qkajm"]
 [ext_resource type="Material" uid="uid://dmbm00dwv6b4" path="res://scenes/component/hit_flash_component_material.tres" id="2_hl15s"]
 
 [node name="HitFlashComponent" type="Node"]

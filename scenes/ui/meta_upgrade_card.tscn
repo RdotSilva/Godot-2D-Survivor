@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bn30hqpfyu01j"]
 
-[ext_resource type="Script" path="res://scenes/ui/meta_upgrade_card.gd" id="1_1i16g"]
+[ext_resource type="Script" uid="uid://3vtsa4dw5dhp" path="res://scenes/ui/meta_upgrade_card.gd" id="1_1i16g"]
 [ext_resource type="PackedScene" uid="uid://dnl61p5k1722t" path="res://scenes/component/random_stream_player_component.tscn" id="2_gjfgj"]
 [ext_resource type="AudioStream" uid="uid://cpyppweodca10" path="res://assets/audio/switch3.ogg" id="3_8wgxo"]
 [ext_resource type="AudioStream" uid="uid://bsoiyitwymmgh" path="res://assets/audio/switch4.ogg" id="4_ull4o"]
@@ -98,8 +98,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvtfl"]
 _data = {
-"RESET": SubResource("Animation_e82gr"),
-"selected": SubResource("Animation_euewo")
+&"RESET": SubResource("Animation_e82gr"),
+&"selected": SubResource("Animation_euewo")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6inxt"]
@@ -122,7 +122,7 @@ streams = Array[AudioStream]([ExtResource("11_r0448"), ExtResource("12_sidmn"), 
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xvtfl")
+&"": SubResource("AnimationLibrary_xvtfl")
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

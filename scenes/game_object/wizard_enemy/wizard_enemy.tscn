@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bicpqrbh1g6ov"]
 
-[ext_resource type="Script" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_qg8pl"]
+[ext_resource type="Script" uid="uid://cqqsn2cw7f6db" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_qg8pl"]
 [ext_resource type="Texture2D" uid="uid://dolu10ycfseyg" path="res://scenes/game_object/wizard_enemy/wizard_enemy.png" id="1_qpi7n"]
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="2_mg6lj"]
 [ext_resource type="PackedScene" uid="uid://dguw3gbjrktng" path="res://scenes/component/death_component.tscn" id="3_soafk"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8r3frd0skkfr" path="res://scenes/component/random_stream_player_2d_component.tscn" id="8_bqek1"]
 [ext_resource type="PackedScene" uid="uid://blifqb2ew1acb" path="res://scenes/component/hit_flash_component.tscn" id="8_mysi4"]
 [ext_resource type="AudioStream" uid="uid://ctrjhbk5gqost" path="res://assets/audio/footstep_carpet_000.ogg" id="9_1lpr1"]
-[ext_resource type="Shader" path="res://scenes/component/hit_flash_component.gdshader" id="9_qu1xg"]
+[ext_resource type="Shader" uid="uid://cokl0cwu71lcd" path="res://scenes/component/hit_flash_component.gdshader" id="9_qu1xg"]
 [ext_resource type="AudioStream" uid="uid://c0g7bv1fhx3vj" path="res://assets/audio/footstep_carpet_001.ogg" id="10_553ob"]
 [ext_resource type="AudioStream" uid="uid://cfeftuxaht2ay" path="res://assets/audio/footstep_carpet_002.ogg" id="11_tmu3m"]
 [ext_resource type="AudioStream" uid="uid://bxjwt4a0466xi" path="res://assets/audio/footstep_carpet_003.ogg" id="12_n45ia"]
@@ -116,8 +116,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ejlav"]
 _data = {
-"RESET": SubResource("Animation_5s5qj"),
-"walk": SubResource("Animation_ffanc")
+&"RESET": SubResource("Animation_5s5qj"),
+&"walk": SubResource("Animation_ffanc")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ih4n7"]
@@ -138,7 +138,7 @@ script = ExtResource("1_qg8pl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ejlav")
+&"": SubResource("AnimationLibrary_ejlav")
 }
 autoplay = "walk"
 

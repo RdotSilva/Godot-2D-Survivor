@@ -12,74 +12,74 @@ signal back_pressed
 const SAVE_FILE_PATH = "user://game.save"
 
 func _ready():
-    back_button.pressed.connect(on_back_pressed)
-    save_button.pressed.connect(on_save_pressed)
-    delete_save_button.pressed.connect(on_delete_save_pressed)
+	back_button.pressed.connect(on_back_pressed)
+	save_button.pressed.connect(on_save_pressed)
+	delete_save_button.pressed.connect(on_delete_save_pressed)
 
-    $%WindowButton.pressed.connect(_on_window_button_pressed)
+	$%WindowButton.pressed.connect(_on_window_button_pressed)
 
-    sfx_slider.value_changed.connect(on_audio_slider_changed.bind("sfx"))
-    music_slider.value_changed.connect(on_audio_slider_changed.bind("music"))
+	sfx_slider.value_changed.connect(on_audio_slider_changed.bind("sfx"))
+	music_slider.value_changed.connect(on_audio_slider_changed.bind("music"))
 
-    update_display()
+	update_display()
 
 
 func update_display():
-    window_button.text = "Windowed"
+	window_button.text = "Windowed"
 
-    if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
-        window_button.text = "Fullscreen"
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		window_button.text = "Fullscreen"
 
-    sfx_slider.value = get_bus_volume_percent("sfx")
-    music_slider.value = get_bus_volume_percent("music")
+	sfx_slider.value = get_bus_volume_percent("sfx")
+	music_slider.value = get_bus_volume_percent("music")
 
 
 func get_bus_volume_percent(bus_name: String):
-    var bus_index = AudioServer.get_bus_index(bus_name)
-    var volume_db = AudioServer.get_bus_volume_db(bus_index)
+	var bus_index = AudioServer.get_bus_index(bus_name)
+	var volume_db = AudioServer.get_bus_volume_db(bus_index)
 
-    return db_to_linear(volume_db)
+	return db_to_linear(volume_db)
 
 
 func set_bus_volume_percent(bus_name: String, percent: float):
-    var bus_index = AudioServer.get_bus_index(bus_name)
-    var volume_db = linear_to_db(percent)
+	var bus_index = AudioServer.get_bus_index(bus_name)
+	var volume_db = linear_to_db(percent)
 
-    AudioServer.set_bus_volume_db(bus_index, volume_db)
+	AudioServer.set_bus_volume_db(bus_index, volume_db)
 
 
 func _on_window_button_pressed():
-    var mode = DisplayServer.window_get_mode()
+	var mode = DisplayServer.window_get_mode()
 
-    if mode != DisplayServer.WINDOW_MODE_FULLSCREEN:
-        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-    else:
-        DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	if mode != DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-    update_display()
+	update_display()
 
 
 func on_audio_slider_changed(value: float, bus_name: String):
-    set_bus_volume_percent(bus_name, value)
+	set_bus_volume_percent(bus_name, value)
 
 
 func on_back_pressed():
-    ScreenTransition.transition()
-    await ScreenTransition.transitioned_halfway
-    
-    back_pressed.emit()
+	ScreenTransition.transition()
+	await ScreenTransition.transitioned_halfway
+	
+	back_pressed.emit()
 
 # TODO: Add manual save functionality
 func on_save_pressed():
-    pass
+	pass
 
 
 # TODO: Add manual save functionality
 func on_delete_save_pressed():
-    pass
+	pass
 
-# TODO: Replace this with MetaProgression's save functionality
-func save():
-	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
-	file.store_var(save_data)
+# # TODO: Replace this with MetaProgression's save functionality
+# func save():
+# 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
+# 	file.store_var(save_data)

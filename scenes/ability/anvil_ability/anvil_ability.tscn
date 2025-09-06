@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b4wdhi02g4mi0"]
 
-[ext_resource type="Script" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_nsmsp"]
+[ext_resource type="Script" uid="uid://cjx315wflnre7" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_nsmsp"]
 [ext_resource type="Texture2D" uid="uid://l0qn57e0io63" path="res://scenes/ability/anvil_ability/anvil.png" id="1_rsacr"]
 [ext_resource type="PackedScene" uid="uid://vbaj4343o2wo" path="res://scenes/component/hitbox_component.tscn" id="3_jd7io"]
 [ext_resource type="Texture2D" uid="uid://di2g6ppca1upv" path="res://assets/particle.png" id="4_pb0xi"]
@@ -125,8 +125,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgpiv"]
 _data = {
-"RESET": SubResource("Animation_xggyy"),
-"default": SubResource("Animation_o2tvg")
+&"RESET": SubResource("Animation_xggyy"),
+&"default": SubResource("Animation_o2tvg")
 }
 
 [sub_resource type="Curve" id="Curve_rbno4"]
@@ -155,20 +155,20 @@ script = ExtResource("1_nsmsp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_fgpiv")
+&"": SubResource("AnimationLibrary_fgpiv")
 }
 autoplay = "default"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 30
-process_material = SubResource("ParticleProcessMaterial_ab6c2")
 texture = ExtResource("4_pb0xi")
 lifetime = 0.2
 one_shot = true
 explosiveness = 0.9
 fixed_fps = 0
 interpolate = false
+process_material = SubResource("ParticleProcessMaterial_ab6c2")
 
 [node name="Visuals" type="Node2D" parent="."]
 
