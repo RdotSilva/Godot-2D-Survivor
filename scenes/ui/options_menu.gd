@@ -70,9 +70,8 @@ func on_back_pressed():
 	
 	back_pressed.emit()
 
-# TODO: Add manual save functionality
 func on_save_pressed():
-	pass
+	MetaProgression.save()
 
 
 # TODO: Add manual save functionality
