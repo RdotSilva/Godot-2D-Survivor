@@ -72,6 +72,15 @@ func on_back_pressed():
 
 func on_save_pressed():
 	MetaProgression.save()
+	
+	# Provide user feedback
+	var original_text = save_button.text
+	save_button.text = "Saved!"
+	save_button.disabled = true
+	
+	await get_tree().create_timer(1.0).timeout
+	save_button.text = original_text
+	save_button.disabled = false
 
 
 # TODO: Add manual save functionality
