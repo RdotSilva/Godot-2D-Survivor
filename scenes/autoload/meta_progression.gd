@@ -27,6 +27,17 @@ func save():
 	file.store_var(save_data)
 
 
+func delete_save():
+	if FileAccess.file_exists(SAVE_FILE_PATH):
+		DirAccess.remove_absolute(SAVE_FILE_PATH)
+	
+	# Reset save data to defaults
+	save_data = {
+		"meta_upgrade_currency": 0,
+		"meta_upgrades": {}
+	}
+
+
 func add_meta_upgrade(upgrade: MetaUpgrade):
 	if !save_data["meta_upgrades"].has(upgrade.id):
 		save_data["meta_upgrades"][upgrade.id] = {
