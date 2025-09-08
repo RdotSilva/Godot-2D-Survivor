@@ -103,6 +103,15 @@ func on_delete_save_pressed():
 
 func on_delete_confirmed():
 	MetaProgression.delete_save()
+	
+	# Provide user feedback
+	var original_text = delete_save_button.text
+	delete_save_button.text = "Deleted!"
+	delete_save_button.disabled = true
+	
+	await get_tree().create_timer(1.5).timeout
+	delete_save_button.text = original_text
+	delete_save_button.disabled = false
 
 # # TODO: Replace this with MetaProgression's save functionality
 # func save():
