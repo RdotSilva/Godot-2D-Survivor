@@ -83,9 +83,8 @@ func on_save_pressed():
 	save_button.disabled = false
 
 
-# TODO: Add manual save functionality
 func on_delete_save_pressed():
-	pass
+	MetaProgression.delete_save()
 
 # # TODO: Replace this with MetaProgression's save functionality
 # func save():
