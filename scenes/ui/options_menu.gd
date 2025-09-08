@@ -9,6 +9,8 @@ signal back_pressed
 @onready var save_button: Button = $%SaveButton
 @onready var delete_save_button: Button = $%DeleteSaveButton
 
+var confirmation_dialog: AcceptDialog
+
 const SAVE_FILE_PATH = "user://game.save"
 
 func _ready():
@@ -22,6 +24,7 @@ func _ready():
 	music_slider.value_changed.connect(on_audio_slider_changed.bind("music"))
 
 	update_display()
+	setup_confirmation_dialog()
 
 
 func update_display():
@@ -83,7 +86,22 @@ func on_save_pressed():
 	save_button.disabled = false
 
 
+func setup_confirmation_dialog():
+	confirmation_dialog = AcceptDialog.new()
+	confirmation_dialog.dialog_text = "Are you sure you want to delete your save data? This action cannot be undone."
+	confirmation_dialog.title = "Delete Save Data"
+	confirmation_dialog.ok_button_text = "Delete"
+	confirmation_dialog.add_cancel_button("Cancel")
+	
+	add_child(confirmation_dialog)
+	confirmation_dialog.confirmed.connect(on_delete_confirmed)
+
+
 func on_delete_save_pressed():
+	confirmation_dialog.popup_centered()
+
+
+func on_delete_confirmed():
 	MetaProgression.delete_save()
 
 # # TODO: Replace this with MetaProgression's save functionality
