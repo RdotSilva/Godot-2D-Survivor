@@ -34,11 +34,11 @@ func on_continue_button_pressed():
 	get_tree().paused = false
 
 	# Change root node that is running the game
-	get_tree().change_scene_to_file("res://scenes/ui/meta_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/menus/meta_menu.tscn")
 
 
 func on_quit_button_pressed():
-	ScreenTransition.transition_to_scene("res://scenes/ui/main_menu.tscn")
+	ScreenTransition.transition_to_scene("res://scenes/ui/menus/main_menu.tscn")
 	
 	await ScreenTransition.transitioned_halfway
 	get_tree().paused = false
