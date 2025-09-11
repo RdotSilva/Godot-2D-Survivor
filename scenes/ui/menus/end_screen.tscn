@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cwoulugnu0ujk"]
 
 [ext_resource type="Script" uid="uid://dvvsndpf3hlf" path="res://scenes/ui/menus/end_screen.gd" id="1_2xjni"]
-[ext_resource type="PackedScene" uid="uid://7tu0dfrlj5d1" path="res://scenes/ui/sound_button.tscn" id="2_3wu1k"]
+[ext_resource type="PackedScene" uid="uid://7tu0dfrlj5d1" path="res://scenes/ui/components/sound_button.tscn" id="2_3wu1k"]
 [ext_resource type="AudioStream" uid="uid://bd3s0cwjo0glt" path="res://assets/audio/jingles_victory.ogg" id="2_k84vt"]
 [ext_resource type="AudioStream" uid="uid://nvy4fawpw8u" path="res://assets/audio/jingles_defeat.ogg" id="3_ppuls"]
 
