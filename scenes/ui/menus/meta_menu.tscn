@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://088lv3hrwlfm" path="res://resources/meta_upgrades/experience_gain.tres" id="3_xegsm"]
 [ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/vignette.tscn" id="4_a11np"]
 [ext_resource type="Resource" uid="uid://dv0qb445ktha2" path="res://resources/meta_upgrades/health_regeneration.tres" id="4_tq4l2"]
-[ext_resource type="PackedScene" uid="uid://bn30hqpfyu01j" path="res://scenes/ui/meta_upgrade_card.tscn" id="5_xphgo"]
+[ext_resource type="PackedScene" uid="uid://bn30hqpfyu01j" path="res://scenes/ui/cards/meta_upgrade_card.tscn" id="5_xphgo"]
 
 [node name="MetaMenu" type="CanvasLayer"]
 layer = 2

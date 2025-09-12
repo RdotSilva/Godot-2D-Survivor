@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var grid_container = $%GridContainer
 @onready var back_button = $%BackButton
 
-var meta_upgrade_card_scene = preload("res://scenes/ui/meta_upgrade_card.tscn")
+var meta_upgrade_card_scene = preload("res://scenes/ui/cards/meta_upgrade_card.tscn")
 
 
 func _ready():

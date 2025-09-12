@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://co00y0b7jxf5j"]
 
 [ext_resource type="Script" uid="uid://dbowlacjh2has" path="res://scenes/ui/upgrade_screen.gd" id="1_6iint"]
-[ext_resource type="PackedScene" uid="uid://bm6wsaj3801uy" path="res://scenes/ui/ability_upgrade_card.tscn" id="2_4noo5"]
+[ext_resource type="PackedScene" uid="uid://bm6wsaj3801uy" path="res://scenes/ui/cards/ability_upgrade_card.tscn" id="2_4noo5"]
 
 [sub_resource type="Animation" id="Animation_t1h6x"]
 length = 0.001
