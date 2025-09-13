@@ -6,7 +6,7 @@ signal hit
 @export var health_component: Node
 
 # Alternative way of loading a scene rather than using @export variable
-var floating_text_scene = preload("res://scenes/ui/floating_text.tscn")
+var floating_text_scene = preload("res://scenes/ui/effects/floating_text.tscn")
 
 
 func _ready():

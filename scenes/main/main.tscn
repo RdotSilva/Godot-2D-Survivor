@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cwoulugnu0ujk" path="res://scenes/ui/menus/end_screen.tscn" id="2_sari0"]
 [ext_resource type="PackedScene" uid="uid://djcojchvbuisf" path="res://scenes/manager/experience_manager.tscn" id="4_uktvm"]
 [ext_resource type="PackedScene" uid="uid://c7qt2n6fqp3h3" path="res://scenes/manager/upgrade_manager.tscn" id="6_k6nod"]
-[ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/vignette.tscn" id="12_qwlqe"]
+[ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/effects/vignette.tscn" id="12_qwlqe"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_phnnb")
