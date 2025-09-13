@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjhdjpq63hey5"]
 
-[ext_resource type="Shader" uid="uid://fxd4o4ec05mf" path="res://scenes/ui/vignette.gdshader" id="1_0vi7f"]
-[ext_resource type="Script" uid="uid://dbnngwisgo282" path="res://scenes/ui/vignette.gd" id="1_qsa37"]
+[ext_resource type="Shader" uid="uid://fxd4o4ec05mf" path="res://scenes/ui/effects/vignette.gdshader" id="1_0vi7f"]
+[ext_resource type="Script" uid="uid://dbnngwisgo282" path="res://scenes/ui/effects/vignette.gd" id="1_qsa37"]
 
 [sub_resource type="Animation" id="Animation_2vwqf"]
 length = 0.001
