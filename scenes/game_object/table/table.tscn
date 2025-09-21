@@ -6,6 +6,7 @@
 size = Vector2(12, 14)
 
 [node name="Table" type="StaticBody2D"]
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qavd0")
