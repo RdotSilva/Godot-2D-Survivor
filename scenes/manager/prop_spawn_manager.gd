@@ -82,14 +82,14 @@ func get_valid_spawn_position(player_position: Vector2) -> Vector2:
 			continue
 
 		# Check for collisions with terrain using multiple rays
-		var safe_radius = 20.0  # Buffer around the spawn position
+		var safe_radius = 20.0 # Buffer around the spawn position
 		var collision_found = false
 
 		# Check center position
 		var center_query = PhysicsRayQueryParameters2D.create(
 			player_position,
 			potential_position,
-			1  # Terrain layer
+			1 # Terrain layer
 		)
 		var center_result = get_tree().root.world_2d.direct_space_state.intersect_ray(center_query)
 
@@ -109,7 +109,7 @@ func get_valid_spawn_position(player_position: Vector2) -> Vector2:
 				var check_query = PhysicsRayQueryParameters2D.create(
 					player_position,
 					check_pos,
-					1  # Terrain layer
+					1 # Terrain layer
 				)
 				var check_result = get_tree().root.world_2d.direct_space_state.intersect_ray(check_query)
 
@@ -120,7 +120,7 @@ func get_valid_spawn_position(player_position: Vector2) -> Vector2:
 		if not collision_found:
 			return potential_position
 
-	return Vector2.ZERO  # Failed to find valid position
+	return Vector2.ZERO # Failed to find valid position
 
 # Optional: Add method to spawn more props during gameplay
 func spawn_additional_prop(player_position: Vector2):
