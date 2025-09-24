@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhv7gd25s5cpk"]
+[gd_scene load_steps=10 format=3 uid="uid://dhv7gd25s5cpk"]
 
 [ext_resource type="Script" uid="uid://bpgtnd5jh7hjk" path="res://scenes/game_object/health_potion/health_potion.gd" id="1_4bqb1"]
+[ext_resource type="PackedScene" uid="uid://8r3frd0skkfr" path="res://scenes/component/random_stream_player_2d_component.tscn" id="2_kx1qv"]
+[ext_resource type="Texture2D" uid="uid://bj37ms8tm3er2" path="res://scenes/game_object/health_potion/health_potion.png" id="2_nh2ak"]
+[ext_resource type="AudioStream" uid="uid://c4eop8fpdjile" path="res://assets/audio/impactGeneric_light_000.ogg" id="3_6a1xj"]
+[ext_resource type="AudioStream" uid="uid://dan84kfeac825" path="res://assets/audio/impactGeneric_light_001.ogg" id="4_4n11v"]
+[ext_resource type="AudioStream" uid="uid://ciokymia0p482" path="res://assets/audio/impactGeneric_light_002.ogg" id="5_3ekkw"]
+[ext_resource type="AudioStream" uid="uid://jmd2emabav45" path="res://assets/audio/impactGeneric_light_003.ogg" id="6_txkks"]
+[ext_resource type="AudioStream" uid="uid://8rhgvn831n7g" path="res://assets/audio/impactGeneric_light_004.ogg" id="7_vbvwt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bqb1"]
 radius = 16.0
@@ -8,9 +15,15 @@ radius = 16.0
 [node name="HealthPotion" type="Node2D"]
 script = ExtResource("1_4bqb1")
 
+[node name="RandomStreamPlayer2DComponent" parent="." instance=ExtResource("2_kx1qv")]
+streams = Array[AudioStream]([ExtResource("3_6a1xj"), ExtResource("4_4n11v"), ExtResource("5_3ekkw"), ExtResource("6_txkks"), ExtResource("7_vbvwt")])
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_4bqb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nh2ak")
