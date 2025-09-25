@@ -25,6 +25,7 @@ func _ready() -> void:
 	health_component.health_changed.connect(on_health_changed)
 
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+	GameEvents.health_potion_collected.connect(on_health_potion_collected)
 	update_health_display()
 
 
@@ -96,6 +97,10 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 		abilities.add_child(ability.ability_controller_scene.instantiate())
 	elif ability_upgrade.id == "player_speed":
 		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * 0.1)
+
+
+func on_health_potion_collected():
+	health_component.heal(2)
 
 
 func on_arena_difficulty_increased(difficulty: int):
