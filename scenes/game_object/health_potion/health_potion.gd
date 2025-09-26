@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var heal_amount: int = 2
+
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
 @onready var sprite = $Sprite2D
 
@@ -24,7 +26,7 @@ func tween_collect(percent: float, start_position: Vector2):
 
 
 func collect():
-	GameEvents.emit_health_potion_collected()
+	GameEvents.emit_health_potion_collected(heal_amount)
 	queue_free()
 
 

@@ -99,8 +99,8 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * 0.1)
 
 
-func on_health_potion_collected():
-	health_component.heal(2)
+func on_health_potion_collected(heal_amount: int):
+	health_component.heal(heal_amount)
 
 
 func on_arena_difficulty_increased(difficulty: int):

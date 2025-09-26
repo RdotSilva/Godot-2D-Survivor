@@ -3,7 +3,7 @@ extends Node
 signal experience_vial_collected(number: float)
 signal ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary)
 signal player_damaged
-signal health_potion_collected
+signal health_potion_collected(heal_amount: int)
 
 
 func emit_experience_vial_collected(number: float):
@@ -18,5 +18,5 @@ func emit_player_damaged():
 	player_damaged.emit()
 
 
-func emit_health_potion_collected():
-	health_potion_collected.emit()
+func emit_health_potion_collected(heal_amount: int):
+	health_potion_collected.emit(heal_amount)
