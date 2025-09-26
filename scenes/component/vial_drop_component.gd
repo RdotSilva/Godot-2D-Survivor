@@ -4,11 +4,28 @@ extends Node
 @export var health_component: Node
 @export var vial_scene: PackedScene
 
+@export_range(0, 1) var health_potion_drop_percent: float = .15 # 15% drop rate for health potions
+@export var health_potion_scene: PackedScene
+
 func _ready():
 	(health_component as HealthComponent).died.connect(on_died)
 
 ## Function that is called whenever an entity dies
 func on_died():
+	if not owner is Node2D:
+		return
+
+	var spawn_position = (owner as Node2D).global_position
+	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
+
+	# Handle experience vial drops
+	_try_drop_experience_vial(spawn_position, entities_layer)
+
+	# Handle health potion drops
+	_try_drop_health_potion(spawn_position, entities_layer)
+
+
+func _try_drop_experience_vial(spawn_position: Vector2, entities_layer: Node):
 	var adjusted_drop_percent = drop_percent
 	var experience_gain_upgrade_count = MetaProgression.get_upgrade_count("experience_gain")
 
@@ -16,21 +33,24 @@ func on_died():
 		# Increase drop percent by 10% for each upgrade
 		adjusted_drop_percent += .1
 
-
 	if randf() > adjusted_drop_percent:
 		return
 
 	if vial_scene == null:
 		return
 
-	if not owner is Node2D:
-		return
-
-	var spawn_position = (owner as Node2D).global_position
-
 	var vial_instance = vial_scene.instantiate() as Node2D
-
-	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
-
 	entities_layer.add_child(vial_instance)
 	vial_instance.global_position = spawn_position
+
+
+func _try_drop_health_potion(spawn_position: Vector2, entities_layer: Node):
+	if randf() > health_potion_drop_percent:
+		return
+
+	if health_potion_scene == null:
+		return
+
+	var potion_instance = health_potion_scene.instantiate() as Node2D
+	entities_layer.add_child(potion_instance)
+	potion_instance.global_position = spawn_position
