@@ -35,6 +35,19 @@ func disable_collision():
 
 
 func on_area_entered(other_area: Area2D):
+	# Check if the player is at full health
+	var player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+
+	var health_component = player.get_node("HealthComponent") as HealthComponent
+	if health_component == null:
+		return
+
+	# Don't pick up if player is at full health (100%)
+	if health_component.get_health_percent() >= 1.0:
+		return
+
 	Callable(disable_collision).call_deferred()
 
 	var tween = create_tween()
