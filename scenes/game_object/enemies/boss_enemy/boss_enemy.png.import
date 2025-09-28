@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dolu10ycfseyg"
-path="res://.godot/imported/wizard_enemy.png-ea4dcbc1cd21f78193df73188d66741a.ctex"
+uid="uid://6ro6xmt4fkoh"
+path="res://.godot/imported/boss_enemy.png-f1b15539df6d5f1fee01858f732b60db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game_object/wizard_enemy/wizard_enemy.png"
-dest_files=["res://.godot/imported/wizard_enemy.png-ea4dcbc1cd21f78193df73188d66741a.ctex"]
+source_file="res://scenes/game_object/enemies/boss_enemy/boss_enemy.png"
+dest_files=["res://.godot/imported/boss_enemy.png-f1b15539df6d5f1fee01858f732b60db.ctex"]
 
 [params]
 

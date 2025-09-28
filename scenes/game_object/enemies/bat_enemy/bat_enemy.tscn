@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://b7wm4lvkqt5sc"]
 
-[ext_resource type="Script" uid="uid://bgplqr88slkg3" path="res://scenes/game_object/bat_enemy/bat_enemy.gd" id="1_emlnx"]
+[ext_resource type="Script" uid="uid://bgplqr88slkg3" path="res://scenes/game_object/enemies/bat_enemy/bat_enemy.gd" id="1_emlnx"]
 [ext_resource type="PackedScene" uid="uid://behakfm55dh6t" path="res://scenes/component/velocity_component.tscn" id="2_etvwt"]
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="3_nas3w"]
 [ext_resource type="PackedScene" uid="uid://cd68m4pfmntt1" path="res://scenes/component/item_drop_component.tscn" id="4_ovj5h"]
@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cfeftuxaht2ay" path="res://assets/audio/footstep_carpet_002.ogg" id="11_3clwb"]
 [ext_resource type="AudioStream" uid="uid://bxjwt4a0466xi" path="res://assets/audio/footstep_carpet_003.ogg" id="12_8r1pp"]
 [ext_resource type="AudioStream" uid="uid://l0nwyfkbevw2" path="res://assets/audio/footstep_carpet_004.ogg" id="13_puf38"]
-[ext_resource type="Texture2D" uid="uid://dysttpj37h67e" path="res://scenes/game_object/bat_enemy/bat.png" id="14_7b745"]
+[ext_resource type="Texture2D" uid="uid://dysttpj37h67e" path="res://scenes/game_object/enemies/bat_enemy/bat.png" id="14_7b745"]
 [ext_resource type="PackedScene" uid="uid://b3rsb0wbnl14" path="res://scenes/component/hurt_box_component.tscn" id="15_slmqa"]
 
 [sub_resource type="Animation" id="Animation_5s5qj"]

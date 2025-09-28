@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6ro6xmt4fkoh"
-path="res://.godot/imported/boss_enemy.png-eb94c3342eb99639189bc3885e9e34f2.ctex"
+uid="uid://dysttpj37h67e"
+path="res://.godot/imported/bat.png-570824d84f9298e375fe87d32a6163b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game_object/boss_enemy/boss_enemy.png"
-dest_files=["res://.godot/imported/boss_enemy.png-eb94c3342eb99639189bc3885e9e34f2.ctex"]
+source_file="res://scenes/game_object/enemies/bat_enemy/bat.png"
+dest_files=["res://.godot/imported/bat.png-570824d84f9298e375fe87d32a6163b0.ctex"]
 
 [params]
 

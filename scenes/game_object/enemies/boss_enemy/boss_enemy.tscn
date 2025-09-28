@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d27vc4k0nhkph"]
 
-[ext_resource type="Script" uid="uid://lobqb0j12jhj" path="res://scenes/game_object/boss_enemy/boss_enemy.gd" id="1_w1oh7"]
+[ext_resource type="Script" uid="uid://lobqb0j12jhj" path="res://scenes/game_object/enemies/boss_enemy/boss_enemy.gd" id="1_w1oh7"]
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="2_ujli8"]
 [ext_resource type="PackedScene" uid="uid://cd68m4pfmntt1" path="res://scenes/component/item_drop_component.tscn" id="3_wk73c"]
 
