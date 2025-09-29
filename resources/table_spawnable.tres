@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SpawnableItem" load_steps=3 format=3 uid="uid://hulvuxxuv8oe"]
 
-[ext_resource type="PackedScene" uid="uid://h1lkisynf7e7" path="res://scenes/game_object/table/table.tscn" id="1_1b4n0"]
+[ext_resource type="PackedScene" uid="uid://h1lkisynf7e7" path="res://scenes/game_object/arena_objects/table/table.tscn" id="1_1b4n0"]
 [ext_resource type="Script" uid="uid://d008rnbfx0i46" path="res://scripts/spawnable_item.gd" id="1_bwurh"]
 
 [resource]
