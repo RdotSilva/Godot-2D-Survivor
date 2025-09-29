@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://db8y40fiombk3"]
 
-[ext_resource type="Script" uid="uid://b7gcwbfeo3k2r" path="res://scenes/game_object/experience_vial/experience_vial.gd" id="1_4ej3a"]
-[ext_resource type="Texture2D" uid="uid://cxlqgmyf5ykvd" path="res://scenes/game_object/experience_vial/experience_vial.png" id="1_2516g"]
+[ext_resource type="Script" uid="uid://b7gcwbfeo3k2r" path="res://scenes/game_object/item_drops/experience_vial/experience_vial.gd" id="1_4ej3a"]
+[ext_resource type="Texture2D" uid="uid://cxlqgmyf5ykvd" path="res://scenes/game_object/item_drops/experience_vial/experience_vial.png" id="1_2516g"]
 [ext_resource type="PackedScene" uid="uid://8r3frd0skkfr" path="res://scenes/component/random_stream_player_2d_component.tscn" id="3_iubgv"]
 [ext_resource type="AudioStream" uid="uid://c4eop8fpdjile" path="res://assets/audio/impactGeneric_light_000.ogg" id="3_nueeg"]
 [ext_resource type="AudioStream" uid="uid://dan84kfeac825" path="res://assets/audio/impactGeneric_light_001.ogg" id="4_n6md7"]

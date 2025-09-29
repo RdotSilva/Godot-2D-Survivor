@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://ckdkpomncxf66" path="res://assets/audio/switch10.ogg" id="10_v5rvi"]
 [ext_resource type="AudioStream" uid="uid://thmwnivatnoi" path="res://assets/audio/switch1.ogg" id="11_r0448"]
 [ext_resource type="AudioStream" uid="uid://clhh4wndbdcgx" path="res://assets/audio/switch2.ogg" id="12_sidmn"]
-[ext_resource type="Texture2D" uid="uid://cxlqgmyf5ykvd" path="res://scenes/game_object/experience_vial/experience_vial.png" id="13_kfmmx"]
+[ext_resource type="Texture2D" uid="uid://cxlqgmyf5ykvd" path="res://scenes/game_object/item_drops/experience_vial/experience_vial.png" id="13_kfmmx"]
 
 [sub_resource type="Animation" id="Animation_e82gr"]
 length = 0.001
