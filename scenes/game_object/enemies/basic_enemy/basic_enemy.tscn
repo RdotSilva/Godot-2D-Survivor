@@ -109,13 +109,13 @@ script = ExtResource("1_dqudf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ongy3")
+&"": SubResource("AnimationLibrary_ongy3")
 }
 autoplay = "walk"
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_n3hpd")]
 
-[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_54w5n")]
+[node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_54w5n")]
 drop_percent = 0.35
 health_component = NodePath("../HealthComponent")
 
@@ -131,7 +131,6 @@ health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
 
 [node name="HitRandomAudioPlayerComponent" parent="." instance=ExtResource("11_c27x1")]
-max_distance = 300.0
 streams = Array[AudioStream]([ExtResource("11_1r2xw"), ExtResource("12_qygax"), ExtResource("13_u3hkk"), ExtResource("14_tv7s7"), ExtResource("15_1h0ac")])
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_4bpjw")]

@@ -108,7 +108,7 @@ acceleration = 0.75
 [node name="HealthComponent" parent="." instance=ExtResource("3_nas3w")]
 max_health = 30.0
 
-[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_ovj5h")]
+[node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_ovj5h")]
 drop_percent = 0.4
 health_component = NodePath("../HealthComponent")
 
