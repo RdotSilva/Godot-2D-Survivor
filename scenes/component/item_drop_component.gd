@@ -2,7 +2,7 @@ extends Node
 
 @export_range(0, 1) var experience_vial_drop_percent: float = .5 # 50% drop rate that is configurable in UI
 @export var health_component: Node
-@export var vial_scene: PackedScene
+@export var experience_vial_scene: PackedScene
 
 @export_range(0, 1) var health_potion_drop_percent: float = .15 # 15% drop rate for health potions
 @export var health_potion_scene: PackedScene
@@ -36,10 +36,10 @@ func _try_drop_experience_vial(spawn_position: Vector2, entities_layer: Node):
 	if randf() > adjusted_drop_percent:
 		return
 
-	if vial_scene == null:
+	if experience_vial_scene == null:
 		return
 
-	var vial_instance = vial_scene.instantiate() as Node2D
+	var vial_instance = experience_vial_scene.instantiate() as Node2D
 	entities_layer.add_child(vial_instance)
 	vial_instance.global_position = spawn_position
 
