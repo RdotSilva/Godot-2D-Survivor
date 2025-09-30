@@ -1,7 +1,8 @@
 extends Node
 
-@export_range(0, 1) var experience_vial_drop_percent: float = .5 # 50% drop rate that is configurable in UI
 @export var health_component: Node
+
+@export_range(0, 1) var experience_vial_drop_percent: float = .5 # 50% drop rate that is configurable in UI
 @export var experience_vial_scene: PackedScene
 
 @export_range(0, 1) var health_potion_drop_percent: float = .15 # 15% drop rate for health potions
