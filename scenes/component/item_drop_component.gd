@@ -1,6 +1,6 @@
 extends Node
 
-@export_range(0, 1) var drop_percent: float = .5 # 50% drop rate that is configurable in UI
+@export_range(0, 1) var experience_vial_drop_percent: float = .5 # 50% drop rate that is configurable in UI
 @export var health_component: Node
 @export var vial_scene: PackedScene
 
@@ -26,7 +26,7 @@ func on_died():
 
 
 func _try_drop_experience_vial(spawn_position: Vector2, entities_layer: Node):
-	var adjusted_drop_percent = drop_percent
+	var adjusted_drop_percent = experience_vial_drop_percent
 	var experience_gain_upgrade_count = MetaProgression.get_upgrade_count("experience_gain")
 
 	if experience_gain_upgrade_count > 0:
