@@ -21,6 +21,13 @@ func set_defeat():
 	play_jingle(true)
 
 
+# Sets the title and description labels when the user wins
+func set_victory():
+	$%TitleLabel.text = "Victory"
+	$%DescriptionLabel.text = "You won!"
+	play_jingle(false)
+
+
 func play_jingle(defeat: bool = false):
 	if defeat:
 		$DefeatStreamPlayer.play()
