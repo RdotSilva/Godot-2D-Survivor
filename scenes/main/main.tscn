@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bif1is5fthxbt"]
+[gd_scene load_steps=19 format=3 uid="uid://bif1is5fthxbt"]
 
 [ext_resource type="PackedScene" uid="uid://6ljaw2rr8ye0" path="res://scenes/ui/hud/arena_time_ui.tscn" id="1_e5368"]
 [ext_resource type="PackedScene" uid="uid://cyg516wn5syhj" path="res://scenes/manager/enemy_manager.tscn" id="1_et0tq"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cwoulugnu0ujk" path="res://scenes/ui/menus/end_screen.tscn" id="2_sari0"]
 [ext_resource type="PackedScene" uid="uid://djcojchvbuisf" path="res://scenes/manager/experience_manager.tscn" id="4_uktvm"]
 [ext_resource type="PackedScene" uid="uid://c7qt2n6fqp3h3" path="res://scenes/manager/upgrade_manager.tscn" id="6_k6nod"]
+[ext_resource type="Script" uid="uid://b1lq66mxdnk14" path="res://scenes/manager/boss_manager.gd" id="8_nvumn"]
+[ext_resource type="PackedScene" uid="uid://244bqnjy3ng0" path="res://scenes/game_object/enemies/bosses/ghost_boss_enemy/ghost_boss_enemy.tscn" id="9_ou6is"]
 [ext_resource type="PackedScene" uid="uid://2gw2avgbhdbf" path="res://scenes/manager/prop_spawn_manager.tscn" id="10_th5th"]
 [ext_resource type="Script" uid="uid://d008rnbfx0i46" path="res://scripts/spawnable_item.gd" id="11_hxu8e"]
 [ext_resource type="Resource" uid="uid://c7vjqvh2xpful" path="res://resources/crate_spawnable.tres" id="12_nvumn"]
@@ -34,6 +36,16 @@ experience_manager = NodePath("../ExperienceManager")
 
 [node name="EnemyManager" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_et0tq")]
 arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="BossManager" type="Node" parent="." node_paths=PackedStringArray("arena_time_manager", "enemy_manager")]
+script = ExtResource("8_nvumn")
+boss_spawns = Array[Dictionary]([{
+"boss_scene": ExtResource("9_ou6is"),
+"spawn_time": 5
+}])
+arena_time_manager = NodePath("../ArenaTimeManager")
+enemy_manager = NodePath("../EnemyManager")
+victory_screen_scene = ExtResource("2_sari0")
 
 [node name="ExperienceManager" parent="." instance=ExtResource("4_uktvm")]
 
