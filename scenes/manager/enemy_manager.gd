@@ -56,6 +56,14 @@ func get_spawn_position():
 	return spawn_position
 
 
+func stop_spawning():
+	timer.stop()
+
+
+func resume_spawning():
+	timer.start()
+
+
 # TODO: Check this to ensure enemies are not spawned outside of the walls
 # Spawn the enemy outside the view of the player
 func on_timer_timeout():
