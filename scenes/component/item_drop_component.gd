@@ -8,12 +8,20 @@ extends Node
 @export_range(0, 1) var health_potion_drop_percent: float = .15 # 15% drop rate for health potions
 @export var health_potion_scene: PackedScene
 
+@export var boss_currency_amount: int = 0
+
 func _ready():
 	(health_component as HealthComponent).died.connect(on_died)
 
 ## Function that is called whenever an entity dies
 func on_died():
 	if not owner is Node2D:
+		return
+
+	# If this is a boss, emit boss defeated signal and add currency
+	if boss_currency_amount > 0:
+		MetaProgression.add_meta_upgrade_currency(boss_currency_amount)
+		GameEvents.emit_boss_defeated()
 		return
 
 	var spawn_position = (owner as Node2D).global_position

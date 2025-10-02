@@ -38,6 +38,11 @@ func delete_save():
 	}
 
 
+func add_meta_upgrade_currency(amount: int):
+	save_data["meta_upgrade_currency"] += amount
+	save()
+
+
 func add_meta_upgrade(upgrade: MetaUpgrade):
 	if !save_data["meta_upgrades"].has(upgrade.id):
 		save_data["meta_upgrades"][upgrade.id] = {
