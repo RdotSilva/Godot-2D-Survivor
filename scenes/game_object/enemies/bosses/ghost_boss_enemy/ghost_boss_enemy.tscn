@@ -97,10 +97,10 @@ shader = ExtResource("7_xl2ig")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxj6s"]
-radius = 12.0
+radius = 25.0799
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5jrk"]
-radius = 14.0
+radius = 25.02
 
 [node name="GhostBossEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
@@ -140,17 +140,16 @@ streams = Array[AudioStream]([ExtResource("10_6t2q7"), ExtResource("11_2ciw4"), 
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
-position = Vector2(0, -12)
+position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_rxj6s")
 
 [node name="Visuals" type="Node2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("2_w8hs7")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -14)
+position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_g5jrk")
