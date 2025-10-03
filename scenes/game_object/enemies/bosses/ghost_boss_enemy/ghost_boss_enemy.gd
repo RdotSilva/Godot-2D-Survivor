@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	# Face enemy in correct direction
 	var move_sign = sign(velocity.x)
 	if move_sign != 0:
-		visuals.scale = Vector2(-move_sign, 1)
+		visuals.scale = Vector2(-move_sign * abs(visuals.scale.x), visuals.scale.y)
 
 
 func on_hit():
