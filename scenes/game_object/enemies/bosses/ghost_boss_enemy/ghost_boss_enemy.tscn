@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://244bqnjy3ng0"]
+[gd_scene load_steps=24 format=3 uid="uid://244bqnjy3ng0"]
 
 [ext_resource type="Script" uid="uid://408ptgh77f4m" path="res://scenes/game_object/enemies/bosses/ghost_boss_enemy/ghost_boss_enemy.gd" id="1_i65wd"]
+[ext_resource type="PackedScene" uid="uid://cchbq1lof2o0d" path="res://scenes/game_object/boss_projectile/boss_projectile.tscn" id="2_5gmyc"]
 [ext_resource type="PackedScene" uid="uid://cme7nl2jwgc26" path="res://scenes/component/health_component.tscn" id="2_48q3c"]
 [ext_resource type="Texture2D" uid="uid://bajaaoekg0abv" path="res://scenes/game_object/enemies/bosses/ghost_boss_enemy/ghost_boss_enemy.png" id="2_w8hs7"]
 [ext_resource type="PackedScene" uid="uid://cd68m4pfmntt1" path="res://scenes/component/item_drop_component.tscn" id="3_rmvc6"]
@@ -107,6 +108,7 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_i65wd")
+projectile_scene = ExtResource("2_5gmyc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -153,3 +155,7 @@ offset = Vector2(0, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_g5jrk")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true

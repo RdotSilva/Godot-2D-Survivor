@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cchbq1lof2o0d"]
+
+[ext_resource type="Script" uid="uid://bdtf7si6vao5b" path="res://scenes/game_object/boss_projectile/boss_projectile.gd" id="1_1fanr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cykmo"]
+radius = 6.0
+
+[node name="BossProjectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_1fanr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cykmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.745227, 0.148707, 0.0986344, 1)
+polygon = PackedVector2Array(0, -8, 8, 0, 0, 8, -8, 0)
