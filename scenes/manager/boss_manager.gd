@@ -63,7 +63,11 @@ func _get_boss_spawn_position() -> Vector2:
 	if player == null:
 		return Vector2.ZERO
 
-	# Spawn boss in front of player (200 pixels away)
+	# Use enemy_manager's spawn position logic for consistency
+	if enemy_manager != null:
+		return enemy_manager.get_spawn_position()
+
+	# Fallback: spawn in front of player if enemy_manager is not available
 	return player.global_position + Vector2(200, 0)
 
 
