@@ -68,28 +68,22 @@ func get_spawn_position():
 	if player == null:
 		return Vector2.ZERO
 
-	
+
 	var spawn_position = Vector2.ZERO
 
 	# Get a random direction and rotate
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
 
-	for i in 8:
+	# Increased attempts to ensure we find valid positions
+	for i in 12:
 		# Take player position with the direction
 		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 
-		# Additional offset to ensure monsters don't spawn in the wall
-		var additional_check_offset = random_direction * 20
-
-		# Raycast collisions
-		# TODO: Look into additional_check_offset to see if its needed (confirm within code base)
-		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1)
-		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
-
-		if result.is_empty():
+		# Validate spawn position with comprehensive checks
+		if is_spawn_position_valid(player.global_position, spawn_position):
 			break
 		else:
-			random_direction = random_direction.rotated(deg_to_rad(45))
+			random_direction = random_direction.rotated(deg_to_rad(30))
 
 	return spawn_position
 
