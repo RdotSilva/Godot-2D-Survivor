@@ -24,6 +24,44 @@ func _ready() -> void:
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
 
 
+## Validates if a spawn position is safe (no walls/obstacles)
+## Checks center position and 4 cardinal directions around it
+func is_spawn_position_valid(player_position: Vector2, spawn_position: Vector2) -> bool:
+	var safe_radius = 20.0  # Buffer around the spawn position
+
+	# Check center position - raycast from player to spawn point
+	var center_query = PhysicsRayQueryParameters2D.create(
+		player_position,
+		spawn_position,
+		1  # Terrain layer
+	)
+	var center_result = get_tree().root.world_2d.direct_space_state.intersect_ray(center_query)
+
+	if not center_result.is_empty():
+		return false
+
+	# Check 4 points around the spawn position to ensure clear area
+	var check_positions = [
+		spawn_position + Vector2(safe_radius, 0),
+		spawn_position + Vector2(-safe_radius, 0),
+		spawn_position + Vector2(0, safe_radius),
+		spawn_position + Vector2(0, -safe_radius)
+	]
+
+	for check_pos in check_positions:
+		var check_query = PhysicsRayQueryParameters2D.create(
+			player_position,
+			check_pos,
+			1  # Terrain layer
+		)
+		var check_result = get_tree().root.world_2d.direct_space_state.intersect_ray(check_query)
+
+		if not check_result.is_empty():
+			return false
+
+	return true
+
+
 func get_spawn_position():
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 
