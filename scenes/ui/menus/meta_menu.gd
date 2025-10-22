@@ -4,12 +4,14 @@ extends CanvasLayer
 
 @onready var grid_container = $%GridContainer
 @onready var back_button = $%BackButton
+@onready var respec_button = $%RespecButton
 
 var meta_upgrade_card_scene = preload("res://scenes/ui/cards/meta_upgrade_card.tscn")
 
 
 func _ready():
     back_button.pressed.connect(on_back_pressed)
+    respec_button.pressed.connect(on_respec_pressed)
 
     # This will allow us to keep 3 instances of the card for developer purposes and will clear them when the scene loads
     for child in grid_container.get_children():
@@ -24,3 +26,15 @@ func _ready():
 
 func on_back_pressed():
     ScreenTransition.transition_to_scene("res://scenes/ui/menus/main_menu.tscn")
+
+
+func on_respec_pressed():
+    # Check if player has any upgrades to refund
+    if MetaProgression.save_data["meta_upgrades"].is_empty():
+        return
+
+    # Refund all upgrades
+    MetaProgression.refund_all_upgrades(upgrades)
+
+    # Update all upgrade cards to reflect the changes
+    get_tree().call_group("meta_upgrade_card", "update_progress")
