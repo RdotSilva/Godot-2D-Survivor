@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dkwvc2vdtrtpd" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_cjwbn"]
 [ext_resource type="TileSet" uid="uid://b5b2ow5nthbsr" path="res://resources/tileset.tres" id="2_cqqbe"]
 [ext_resource type="Resource" uid="uid://088lv3hrwlfm" path="res://resources/meta_upgrades/experience_gain.tres" id="3_xegsm"]
-[ext_resource type="PackedScene" path="res://scenes/ui/effects/vignette.tscn" id="4_a11np"]
+[ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/effects/vignette.tscn" id="4_a11np"]
 [ext_resource type="Resource" uid="uid://dv0qb445ktha2" path="res://resources/meta_upgrades/health_regeneration.tres" id="4_tq4l2"]
 [ext_resource type="PackedScene" uid="uid://bn30hqpfyu01j" path="res://scenes/ui/cards/meta_upgrade_card.tscn" id="5_xphgo"]
 
@@ -63,6 +63,14 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
 [node name="BackButton" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Back"
+
+[node name="RespecButton" type="Button" parent="MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
