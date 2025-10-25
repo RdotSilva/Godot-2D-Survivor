@@ -7,6 +7,6 @@
 script = ExtResource("2_6d47l")
 ability_controller_scene = ExtResource("1_letye")
 id = "anvil"
-max_quantity = 1
-name = "Anvil"
-description = "Drops anvils randomly on enemies."
+max_quantity = 5
+name = "BetaAnvil"
+description = "BETA - Drops anvils randomly on enemies."
