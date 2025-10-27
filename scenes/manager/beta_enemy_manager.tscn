@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bicpqrbh1g6ov" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.tscn" id="2_s3jsf"]
 [ext_resource type="PackedScene" uid="uid://b7wm4lvkqt5sc" path="res://scenes/game_object/enemies/bat_enemy/bat_enemy.tscn" id="4_ka7jv"]
 
-[node name="EnemyManager" type="Node"]
+[node name="BetaEnemyManager" type="Node"]
 script = ExtResource("1_qntvc")
 basic_enemy_scene = ExtResource("2_7ilio")
 wizard_enemy_scene = ExtResource("2_s3jsf")
