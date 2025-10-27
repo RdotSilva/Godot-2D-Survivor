@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://2gw2avgbhdbf"]
+
+[ext_resource type="Script" uid="uid://m2i7glnc3rem" path="res://scenes/manager/prop_spawn_manager.gd" id="1_7f74v"]
+[ext_resource type="Script" uid="uid://d008rnbfx0i46" path="res://scripts/spawnable_item.gd" id="2_i1vve"]
+[ext_resource type="Resource" uid="uid://c7vjqvh2xpful" path="res://resources/crate_spawnable.tres" id="3_oghrw"]
+
+[node name="BetaPropSpawnManager" type="Node2D"]
+script = ExtResource("1_7f74v")
+spawnable_items = Array[ExtResource("2_i1vve")]([ExtResource("3_oghrw")])
