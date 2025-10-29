@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var experience_value: int = 1
+
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
 @onready var sprite = $Sprite2D
 
@@ -24,7 +26,7 @@ func tween_collect(percent: float, start_position: Vector2):
 
 
 func collect():
-	GameEvents.emit_experience_vial_collected(1)
+	GameEvents.emit_experience_vial_collected(experience_value)
 	queue_free()
 
 
