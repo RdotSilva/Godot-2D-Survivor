@@ -41,7 +41,7 @@ arena_time_manager = NodePath("../ArenaTimeManager")
 script = ExtResource("8_nvumn")
 boss_spawns = Array[Dictionary]([{
 "boss_scene": ExtResource("9_ou6is"),
-"spawn_time": 5
+"spawn_time": 180
 }])
 arena_time_manager = NodePath("../ArenaTimeManager")
 enemy_manager = NodePath("../EnemyManager")
