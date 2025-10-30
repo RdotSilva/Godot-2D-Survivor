@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqvg6unvqs4bv"]
+
+[ext_resource type="PackedScene" uid="uid://db8y40fiombk3" path="res://scenes/game_object/item_drops/experience_vial/experience_vial.tscn" id="1_fhx3s"]
+
+[node name="ExperienceVial" instance=ExtResource("1_fhx3s")]
+position = Vector2(0, 0)
+experience_value = 10
+
+[node name="Sprite2D" parent="." index="2"]
+modulate = Color(1, 0.647059, 0, 1)
