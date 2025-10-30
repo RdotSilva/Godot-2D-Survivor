@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bur28u6vqx534"]
+[gd_scene load_steps=27 format=3 uid="uid://bur28u6vqx534"]
 
 [ext_resource type="Texture2D" uid="uid://cqpnbo8gj5fyb" path="res://scenes/game_object/enemies/basic_enemy/basic_enemy.png" id="1_70ohu"]
 [ext_resource type="Script" uid="uid://cc6q0y410dfvl" path="res://scenes/game_object/enemies/basic_enemy/basic_enemy.gd" id="1_dqudf"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cd68m4pfmntt1" path="res://scenes/component/item_drop_component.tscn" id="3_54w5n"]
 [ext_resource type="PackedScene" uid="uid://b3rsb0wbnl14" path="res://scenes/component/hurt_box_component.tscn" id="4_4bpjw"]
 [ext_resource type="PackedScene" uid="uid://db8y40fiombk3" path="res://scenes/game_object/item_drops/experience_vial/experience_vial.tscn" id="4_7ltmv"]
+[ext_resource type="Script" uid="uid://o2p01x1xg6wk" path="res://resources/item_drops/experience_vial_drop.gd" id="5_fo5bx"]
 [ext_resource type="Shader" uid="uid://cokl0cwu71lcd" path="res://scenes/component/hit_flash_component.gdshader" id="6_0rg71"]
+[ext_resource type="PackedScene" uid="uid://cqvg6unvqs4bv" path="res://scenes/game_object/item_drops/experience_vial/experience_vial_rare.tscn" id="6_ls36d"]
 [ext_resource type="PackedScene" uid="uid://dguw3gbjrktng" path="res://scenes/component/death_component.tscn" id="6_ttqog"]
 [ext_resource type="PackedScene" uid="uid://behakfm55dh6t" path="res://scenes/component/velocity_component.tscn" id="7_ob1fm"]
 [ext_resource type="PackedScene" uid="uid://blifqb2ew1acb" path="res://scenes/component/hit_flash_component.tscn" id="8_l4d8s"]
@@ -91,6 +93,18 @@ _data = {
 &"walk": SubResource("Animation_djl0y")
 }
 
+[sub_resource type="Resource" id="Resource_74jda"]
+script = ExtResource("5_fo5bx")
+vial_scene = ExtResource("4_7ltmv")
+drop_weight = 80
+metadata/_custom_type_script = "uid://o2p01x1xg6wk"
+
+[sub_resource type="Resource" id="Resource_72xqq"]
+script = ExtResource("5_fo5bx")
+vial_scene = ExtResource("6_ls36d")
+drop_weight = 20
+metadata/_custom_type_script = "uid://o2p01x1xg6wk"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c65ef"]
 resource_local_to_scene = true
 shader = ExtResource("6_0rg71")
@@ -119,6 +133,7 @@ autoplay = "walk"
 [node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_54w5n")]
 health_component = NodePath("../HealthComponent")
 experience_vial_scene = ExtResource("4_7ltmv")
+experience_vial_drops = Array[ExtResource("5_fo5bx")]([SubResource("Resource_74jda"), SubResource("Resource_72xqq")])
 
 [node name="VelocityComponent" parent="." instance=ExtResource("7_ob1fm")]
 
