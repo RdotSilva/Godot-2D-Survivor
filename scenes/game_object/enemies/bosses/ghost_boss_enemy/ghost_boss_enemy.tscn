@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://244bqnjy3ng0"]
+[gd_scene load_steps=28 format=3 uid="uid://244bqnjy3ng0"]
 
 [ext_resource type="Script" uid="uid://408ptgh77f4m" path="res://scenes/game_object/enemies/bosses/ghost_boss_enemy/ghost_boss_enemy.gd" id="1_i65wd"]
 [ext_resource type="PackedScene" uid="uid://cchbq1lof2o0d" path="res://scenes/game_object/boss_projectile/boss_projectile.tscn" id="2_5gmyc"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://db8y40fiombk3" path="res://scenes/game_object/item_drops/experience_vial/experience_vial.tscn" id="4_2hyte"]
 [ext_resource type="PackedScene" uid="uid://behakfm55dh6t" path="res://scenes/component/velocity_component.tscn" id="5_4o02c"]
 [ext_resource type="PackedScene" uid="uid://blifqb2ew1acb" path="res://scenes/component/hit_flash_component.tscn" id="6_87pc8"]
+[ext_resource type="Script" uid="uid://o2p01x1xg6wk" path="res://resources/item_drops/experience_vial_drop.gd" id="6_kj5il"]
+[ext_resource type="PackedScene" uid="uid://cqvg6unvqs4bv" path="res://scenes/game_object/item_drops/experience_vial/experience_vial_rare.tscn" id="7_b38hr"]
 [ext_resource type="Shader" uid="uid://cokl0cwu71lcd" path="res://scenes/component/hit_flash_component.gdshader" id="7_xl2ig"]
 [ext_resource type="PackedScene" uid="uid://dguw3gbjrktng" path="res://scenes/component/death_component.tscn" id="8_7td3j"]
 [ext_resource type="PackedScene" uid="uid://8r3frd0skkfr" path="res://scenes/component/random_stream_player_2d_component.tscn" id="9_6nq7s"]
@@ -92,6 +94,18 @@ _data = {
 &"walk": SubResource("Animation_djl0y")
 }
 
+[sub_resource type="Resource" id="Resource_b38hr"]
+script = ExtResource("6_kj5il")
+vial_scene = ExtResource("4_2hyte")
+drop_weight = 20
+metadata/_custom_type_script = "uid://o2p01x1xg6wk"
+
+[sub_resource type="Resource" id="Resource_tjqop"]
+script = ExtResource("6_kj5il")
+vial_scene = ExtResource("7_b38hr")
+drop_weight = 1
+metadata/_custom_type_script = "uid://o2p01x1xg6wk"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c65ef"]
 resource_local_to_scene = true
 shader = ExtResource("7_xl2ig")
@@ -122,6 +136,7 @@ max_health = 500.0
 [node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_rmvc6")]
 health_component = NodePath("../HealthComponent")
 experience_vial_scene = ExtResource("4_2hyte")
+experience_vial_drops = Array[ExtResource("6_kj5il")]([SubResource("Resource_b38hr"), SubResource("Resource_tjqop")])
 boss_currency_amount = 1
 
 [node name="VelocityComponent" parent="." instance=ExtResource("5_4o02c")]
