@@ -135,7 +135,6 @@ max_health = 500.0
 
 [node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_rmvc6")]
 health_component = NodePath("../HealthComponent")
-experience_vial_scene = ExtResource("4_2hyte")
 experience_vial_drops = Array[ExtResource("6_kj5il")]([SubResource("Resource_b38hr"), SubResource("Resource_tjqop")])
 boss_currency_amount = 1
 
