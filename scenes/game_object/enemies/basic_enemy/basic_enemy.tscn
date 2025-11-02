@@ -96,13 +96,13 @@ _data = {
 [sub_resource type="Resource" id="Resource_74jda"]
 script = ExtResource("5_fo5bx")
 vial_scene = ExtResource("4_7ltmv")
-drop_weight = 80
+drop_weight = 95
 metadata/_custom_type_script = "uid://o2p01x1xg6wk"
 
 [sub_resource type="Resource" id="Resource_72xqq"]
 script = ExtResource("5_fo5bx")
 vial_scene = ExtResource("6_ls36d")
-drop_weight = 20
+drop_weight = 5
 metadata/_custom_type_script = "uid://o2p01x1xg6wk"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c65ef"]
