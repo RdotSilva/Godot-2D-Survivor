@@ -103,7 +103,7 @@ metadata/_custom_type_script = "uid://o2p01x1xg6wk"
 [sub_resource type="Resource" id="Resource_tjqop"]
 script = ExtResource("6_kj5il")
 vial_scene = ExtResource("7_b38hr")
-drop_weight = 1
+drop_weight = 80
 metadata/_custom_type_script = "uid://o2p01x1xg6wk"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c65ef"]
