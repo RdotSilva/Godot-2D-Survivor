@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
+@export var projectile_scene: PackedScene
+
 @onready var velocity_component = $VelocityComponent
 @onready var visuals = $Visuals
+@onready var attack_timer = $AttackTimer
 
 var is_moving = false
 
 
 func _ready():
 	$HurtBoxComponent.hit.connect(on_hit)
+	attack_timer.timeout.connect(on_attack_timer_timeout)
 
 
 func _process(delta: float) -> void:
@@ -31,3 +35,29 @@ func set_is_moving(moving: bool):
 
 func on_hit():
 	$HitRandomAudioPlayerComponent.play_random()
+
+
+func on_attack_timer_timeout():
+	# Only shoot when stopped
+	if is_moving:
+		return
+
+	if projectile_scene == null:
+		return
+
+	var player = get_tree().get_first_node_in_group("player") as Node2D
+	if player == null:
+		return
+
+	# Calculate direction to player
+	var direction = (player.global_position - global_position).normalized()
+
+	# Spawn projectile
+	var projectile = projectile_scene.instantiate()
+	projectile.direction = direction
+	projectile.global_position = global_position
+
+	# Add to foreground layer
+	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
+	if foreground_layer != null:
+		foreground_layer.add_child(projectile)
