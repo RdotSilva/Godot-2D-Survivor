@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlqex8molii5f"]
+
+[ext_resource type="Script" uid="uid://c00ecjokg7f6v" path="res://scenes/game_object/wizard_projectile/wizard_projectile.gd" id="1_dhrc2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dhrc2"]
+
+[node name="WizardProjectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_dhrc2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = SubResource("PlaceholderTexture2D_dhrc2")
