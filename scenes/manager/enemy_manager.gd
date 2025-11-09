@@ -27,13 +27,13 @@ func _ready() -> void:
 ## Validates if a spawn position is safe (no walls/obstacles)
 ## Checks center position and 4 cardinal directions around it
 func is_spawn_position_valid(player_position: Vector2, spawn_position: Vector2) -> bool:
-	var safe_radius = 20.0  # Buffer around the spawn position
+	var safe_radius = 20.0 # Buffer around the spawn position
 
 	# Check center position - raycast from player to spawn point
 	var center_query = PhysicsRayQueryParameters2D.create(
 		player_position,
 		spawn_position,
-		1  # Terrain layer
+		1 # Terrain layer
 	)
 	var center_result = get_tree().root.world_2d.direct_space_state.intersect_ray(center_query)
 
@@ -52,7 +52,7 @@ func is_spawn_position_valid(player_position: Vector2, spawn_position: Vector2) 
 		var check_query = PhysicsRayQueryParameters2D.create(
 			player_position,
 			check_pos,
-			1  # Terrain layer
+			1 # Terrain layer
 		)
 		var check_result = get_tree().root.world_2d.direct_space_state.intersect_ray(check_query)
 
@@ -137,5 +137,6 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.add_item(bat_enemy_scene, 8)
 
 	# 30 second interval - Increase the number of enemies to spawn
-	if (arena_difficulty % 6) == -0:
+	if (arena_difficulty % 6) == 0:
 		number_to_spawn += 1
+		number_to_spawn = min(number_to_spawn, 5) # Cap at 5 enemies per wave

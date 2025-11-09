@@ -12,5 +12,5 @@ wizard_enemy_scene = ExtResource("2_s3jsf")
 bat_enemy_scene = ExtResource("4_ka7jv")
 
 [node name="Timer" type="Timer" parent="."]
-one_shot = true
+wait_time = 3.0
 autostart = true
