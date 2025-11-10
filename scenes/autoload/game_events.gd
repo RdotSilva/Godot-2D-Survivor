@@ -5,6 +5,7 @@ signal ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictiona
 signal player_damaged
 signal health_potion_collected(heal_amount: int)
 signal boss_defeated
+signal bomb_collected
 
 
 func emit_experience_vial_collected(number: float):
@@ -25,3 +26,7 @@ func emit_health_potion_collected(heal_amount: int):
 
 func emit_boss_defeated():
 	boss_defeated.emit()
+
+
+func emit_bomb_collected():
+	bomb_collected.emit()
