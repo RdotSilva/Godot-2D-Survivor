@@ -22,6 +22,7 @@ func _ready() -> void:
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
+	GameEvents.bomb_collected.connect(on_bomb_collected)
 
 
 ## Validates if a spawn position is safe (no walls/obstacles)
@@ -140,3 +141,14 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	if (arena_difficulty % 6) == 0:
 		number_to_spawn += 1
 		number_to_spawn = min(number_to_spawn, 5) # Cap at 5 enemies per wave
+
+
+func on_bomb_collected():
+	# Get all enemies currently in the scene and kill them
+	var enemies = get_tree().get_nodes_in_group("enemy")
+
+	for enemy in enemies:
+		if enemy.has_node("HealthComponent"):
+			var health_component = enemy.get_node("HealthComponent")
+			# Deal massive damage to instantly kill the enemy
+			health_component.damage(999999)
