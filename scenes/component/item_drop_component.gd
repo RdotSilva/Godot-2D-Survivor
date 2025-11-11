@@ -8,6 +8,9 @@ extends Node
 @export_range(0, 1) var health_potion_drop_percent: float = .03 # 3% drop rate for health potions
 @export var health_potion_scene: PackedScene
 
+@export_range(0, 1) var bomb_drop_percent: float = .01 # 1% drop rate for bombs (rare)
+@export var bomb_scene: PackedScene
+
 @export var boss_currency_amount: int = 0
 
 func _ready():
@@ -32,6 +35,9 @@ func on_died():
 
 	# Handle health potion drops
 	_try_drop_health_potion(spawn_position, entities_layer)
+
+	# Handle bomb drops
+	_try_drop_bomb(spawn_position, entities_layer)
 
 
 func _try_drop_experience_vial(spawn_position: Vector2, entities_layer: Node):
@@ -72,3 +78,15 @@ func _try_drop_health_potion(spawn_position: Vector2, entities_layer: Node):
 	var potion_instance = health_potion_scene.instantiate() as Node2D
 	entities_layer.add_child(potion_instance)
 	potion_instance.global_position = spawn_position
+
+
+func _try_drop_bomb(spawn_position: Vector2, entities_layer: Node):
+	if randf() > bomb_drop_percent:
+		return
+
+	if bomb_scene == null:
+		return
+
+	var bomb_instance = bomb_scene.instantiate() as Node2D
+	entities_layer.add_child(bomb_instance)
+	bomb_instance.global_position = spawn_position
