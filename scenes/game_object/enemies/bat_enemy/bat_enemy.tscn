@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b7wm4lvkqt5sc"]
+[gd_scene load_steps=28 format=3 uid="uid://b7wm4lvkqt5sc"]
 
 [ext_resource type="Script" uid="uid://bgplqr88slkg3" path="res://scenes/game_object/enemies/bat_enemy/bat_enemy.gd" id="1_emlnx"]
 [ext_resource type="PackedScene" uid="uid://behakfm55dh6t" path="res://scenes/component/velocity_component.tscn" id="2_etvwt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://o2p01x1xg6wk" path="res://resources/item_drops/experience_vial_drop.gd" id="6_wwlhg"]
 [ext_resource type="PackedScene" uid="uid://cqvg6unvqs4bv" path="res://scenes/game_object/item_drops/experience_vial/experience_vial_rare.tscn" id="7_4gii2"]
 [ext_resource type="PackedScene" uid="uid://dguw3gbjrktng" path="res://scenes/component/death_component.tscn" id="7_aer0b"]
+[ext_resource type="PackedScene" uid="uid://c4y6qwq0cjoeh" path="res://scenes/game_object/item_drops/bomb/bomb.tscn" id="8_ih802"]
 [ext_resource type="PackedScene" uid="uid://8r3frd0skkfr" path="res://scenes/component/random_stream_player_2d_component.tscn" id="8_w2f21"]
 [ext_resource type="AudioStream" uid="uid://ctrjhbk5gqost" path="res://assets/audio/footstep_carpet_000.ogg" id="9_ryfco"]
 [ext_resource type="AudioStream" uid="uid://c0g7bv1fhx3vj" path="res://assets/audio/footstep_carpet_001.ogg" id="10_tt0qi"]
@@ -126,6 +127,8 @@ max_health = 30.0
 [node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_ovj5h")]
 health_component = NodePath("../HealthComponent")
 experience_vial_drops = Array[ExtResource("6_wwlhg")]([SubResource("Resource_4gii2"), SubResource("Resource_ih802")])
+bomb_drop_percent = 0.02
+bomb_scene = ExtResource("8_ih802")
 
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("5_6erdh")]
 health_component = NodePath("../HealthComponent")
