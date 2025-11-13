@@ -44,5 +44,4 @@ func on_area_entered(_other_area: Area2D):
 	tween.chain()
 	tween.tween_callback(collect)
 
-	# Optional: Add sound effect if you have one
-	# $RandomStreamPlayer2DComponent.play_random()
+	$RandomStreamPlayer2DComponent.play_random()
