@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4y6qwq0cjoeh"]
+[gd_scene load_steps=5 format=3 uid="uid://c4y6qwq0cjoeh"]
 
 [ext_resource type="Script" uid="uid://b50du1445jj1c" path="res://scenes/game_object/item_drops/bomb/bomb.gd" id="1_47e22"]
 [ext_resource type="Texture2D" uid="uid://dwwetgbbqefd1" path="res://scenes/game_object/item_drops/bomb/bomb.png" id="1_37660"]
+[ext_resource type="PackedScene" uid="uid://8r3frd0skkfr" path="res://scenes/component/random_stream_player_2d_component.tscn" id="2_swxw1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_37660"]
 radius = 16.0
 
 [node name="Bomb" type="Node2D"]
 script = ExtResource("1_47e22")
+
+[node name="RandomStreamPlayer2DComponent" parent="." instance=ExtResource("2_swxw1")]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
