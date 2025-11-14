@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bif1is5fthxbt"]
+[gd_scene load_steps=20 format=3 uid="uid://bif1is5fthxbt"]
 
 [ext_resource type="PackedScene" uid="uid://6ljaw2rr8ye0" path="res://scenes/ui/hud/arena_time_ui.tscn" id="1_e5368"]
 [ext_resource type="PackedScene" uid="uid://cyg516wn5syhj" path="res://scenes/manager/enemy_manager.tscn" id="1_et0tq"]
@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://c7vjqvh2xpful" path="res://resources/crate_spawnable.tres" id="12_nvumn"]
 [ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/effects/vignette.tscn" id="12_qwlqe"]
 [ext_resource type="Resource" uid="uid://hulvuxxuv8oe" path="res://resources/table_spawnable.tres" id="13_ou6is"]
+[ext_resource type="PackedScene" uid="uid://c4y6qwq0cjoeh" path="res://scenes/game_object/item_drops/bomb/bomb.tscn" id="19_necax"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_phnnb")
@@ -71,3 +72,5 @@ position = Vector2(181, 229)
 arena_time_manager = NodePath("../../ArenaTimeManager")
 
 [node name="Foreground" type="Node2D" parent="." groups=["foreground_layer"]]
+
+[node name="Bomb" parent="." instance=ExtResource("19_necax")]
