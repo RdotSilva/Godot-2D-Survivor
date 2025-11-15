@@ -138,6 +138,7 @@ bomb_drop_percent = 0.1
 bomb_scene = ExtResource("7_ls36d")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("7_ob1fm")]
+max_speed = 50
 
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_l4d8s")]
 health_component = NodePath("../HealthComponent")
