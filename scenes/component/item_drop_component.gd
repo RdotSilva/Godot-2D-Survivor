@@ -55,9 +55,21 @@ func _try_drop_experience_vial(spawn_position: Vector2, entities_layer: Node):
 	if experience_vial_drops.size() == 0:
 		return
 
+	var rare_loot_upgrade_count = MetaProgression.get_upgrade_count("rare_loot_drop_rate")
+	
+	# Find the minimum weight (which should be the rare vial)
+	var min_weight = INF
+	for vial_drop in experience_vial_drops:
+		if vial_drop.drop_weight < min_weight:
+			min_weight = vial_drop.drop_weight
+	
 	var drop_table = WeightedTable.new()
 	for vial_drop in experience_vial_drops:
-		drop_table.add_item(vial_drop, vial_drop.drop_weight)
+		var weight = vial_drop.drop_weight
+		# If this is a rare vial (has the minimum weight), increase its weight based on upgrade
+		if rare_loot_upgrade_count > 0 and vial_drop.drop_weight == min_weight:
+			weight = int(vial_drop.drop_weight * pow(1.5, rare_loot_upgrade_count))
+		drop_table.add_item(vial_drop, weight)
 
 	var selected_drop = drop_table.pick_item() as ExperienceVialDrop
 	if selected_drop == null or selected_drop.vial_scene == null:
@@ -69,7 +81,14 @@ func _try_drop_experience_vial(spawn_position: Vector2, entities_layer: Node):
 
 
 func _try_drop_health_potion(spawn_position: Vector2, entities_layer: Node):
-	if randf() > health_potion_drop_percent:
+	var adjusted_drop_percent = health_potion_drop_percent
+	var rare_loot_upgrade_count = MetaProgression.get_upgrade_count("rare_loot_drop_rate")
+	
+	if rare_loot_upgrade_count > 0:
+		# Multiply drop rate by 1.5 for each upgrade level
+		adjusted_drop_percent *= pow(1.5, rare_loot_upgrade_count)
+	
+	if randf() > adjusted_drop_percent:
 		return
 
 	if health_potion_scene == null:
@@ -81,7 +100,14 @@ func _try_drop_health_potion(spawn_position: Vector2, entities_layer: Node):
 
 
 func _try_drop_bomb(spawn_position: Vector2, entities_layer: Node):
-	if randf() > bomb_drop_percent:
+	var adjusted_drop_percent = bomb_drop_percent
+	var rare_loot_upgrade_count = MetaProgression.get_upgrade_count("rare_loot_drop_rate")
+	
+	if rare_loot_upgrade_count > 0:
+		# Multiply drop rate by 1.5 for each upgrade level
+		adjusted_drop_percent *= pow(1.5, rare_loot_upgrade_count)
+	
+	if randf() > adjusted_drop_percent:
 		return
 
 	if bomb_scene == null:
