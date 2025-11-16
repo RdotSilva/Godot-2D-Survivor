@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_jneb7")
-id = ""
-max_quantity = 1
-experience_cost = 10
-title = ""
-description = ""
+id = "rare_loot_drop_rate"
+max_quantity = 3
+experience_cost = 5000
+title = "Rare Loot Drop Rate"
+description = "Increases rare loot drop rates by 50% per level. Affects health potions, bombs, and rare experience vials."
 metadata/_custom_type_script = "uid://dkwvc2vdtrtpd"
