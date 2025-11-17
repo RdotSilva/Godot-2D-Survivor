@@ -57,5 +57,8 @@ func on_purchased_pressed():
 
 	# Update progress on all MetaUpgradeCards using the group
 	get_tree().call_group("meta_upgrade_card", "update_progress")
+	
+	# Notify meta menu to update respec button state
+	get_tree().call_group("meta_menu", "update_respec_button_state")
 
 	$AnimationPlayer.play("selected")

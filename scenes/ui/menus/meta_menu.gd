@@ -22,6 +22,9 @@ func _ready():
 		grid_container.add_child(meta_upgrade_card_instance)
 
 		meta_upgrade_card_instance.set_meta_upgrade(upgrade)
+	
+	# Update respec button state initially
+	update_respec_button_state()
 
 
 func on_back_pressed():
@@ -38,3 +41,12 @@ func on_respec_pressed():
 
 	# Update all upgrade cards to reflect the changes
 	get_tree().call_group("meta_upgrade_card", "update_progress")
+	
+	# Update respec button state after refunding
+	update_respec_button_state()
+
+
+func update_respec_button_state():
+	# Disable respec button if no upgrades have been purchased
+	var has_upgrades = !MetaProgression.save_data["meta_upgrades"].is_empty()
+	respec_button.disabled = !has_upgrades
