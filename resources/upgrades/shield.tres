@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bo4im538frirb"]
+
+[ext_resource type="Script" uid="uid://2hfnhprmh1in" path="res://resources/upgrades/ability_upgrade.gd" id="1_46i3w"]
+
+[resource]
+script = ExtResource("1_46i3w")
+id = "shield"
+max_quantity = 1
+name = "Shield"
+description = "Protects you from 1 hit. Regenerates every 60 seconds after use."
+metadata/_custom_type_script = "uid://2hfnhprmh1in"
