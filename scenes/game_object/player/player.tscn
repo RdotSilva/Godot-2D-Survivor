@@ -183,3 +183,7 @@ shape = SubResource("CircleShape2D_n553s")
 visible = false
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_q0tje")
+
+[node name="ShieldCooldownTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
