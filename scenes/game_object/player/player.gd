@@ -9,9 +9,12 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer
 @onready var visuals = $Visuals
 @onready var velocity_component = $VelocityComponent
+@onready var shield_cooldown_timer = $ShieldCooldownTimer
 
 var number_colliding_bodies = 0
 var base_speed = 0
+var has_shield_upgrade = false
+var shield_active = false
 
 
 func _ready() -> void:
@@ -23,6 +26,7 @@ func _ready() -> void:
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_decreased.connect(on_health_decreased)
 	health_component.health_changed.connect(on_health_changed)
+	shield_cooldown_timer.timeout.connect(on_shield_cooldown_timeout)
 
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	GameEvents.health_potion_collected.connect(on_health_potion_collected)
@@ -60,7 +64,7 @@ func get_movement_vector():
 func check_deal_damage():
 	if number_colliding_bodies == 0 || !damage_interval_timer.is_stopped():
 		return
-	health_component.damage(1)
+	take_damage(1)
 	damage_interval_timer.start()
 	print(health_component.current_health)
 
@@ -97,6 +101,10 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 		abilities.add_child(ability.ability_controller_scene.instantiate())
 	elif ability_upgrade.id == "player_speed":
 		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * 0.1)
+	elif ability_upgrade.id == "shield":
+		has_shield_upgrade = true
+		shield_active = true
+		update_shield_indicator()
 
 
 func on_health_potion_collected(heal_amount: int):
@@ -110,3 +118,17 @@ func on_arena_difficulty_increased(difficulty: int):
 		var is_thirty_second_interval = (difficulty % 6) == 0
 		if is_thirty_second_interval:
 			health_component.heal(health_regeneration_quantity)
+
+
+func take_damage(damage_amount: float):
+	if has_shield_upgrade && shield_active:
+		# Shield blocks the damage
+		shield_active = false
+		shield_cooldown_timer.start()
+		update_shield_indicator()
+		return
+	
+	# No shield or shield is on cooldown, take normal damage
+	health_component.damage(damage_amount)
+
+
