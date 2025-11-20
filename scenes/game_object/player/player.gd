@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var visuals = $Visuals
 @onready var velocity_component = $VelocityComponent
 @onready var shield_cooldown_timer = $ShieldCooldownTimer
+@onready var shield_indicator = $ShieldIndicator
 
 var number_colliding_bodies = 0
 var base_speed = 0
@@ -31,6 +32,7 @@ func _ready() -> void:
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	GameEvents.health_potion_collected.connect(on_health_potion_collected)
 	update_health_display()
+	update_shield_indicator()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -132,3 +134,12 @@ func take_damage(damage_amount: float):
 	health_component.damage(damage_amount)
 
 
+func on_shield_cooldown_timeout():
+	if has_shield_upgrade:
+		shield_active = true
+		update_shield_indicator()
+
+
+func update_shield_indicator():
+	if shield_indicator != null:
+		shield_indicator.visible = shield_active && has_shield_upgrade
