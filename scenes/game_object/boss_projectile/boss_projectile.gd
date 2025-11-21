@@ -24,7 +24,7 @@ func on_area_entered(area: Area2D):
 	# Check if this is the player's collision area
 	var owner_node = area.get_parent()
 	if owner_node != null and owner_node.is_in_group("player"):
-		var health_component = owner_node.get_node_or_null("HealthComponent")
-		if health_component != null:
-			health_component.damage(damage)
+		var player = owner_node as Node
+		if player != null and player.has_method("take_damage"):
+			player.take_damage(damage)
 		queue_free()
