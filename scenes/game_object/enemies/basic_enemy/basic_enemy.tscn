@@ -134,7 +134,7 @@ autoplay = "walk"
 [node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_54w5n")]
 health_component = NodePath("../HealthComponent")
 experience_vial_drops = Array[ExtResource("5_fo5bx")]([SubResource("Resource_74jda"), SubResource("Resource_72xqq")])
-bomb_drop_percent = 0.01
+bomb_drop_percent = 0.1
 bomb_scene = ExtResource("7_ls36d")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("7_ob1fm")]
