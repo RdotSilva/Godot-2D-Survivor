@@ -127,7 +127,7 @@ max_health = 30.0
 [node name="ItemDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_ovj5h")]
 health_component = NodePath("../HealthComponent")
 experience_vial_drops = Array[ExtResource("6_wwlhg")]([SubResource("Resource_4gii2"), SubResource("Resource_ih802")])
-bomb_drop_percent = 0.02
+bomb_drop_percent = 0.20
 bomb_scene = ExtResource("8_ih802")
 
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("5_6erdh")]
