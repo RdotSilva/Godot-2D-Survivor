@@ -8,7 +8,7 @@ extends Node
 @export_range(0, 1) var health_potion_drop_percent: float = .03 # 3% drop rate for health potions
 @export var health_potion_scene: PackedScene
 
-@export_range(0, 1) var bomb_drop_percent: float = .1 # 10% drop rate for bombs
+@export_range(0, 1) var bomb_drop_percent: float = .01 # 1% drop rate for bombs
 @export var bomb_scene: PackedScene
 
 @export var boss_currency_amount: int = 0
