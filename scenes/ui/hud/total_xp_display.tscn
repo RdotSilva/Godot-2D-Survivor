@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://bx8v42humkcaj"]
 
 [node name="TotalXpDisplay" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
