@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bx8v42humkcaj"]
+
+[node name="TotalXpDisplay" type="CanvasLayer"]
