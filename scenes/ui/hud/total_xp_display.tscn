@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bx8v42humkcaj"]
+[gd_scene load_steps=2 format=3 uid="uid://bx8v42humkcaj"]
+
+[ext_resource type="Script" uid="uid://1i64u0wrtxl3" path="res://scenes/ui/hud/total_xp_display.gd" id="1_3grlo"]
 
 [node name="TotalXpDisplay" type="CanvasLayer"]
+script = ExtResource("1_3grlo")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 40.0
