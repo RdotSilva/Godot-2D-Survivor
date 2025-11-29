@@ -13,4 +13,4 @@ theme_override_constants/margin_top = 8
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
-text = "Total XP: 0 (temporary placeholder)"
+text = "Total XP: 0"
