@@ -8,10 +8,14 @@ signal back_pressed
 @onready var back_button: Button = $%BackButton
 @onready var save_button: Button = $%SaveButton
 @onready var delete_save_button: Button = $%DeleteSaveButton
+@onready var debug_mode_checkbox: CheckBox = $%DebugModeCheckBox
 
 var confirmation_dialog: AcceptDialog
 
 const SAVE_FILE_PATH = "user://game.save"
+
+# Debug mode state (static so it persists across scenes)
+static var debug_mode_enabled: bool = false
 
 func _ready():
 	back_button.pressed.connect(on_back_pressed)
@@ -25,6 +29,7 @@ func _ready():
 
 	update_display()
 	setup_confirmation_dialog()
+	setup_debug_toggle()
 
 
 func update_display():
@@ -35,6 +40,9 @@ func update_display():
 
 	sfx_slider.value = get_bus_volume_percent("sfx")
 	music_slider.value = get_bus_volume_percent("music")
+	
+	# Update debug toggle
+	debug_mode_checkbox.button_pressed = debug_mode_enabled
 
 
 func get_bus_volume_percent(bus_name: String):
@@ -112,6 +120,16 @@ func on_delete_confirmed():
 	await get_tree().create_timer(1.5).timeout
 	delete_save_button.text = original_text
 	delete_save_button.disabled = false
+
+func setup_debug_toggle():
+	# Connect debug toggle
+	debug_mode_checkbox.button_pressed = debug_mode_enabled
+	debug_mode_checkbox.toggled.connect(on_debug_mode_toggled)
+
+
+func on_debug_mode_toggled(enabled: bool):
+	debug_mode_enabled = enabled
+	print("Debug mode: ", "ON" if enabled else "OFF")
 
 # # TODO: Replace this with MetaProgression's save functionality
 # func save():
