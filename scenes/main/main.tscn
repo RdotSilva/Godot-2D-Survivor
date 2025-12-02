@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bif1is5fthxbt"]
+[gd_scene load_steps=28 format=3 uid="uid://bif1is5fthxbt"]
 
 [ext_resource type="PackedScene" uid="uid://6ljaw2rr8ye0" path="res://scenes/ui/hud/arena_time_ui.tscn" id="1_e5368"]
 [ext_resource type="PackedScene" uid="uid://cyg516wn5syhj" path="res://scenes/manager/enemy_manager.tscn" id="1_et0tq"]
@@ -24,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://cqvg6unvqs4bv" path="res://scenes/game_object/item_drops/experience_vial/experience_vial_rare.tscn" id="22_37hlw"]
 [ext_resource type="PackedScene" uid="uid://dhv7gd25s5cpk" path="res://scenes/game_object/item_drops/health_potion/health_potion.tscn" id="23_6llfj"]
 [ext_resource type="PackedScene" uid="uid://c4y6qwq0cjoeh" path="res://scenes/game_object/item_drops/bomb/bomb.tscn" id="24_0bhws"]
+[ext_resource type="PackedScene" uid="uid://bur28u6vqx534" path="res://scenes/game_object/enemies/basic_enemy/basic_enemy.tscn" id="25_0bhws"]
+[ext_resource type="PackedScene" uid="uid://bicpqrbh1g6ov" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.tscn" id="26_62atk"]
+[ext_resource type="PackedScene" uid="uid://b7wm4lvkqt5sc" path="res://scenes/game_object/enemies/bat_enemy/bat_enemy.tscn" id="27_i7in8"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_phnnb")
@@ -85,3 +88,6 @@ experience_vial_scene = ExtResource("21_s17dp")
 experience_vial_rare_scene = ExtResource("22_37hlw")
 health_potion_scene = ExtResource("23_6llfj")
 bomb_scene = ExtResource("24_0bhws")
+basic_enemy_scene = ExtResource("25_0bhws")
+wizard_enemy_scene = ExtResource("26_62atk")
+bat_enemy_scene = ExtResource("27_i7in8")
