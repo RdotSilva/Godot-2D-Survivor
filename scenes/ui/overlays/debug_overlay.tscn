@@ -9,23 +9,30 @@ offset_bottom = 23.0
 [node name="ButtonContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/ButtonContainer"]
+[node name="SpawnXpButton" type="Button" parent="PanelContainer/ButtonContainer"]
 layout_mode = 2
+text = "XP Vial"
 
-[node name="Button2" type="Button" parent="PanelContainer/ButtonContainer"]
+[node name="SpawnRareXpButton" type="Button" parent="PanelContainer/ButtonContainer"]
 layout_mode = 2
+text = "Rare XP Vial"
 
-[node name="Button3" type="Button" parent="PanelContainer/ButtonContainer"]
+[node name="SpawnHealthPotionButton" type="Button" parent="PanelContainer/ButtonContainer"]
 layout_mode = 2
+text = "Health Potion"
 
-[node name="Button4" type="Button" parent="PanelContainer/ButtonContainer"]
+[node name="SpawnBombButton" type="Button" parent="PanelContainer/ButtonContainer"]
 layout_mode = 2
+text = "Bomb"
 
-[node name="Button5" type="Button" parent="PanelContainer/ButtonContainer"]
+[node name="SpawnBasicEnemyButton" type="Button" parent="PanelContainer/ButtonContainer"]
 layout_mode = 2
+text = "Basic Enemy"
 
-[node name="Button6" type="Button" parent="PanelContainer/ButtonContainer"]
+[node name="SpawnWizardEnemyButton" type="Button" parent="PanelContainer/ButtonContainer"]
 layout_mode = 2
+text = "Wizard Enemy"
 
-[node name="Button7" type="Button" parent="PanelContainer/ButtonContainer"]
+[node name="SpawnBatEnemyButton" type="Button" parent="PanelContainer/ButtonContainer"]
 layout_mode = 2
+text = "Bat Enemy"
