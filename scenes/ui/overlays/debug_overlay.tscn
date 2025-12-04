@@ -1,3 +1,31 @@
 [gd_scene format=3 uid="uid://8fxsyeuhjl0j"]
 
 [node name="DebugOverlay" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 85.0
+offset_bottom = 23.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="PanelContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="PanelContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="PanelContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="PanelContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="PanelContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="PanelContainer/ButtonContainer"]
+layout_mode = 2
