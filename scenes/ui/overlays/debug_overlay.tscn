@@ -23,30 +23,37 @@ layout_mode = 2
 layout_mode = 2
 text = "Spawn Items"
 
-[node name="SpawnXpButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="SpawnXpButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "XP Vial"
 
-[node name="SpawnRareXpButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="SpawnRareXpButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "Rare XP Vial"
 
-[node name="SpawnHealthPotionButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="SpawnHealthPotionButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "Health Potion"
 
-[node name="SpawnBombButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="SpawnBombButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "Bomb"
 
-[node name="SpawnBasicEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="EnemiesContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/MainContainer"]
+layout_mode = 2
+
+[node name="EnemiesLabel" type="Label" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
+layout_mode = 2
+text = "Spawn Enemies"
+
+[node name="SpawnBasicEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Basic Enemy"
 
-[node name="SpawnWizardEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="SpawnWizardEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Wizard Enemy"
 
-[node name="SpawnBatEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="SpawnBatEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Bat Enemy"
