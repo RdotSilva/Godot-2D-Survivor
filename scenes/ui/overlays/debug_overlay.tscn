@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://8fxsyeuhjl0j"]
+[gd_scene load_steps=2 format=3 uid="uid://8fxsyeuhjl0j"]
+
+[ext_resource type="Script" uid="uid://blqjxrpk7d122" path="res://scenes/ui/overlays/debug_overlay.gd" id="1_ygprr"]
 
 [node name="DebugOverlay" type="CanvasLayer"]
+script = ExtResource("1_ygprr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_right = 85.0
