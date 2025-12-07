@@ -9,6 +9,7 @@ signal back_pressed
 @onready var save_button: Button = $%SaveButton
 @onready var delete_save_button: Button = $%DeleteSaveButton
 @onready var debug_mode_checkbox: CheckBox = $%DebugModeCheckBox
+@onready var debug_mode_status_label: Label = $%DebugModeStatusLabel
 
 var confirmation_dialog: AcceptDialog
 
@@ -43,6 +44,7 @@ func update_display():
 	
 	# Update debug toggle
 	debug_mode_checkbox.button_pressed = debug_mode_enabled
+	update_debug_status_label()
 
 
 func get_bus_volume_percent(bus_name: String):
@@ -130,6 +132,12 @@ func setup_debug_toggle():
 func on_debug_mode_toggled(enabled: bool):
 	debug_mode_enabled = enabled
 	print("Debug mode: ", "ON" if enabled else "OFF")
+	update_debug_status_label()
+
+
+func update_debug_status_label():
+	if debug_mode_status_label:
+		debug_mode_status_label.text = "On" if debug_mode_enabled else "Off"
 
 # # TODO: Replace this with MetaProgression's save functionality
 # func save():
