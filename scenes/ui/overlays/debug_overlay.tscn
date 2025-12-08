@@ -61,3 +61,9 @@ text = "Wizard Enemy"
 [node name="SpawnBatEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Bat Enemy"
+
+[node name="DraggableContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
