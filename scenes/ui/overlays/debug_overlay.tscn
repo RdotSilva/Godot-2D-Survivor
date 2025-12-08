@@ -6,6 +6,7 @@
 script = ExtResource("1_ygprr")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0.298039)
 offset_right = 85.0
 offset_bottom = 23.0
 
