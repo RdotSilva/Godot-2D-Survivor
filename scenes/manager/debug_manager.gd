@@ -20,7 +20,8 @@ func _ready():
 	pass
 
 
-## Get the spawn position (currently at player position)
+## Get the spawn position (offset from player to avoid immediate pickup/damage)
+## Spawns items/enemies at a fixed offset from the player
 ## Can be extended later to use mouse position or other logic
 func get_spawn_position() -> Vector2:
 	var player = get_tree().get_first_node_in_group("player") as Node2D
@@ -29,7 +30,10 @@ func get_spawn_position() -> Vector2:
 		# Fallback to center if player doesn't exist
 		return Vector2(320, 180)  # Center of 640x360 viewport
 	
-	return player.global_position
+	# Spawn at offset from player (100 pixels up and right)
+	# This prevents immediate pickup/damage when debugging
+	var spawn_offset = Vector2(100, -100)
+	return player.global_position + spawn_offset
 
 
 ## Get the entities layer where we spawn things
