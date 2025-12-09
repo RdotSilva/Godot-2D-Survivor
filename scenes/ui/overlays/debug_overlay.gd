@@ -3,14 +3,14 @@ extends CanvasLayer
 ## Debug Overlay - UI overlay for debug mode spawning
 ## Shows/hides based on debug mode toggle in options menu
 
-@onready var spawn_xp_button: Button = $PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnXpButton
-@onready var spawn_rare_xp_button: Button = $PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnRareXpButton
-@onready var spawn_health_potion_button: Button = $PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnHealthPotionButton
-@onready var spawn_bomb_button: Button = $PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnBombButton
+@onready var spawn_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnXpButton
+@onready var spawn_rare_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnRareXpButton
+@onready var spawn_health_potion_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnHealthPotionButton
+@onready var spawn_bomb_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnBombButton
 
-@onready var spawn_basic_enemy_button: Button = $PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBasicEnemyButton
-@onready var spawn_wizard_enemy_button: Button = $PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnWizardEnemyButton
-@onready var spawn_bat_enemy_button: Button = $PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBatEnemyButton
+@onready var spawn_basic_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBasicEnemyButton
+@onready var spawn_wizard_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnWizardEnemyButton
+@onready var spawn_bat_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBatEnemyButton
 
 
 func _ready():
@@ -32,14 +32,10 @@ func _ready():
 
 
 func _process(_delta):
-	# Update visibility based on debug mode state
-	# This checks every frame - could be optimized with signals later
 	update_visibility()
 
 
 func update_visibility():
-	# Get debug mode state from options menu (static variable)
-	# Access it through the script class name
 	var OptionsMenu = load("res://scenes/ui/menus/options_menu.gd")
 	visible = OptionsMenu.debug_mode_enabled
 
@@ -73,7 +69,6 @@ func _on_spawn_bat_enemy_pressed():
 
 
 func spawn_item(method_name: String):
-	# Find DebugManager in the main scene
 	var debug_manager = get_node_or_null("/root/Main/DebugManager")
 	
 	if debug_manager == null:
@@ -88,4 +83,3 @@ func spawn_item(method_name: String):
 
 func spawn_enemy(method_name: String):
 	spawn_item(method_name)  # Same logic for enemies
-
