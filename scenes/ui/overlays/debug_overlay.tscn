@@ -5,65 +5,65 @@
 [node name="DebugOverlay" type="CanvasLayer"]
 script = ExtResource("1_ygprr")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-modulate = Color(1, 1, 1, 0.298039)
-offset_right = 85.0
-offset_bottom = 23.0
+[node name="DraggableContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 103.0
+offset_bottom = 248.0
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="DraggableContainer"]
+modulate = Color(1, 1, 1, 0.298039)
+offset_right = 103.0
+offset_bottom = 248.0
+
+[node name="MarginContainer" type="MarginContainer" parent="DraggableContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MainContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="MainContainer" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="ItemsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="ItemsContainer" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer"]
 layout_mode = 2
 
-[node name="ItemsLabel" type="Label" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
+[node name="ItemsLabel" type="Label" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "Spawn Items"
 
-[node name="SpawnXpButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
+[node name="SpawnXpButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "XP Vial"
 
-[node name="SpawnRareXpButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
+[node name="SpawnRareXpButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "Rare XP Vial"
 
-[node name="SpawnHealthPotionButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
+[node name="SpawnHealthPotionButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "Health Potion"
 
-[node name="SpawnBombButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
+[node name="SpawnBombButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer"]
 layout_mode = 2
 text = "Bomb"
 
-[node name="EnemiesContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/MainContainer"]
+[node name="EnemiesContainer" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer"]
 layout_mode = 2
 
-[node name="EnemiesLabel" type="Label" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
+[node name="EnemiesLabel" type="Label" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Spawn Enemies"
 
-[node name="SpawnBasicEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
+[node name="SpawnBasicEnemyButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Basic Enemy"
 
-[node name="SpawnWizardEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
+[node name="SpawnWizardEnemyButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Wizard Enemy"
 
-[node name="SpawnBatEnemyButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
+[node name="SpawnBatEnemyButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Bat Enemy"
-
-[node name="DraggableContainer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
