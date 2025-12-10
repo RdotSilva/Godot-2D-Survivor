@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://8fxsyeuhjl0j"]
+[gd_scene load_steps=3 format=3 uid="uid://8fxsyeuhjl0j"]
 
 [ext_resource type="Script" uid="uid://blqjxrpk7d122" path="res://scenes/ui/overlays/debug_overlay.gd" id="1_ygprr"]
+[ext_resource type="Script" uid="uid://bhe50sijkpuiw" path="res://scenes/ui/overlays/drag_handle.gd" id="2_wq2hh"]
 
 [node name="DebugOverlay" type="CanvasLayer"]
 script = ExtResource("1_ygprr")
@@ -67,3 +68,14 @@ text = "Wizard Enemy"
 [node name="SpawnBatEnemyButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
 layout_mode = 2
 text = "Bat Enemy"
+
+[node name="DragHandle" type="Control" parent="DraggableContainer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+script = ExtResource("2_wq2hh")
