@@ -11,6 +11,7 @@ extends CanvasLayer
 @onready var spawn_basic_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBasicEnemyButton
 @onready var spawn_wizard_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnWizardEnemyButton
 @onready var spawn_bat_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBatEnemyButton
+@onready var spawn_ghost_boss_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnGhostBossButton
 
 
 func _ready():
@@ -23,6 +24,7 @@ func _ready():
 	spawn_basic_enemy_button.pressed.connect(_on_spawn_basic_enemy_pressed)
 	spawn_wizard_enemy_button.pressed.connect(_on_spawn_wizard_enemy_pressed)
 	spawn_bat_enemy_button.pressed.connect(_on_spawn_bat_enemy_pressed)
+	spawn_ghost_boss_button.pressed.connect(_on_spawn_ghost_boss_pressed)
 	
 	# Initially hide the overlay
 	visible = false
@@ -66,6 +68,10 @@ func _on_spawn_wizard_enemy_pressed():
 
 func _on_spawn_bat_enemy_pressed():
 	spawn_enemy("spawn_bat_enemy")
+
+
+func _on_spawn_ghost_boss_pressed():
+	spawn_enemy("spawn_ghost_boss_enemy")
 
 
 func spawn_item(method_name: String):

@@ -13,6 +13,7 @@ extends Node
 @export var basic_enemy_scene: PackedScene
 @export var wizard_enemy_scene: PackedScene
 @export var bat_enemy_scene: PackedScene
+@export var ghost_boss_enemy_scene: PackedScene
 
 
 func _ready():
@@ -115,4 +116,8 @@ func spawn_wizard_enemy() -> void:
 
 func spawn_bat_enemy() -> void:
 	spawn_enemy(bat_enemy_scene)
+
+
+func spawn_ghost_boss_enemy() -> void:
+	spawn_enemy(ghost_boss_enemy_scene)
 
