@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuqsbvn1m16n8"]
+[gd_scene load_steps=10 format=3 uid="uid://cuqsbvn1m16n8"]
 
 [ext_resource type="Script" uid="uid://d07r6e3xcritc" path="res://scenes/manager/debug_manager.gd" id="1_0jra2"]
 [ext_resource type="PackedScene" uid="uid://db8y40fiombk3" path="res://scenes/game_object/item_drops/experience_vial/experience_vial.tscn" id="2_b8lr2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bur28u6vqx534" path="res://scenes/game_object/enemies/basic_enemy/basic_enemy.tscn" id="6_o8pks"]
 [ext_resource type="PackedScene" uid="uid://bicpqrbh1g6ov" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.tscn" id="7_2r1th"]
 [ext_resource type="PackedScene" uid="uid://b7wm4lvkqt5sc" path="res://scenes/game_object/enemies/bat_enemy/bat_enemy.tscn" id="8_3caxj"]
+[ext_resource type="PackedScene" uid="uid://244bqnjy3ng0" path="res://scenes/game_object/enemies/bosses/ghost_boss_enemy/ghost_boss_enemy.tscn" id="9_gapn5"]
 
 [node name="DebugManager" type="Node"]
 script = ExtResource("1_0jra2")
@@ -18,3 +19,4 @@ bomb_scene = ExtResource("5_cbrq4")
 basic_enemy_scene = ExtResource("6_o8pks")
 wizard_enemy_scene = ExtResource("7_2r1th")
 bat_enemy_scene = ExtResource("8_3caxj")
+ghost_boss_enemy_scene = ExtResource("9_gapn5")
