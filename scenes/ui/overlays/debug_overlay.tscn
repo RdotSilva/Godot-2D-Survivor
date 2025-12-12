@@ -72,6 +72,9 @@ text = "Wizard Enemy"
 layout_mode = 2
 text = "Bat Enemy"
 
+[node name="SpawnGhostBossButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer"]
+layout_mode = 2
+
 [node name="DragHandle" type="Control" parent="DraggableContainer"]
 layout_mode = 1
 anchors_preset = 10
