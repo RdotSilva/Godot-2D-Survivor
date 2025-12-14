@@ -75,6 +75,10 @@ text = "Bat Enemy"
 [node name="BossContainer" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer"]
 layout_mode = 2
 
+[node name="BossLabel" type="Label" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/BossContainer"]
+layout_mode = 2
+text = "Spawn Bosses"
+
 [node name="SpawnGhostBossButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/BossContainer"]
 layout_mode = 2
 text = "Ghost Boss"
