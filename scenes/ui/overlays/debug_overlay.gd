@@ -11,7 +11,7 @@ extends CanvasLayer
 @onready var spawn_basic_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBasicEnemyButton
 @onready var spawn_wizard_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnWizardEnemyButton
 @onready var spawn_bat_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBatEnemyButton
-@onready var spawn_ghost_boss_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnGhostBossButton
+@onready var spawn_ghost_boss_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/BossContainer/SpawnGhostBossButton
 
 
 func _ready():
