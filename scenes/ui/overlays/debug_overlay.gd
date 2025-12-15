@@ -98,6 +98,23 @@ func spawn_enemy(method_name: String):
 	spawn_item(method_name)  # Same logic for enemies
 
 
+func _on_toggle_spawn_pressed():
+	var enemy_manager = get_node_or_null("/root/Main/EnemyManager")
+	
+	if enemy_manager == null:
+		push_error("DebugOverlay: EnemyManager not found!")
+		return
+	
+	spawning_enabled = !spawning_enabled
+	
+	if spawning_enabled:
+		enemy_manager.resume_spawning()
+	else:
+		enemy_manager.stop_spawning()
+	
+	update_toggle_button_text()
+
+
 func update_toggle_button_text():
 	if spawning_enabled:
 		toggle_spawn_button.text = "Stop Monster Spawns"
