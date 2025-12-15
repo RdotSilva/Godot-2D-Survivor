@@ -90,6 +90,11 @@ layout_mode = 2
 layout_mode = 2
 text = "Controls"
 
+[node name="ToggleSpawnButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/ControlsContainer"]
+layout_mode = 2
+text = "Stop Spawns
+"
+
 [node name="DragHandle" type="Control" parent="DraggableContainer"]
 layout_mode = 1
 anchors_preset = 10
