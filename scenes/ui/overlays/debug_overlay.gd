@@ -12,6 +12,9 @@ extends CanvasLayer
 @onready var spawn_wizard_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnWizardEnemyButton
 @onready var spawn_bat_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBatEnemyButton
 @onready var spawn_ghost_boss_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/BossContainer/SpawnGhostBossButton
+@onready var toggle_spawn_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ControlsContainer/ToggleSpawnButton
+
+var spawning_enabled: bool = true
 
 
 func _ready():
@@ -25,6 +28,10 @@ func _ready():
 	spawn_wizard_enemy_button.pressed.connect(_on_spawn_wizard_enemy_pressed)
 	spawn_bat_enemy_button.pressed.connect(_on_spawn_bat_enemy_pressed)
 	spawn_ghost_boss_button.pressed.connect(_on_spawn_ghost_boss_pressed)
+	toggle_spawn_button.pressed.connect(_on_toggle_spawn_pressed)
+	
+	# Initialize toggle button text
+	update_toggle_button_text()
 	
 	# Initially hide the overlay
 	visible = false
@@ -89,3 +96,10 @@ func spawn_item(method_name: String):
 
 func spawn_enemy(method_name: String):
 	spawn_item(method_name)  # Same logic for enemies
+
+
+func update_toggle_button_text():
+	if spawning_enabled:
+		toggle_spawn_button.text = "Stop Monster Spawns"
+	else:
+		toggle_spawn_button.text = "Resume Monster Spawns"
