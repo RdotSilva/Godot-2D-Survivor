@@ -91,6 +91,7 @@ layout_mode = 2
 text = "Controls"
 
 [node name="ToggleSpawnButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/ControlsContainer"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Stop Spawns
 "
