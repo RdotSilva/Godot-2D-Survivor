@@ -117,6 +117,6 @@ func _on_toggle_spawn_pressed():
 
 func update_toggle_button_text():
 	if spawning_enabled:
-		toggle_spawn_button.text = "Stop Monster Spawns"
+		toggle_spawn_button.text = "Stop Spawns"
 	else:
-		toggle_spawn_button.text = "Resume Monster Spawns"
+		toggle_spawn_button.text = "Resume Spawns"
