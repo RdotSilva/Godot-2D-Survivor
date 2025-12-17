@@ -27,7 +27,10 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MainContainer" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer"]
+[node name="MainContainer" type="HBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer"]
 layout_mode = 2
 
 [node name="ItemsContainer" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer"]
