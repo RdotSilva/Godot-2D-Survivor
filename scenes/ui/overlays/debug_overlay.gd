@@ -3,16 +3,17 @@ extends CanvasLayer
 ## Debug Overlay - UI overlay for debug mode spawning
 ## Shows/hides based on debug mode toggle in options menu
 
-@onready var spawn_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnXpButton
-@onready var spawn_rare_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnRareXpButton
-@onready var spawn_health_potion_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnHealthPotionButton
-@onready var spawn_bomb_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ItemsContainer/SpawnBombButton
+@onready var spawn_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/ItemsContainer/SpawnXpButton
+@onready var spawn_rare_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/ItemsContainer/SpawnRareXpButton
+@onready var spawn_health_potion_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/ItemsContainer/SpawnHealthPotionButton
+@onready var spawn_bomb_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/ItemsContainer/SpawnBombButton
 
-@onready var spawn_basic_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBasicEnemyButton
-@onready var spawn_wizard_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnWizardEnemyButton
-@onready var spawn_bat_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/EnemiesContainer/SpawnBatEnemyButton
-@onready var spawn_ghost_boss_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/BossContainer/SpawnGhostBossButton
-@onready var toggle_spawn_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/ControlsContainer/ToggleSpawnButton
+@onready var spawn_basic_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/EnemiesContainer/SpawnBasicEnemyButton
+@onready var spawn_wizard_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/EnemiesContainer/SpawnWizardEnemyButton
+@onready var spawn_bat_enemy_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/EnemiesContainer/SpawnBatEnemyButton
+@onready var spawn_ghost_boss_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/BossContainer/SpawnGhostBossButton
+@onready var toggle_spawn_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleSpawnButton
+@onready var toggle_freeze_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleFreezeButton
 
 var spawning_enabled: bool = true
 
