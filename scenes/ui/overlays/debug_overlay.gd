@@ -16,6 +16,7 @@ extends CanvasLayer
 @onready var toggle_freeze_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleFreezeButton
 
 var spawning_enabled: bool = true
+var enemies_frozen: bool = false
 
 
 func _ready():
@@ -30,6 +31,7 @@ func _ready():
 	spawn_bat_enemy_button.pressed.connect(_on_spawn_bat_enemy_pressed)
 	spawn_ghost_boss_button.pressed.connect(_on_spawn_ghost_boss_pressed)
 	toggle_spawn_button.pressed.connect(_on_toggle_spawn_pressed)
+	toggle_freeze_button.pressed.connect(_on_toggle_freeze_pressed)
 	
 	# Initialize toggle button text
 	update_toggle_button_text()
@@ -121,3 +123,18 @@ func update_toggle_button_text():
 		toggle_spawn_button.text = "Stop Spawns"
 	else:
 		toggle_spawn_button.text = "Resume Spawns"
+func _on_toggle_freeze_pressed():
+	var enemy_manager = get_node_or_null("/root/Main/EnemyManager")
+	
+	if enemy_manager == null:
+		push_error("DebugOverlay: EnemyManager not found!")
+		return
+	
+	enemies_frozen = !enemies_frozen
+	
+	if enemies_frozen:
+		enemy_manager.freeze_enemies()
+	else:
+		enemy_manager.unfreeze_enemies()
+	
+	update_freeze_button_text()
