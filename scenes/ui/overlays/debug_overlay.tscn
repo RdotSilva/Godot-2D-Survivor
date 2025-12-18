@@ -102,6 +102,11 @@ layout_mode = 2
 text = "Stop Spawns
 "
 
+[node name="ToggleFreezeButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Freeze Enemies"
+
 [node name="DragHandle" type="Control" parent="DraggableContainer"]
 layout_mode = 1
 anchors_preset = 10
