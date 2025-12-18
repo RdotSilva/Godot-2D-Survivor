@@ -14,6 +14,8 @@ var base_spawn_time = 0
 var enemy_table = WeightedTable.new()
 var number_to_spawn = 1
 
+static var enemies_frozen: bool = false
+
 
 # Called when the node enters the scene tree for the first time
 func _ready() -> void:
@@ -95,6 +97,26 @@ func stop_spawning():
 
 func resume_spawning():
 	timer.start()
+
+
+func freeze_enemies():
+	enemies_frozen = true
+	# Pause attack timers on all enemies
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		var attack_timer = enemy.get_node_or_null("AttackTimer")
+		if attack_timer != null:
+			attack_timer.paused = true
+
+
+func unfreeze_enemies():
+	enemies_frozen = false
+	# Resume attack timers on all enemies
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		var attack_timer = enemy.get_node_or_null("AttackTimer")
+		if attack_timer != null:
+			attack_timer.paused = false
 
 
 # TODO: Check this to ensure enemies are not spawned outside of the walls
