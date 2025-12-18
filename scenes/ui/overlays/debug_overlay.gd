@@ -35,6 +35,7 @@ func _ready():
 	
 	# Initialize toggle button text
 	update_toggle_button_text()
+	update_freeze_button_text()
 	
 	# Initially hide the overlay
 	visible = false
@@ -123,6 +124,8 @@ func update_toggle_button_text():
 		toggle_spawn_button.text = "Stop Spawns"
 	else:
 		toggle_spawn_button.text = "Resume Spawns"
+
+
 func _on_toggle_freeze_pressed():
 	var enemy_manager = get_node_or_null("/root/Main/EnemyManager")
 	
@@ -138,3 +141,10 @@ func _on_toggle_freeze_pressed():
 		enemy_manager.unfreeze_enemies()
 	
 	update_freeze_button_text()
+
+
+func update_freeze_button_text():
+	if enemies_frozen:
+		toggle_freeze_button.text = "Unfreeze Enemies"
+	else:
+		toggle_freeze_button.text = "Freeze Enemies"
