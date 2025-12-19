@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const EnemyManager = preload("res://scenes/manager/enemy_manager.gd")
+
 @onready var visuals = $Visuals
 @onready var velocity_component = $VelocityComponent
 
@@ -9,6 +11,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if EnemyManager.enemies_frozen:
+		return
+	
 	velocity_component.accelerate_to_player()
 	velocity_component.move(self)
 

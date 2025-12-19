@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const EnemyManager = preload("res://scenes/manager/enemy_manager.gd")
+
 @export var projectile_scene: PackedScene
 
 @onready var velocity_component = $VelocityComponent
@@ -15,6 +17,9 @@ func _ready():
 
 
 func _process(delta: float) -> void:
+	if EnemyManager.enemies_frozen:
+		return
+	
 	if is_moving:
 		velocity_component.accelerate_to_player()
 	else:

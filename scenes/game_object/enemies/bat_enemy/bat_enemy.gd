@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const EnemyManager = preload("res://scenes/manager/enemy_manager.gd")
+
 @onready var velocity_component = $VelocityComponent
 @onready var visuals = $Visuals
 
@@ -9,6 +11,9 @@ func _ready():
 
 
 func _process(delta: float) -> void:
+	if EnemyManager.enemies_frozen:
+		return
+	
 	velocity_component.accelerate_to_player()
 	
 	# Always apply the movement even if the movement or velocity stops
