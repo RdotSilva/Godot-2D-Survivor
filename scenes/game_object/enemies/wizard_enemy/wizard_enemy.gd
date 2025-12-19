@@ -43,6 +43,9 @@ func on_hit():
 
 
 func on_attack_timer_timeout():
+	if EnemyManager.enemies_frozen:
+		return
+	
 	# Only shoot when stopped
 	if is_moving:
 		return

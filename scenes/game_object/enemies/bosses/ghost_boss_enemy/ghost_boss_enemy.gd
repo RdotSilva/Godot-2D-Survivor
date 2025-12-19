@@ -32,6 +32,9 @@ func on_hit():
 
 
 func on_attack_timer_timeout():
+	if EnemyManager.enemies_frozen:
+		return
+	
 	if projectile_scene == null:
 		return
 
