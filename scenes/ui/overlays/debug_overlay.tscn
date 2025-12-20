@@ -22,6 +22,7 @@ offset_bottom = 248.0
 
 [node name="DragHandle" type="Control" parent="DraggableContainer/PanelContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 script = ExtResource("2_wq2hh")
 
 [node name="ColorRect" type="ColorRect" parent="DraggableContainer/PanelContainer/DragHandle"]
