@@ -21,6 +21,7 @@ offset_right = 103.0
 offset_bottom = 248.0
 
 [node name="DragHandle" type="Control" parent="DraggableContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
 script = ExtResource("2_wq2hh")
