@@ -107,9 +107,9 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Freeze Enemies"
 
-[node name="SpeedButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer"]
+[node name="GameTimerButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer"]
 layout_mode = 2
-text = "	Increase Speed"
+text = "Increase Timer"
 
 [node name="DragHandle" type="Control" parent="DraggableContainer"]
 custom_minimum_size = Vector2(0, 30)
