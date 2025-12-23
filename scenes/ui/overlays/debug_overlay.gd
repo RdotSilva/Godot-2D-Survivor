@@ -14,6 +14,7 @@ extends CanvasLayer
 @onready var spawn_ghost_boss_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/LeftColumn/BossContainer/SpawnGhostBossButton
 @onready var toggle_spawn_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleSpawnButton
 @onready var toggle_freeze_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleFreezeButton
+@onready var game_timer_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/GameTimerButton
 
 var spawning_enabled: bool = true
 var enemies_frozen: bool = false
@@ -32,6 +33,7 @@ func _ready():
 	spawn_ghost_boss_button.pressed.connect(_on_spawn_ghost_boss_pressed)
 	toggle_spawn_button.pressed.connect(_on_toggle_spawn_pressed)
 	toggle_freeze_button.pressed.connect(_on_toggle_freeze_pressed)
+	game_timer_button.pressed.connect(_on_game_timer_pressed)
 	
 	# Initialize toggle button text
 	update_toggle_button_text()
@@ -148,3 +150,16 @@ func update_freeze_button_text():
 		toggle_freeze_button.text = "Unfreeze Enemies"
 	else:
 		toggle_freeze_button.text = "Freeze Enemies"
+
+
+func _on_game_timer_pressed():
+	var arena_time_manager = get_node_or_null("/root/Main/ArenaTimeManager")
+	
+	if arena_time_manager == null:
+		push_error("DebugOverlay: ArenaTimeManager not found!")
+		return
+	
+	# Increment timer by 10 seconds by decreasing time_left
+	var timer = arena_time_manager.timer
+	if timer:
+		timer.time_left = max(0.0, timer.time_left - 10.0)
