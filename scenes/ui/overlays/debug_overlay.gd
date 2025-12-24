@@ -159,7 +159,5 @@ func _on_game_timer_pressed():
 		push_error("DebugOverlay: ArenaTimeManager not found!")
 		return
 	
-	# Increment timer by 10 seconds by decreasing time_left
-	var timer = arena_time_manager.timer
-	if timer:
-		timer.time_left = max(0.0, timer.time_left - 10.0)
+	# Increment timer by 10 seconds
+	arena_time_manager.increment_time(10.0)
