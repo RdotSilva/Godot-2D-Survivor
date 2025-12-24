@@ -32,8 +32,14 @@ func get_time_elapsed():
 # Increment the timer by the specified number of seconds (advances time)
 func increment_time(seconds: float):
 	if not timer.is_stopped():
+		# Save the current wait_time before calling start()
+		# elapsed = wait_time - time_left, so to increase elapsed by seconds,
+		# we just need to decrease time_left by seconds (keeping wait_time the same)
+		var original_wait_time = timer.wait_time
 		var new_time_left = max(0.0, timer.time_left - seconds)
 		timer.start(new_time_left)
+		# Restore the original wait_time since start() resets it
+		timer.wait_time = original_wait_time
 
 
 func on_timer_timeout():
