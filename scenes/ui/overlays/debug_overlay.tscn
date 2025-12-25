@@ -113,6 +113,7 @@ text = "Increase Timer"
 
 [node name="IncreaseXpButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer"]
 layout_mode = 2
+text = "Increase XP"
 
 [node name="DragHandle" type="Control" parent="DraggableContainer"]
 custom_minimum_size = Vector2(0, 30)
