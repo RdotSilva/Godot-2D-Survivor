@@ -15,6 +15,7 @@ extends CanvasLayer
 @onready var toggle_spawn_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleSpawnButton
 @onready var toggle_freeze_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleFreezeButton
 @onready var game_timer_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/GameTimerButton
+@onready var increase_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/IncreaseXpButton
 
 var spawning_enabled: bool = true
 var enemies_frozen: bool = false
@@ -34,6 +35,7 @@ func _ready():
 	toggle_spawn_button.pressed.connect(_on_toggle_spawn_pressed)
 	toggle_freeze_button.pressed.connect(_on_toggle_freeze_pressed)
 	game_timer_button.pressed.connect(_on_game_timer_pressed)
+	increase_xp_button.pressed.connect(_on_increase_xp_pressed)
 	
 	# Initialize toggle button text
 	update_toggle_button_text()
