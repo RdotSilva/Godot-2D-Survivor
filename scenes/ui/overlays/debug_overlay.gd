@@ -161,3 +161,9 @@ func _on_game_timer_pressed():
 	
 	# Increment timer by 10 seconds
 	arena_time_manager.increment_time(10.0)
+
+
+func _on_increase_xp_pressed():
+	# Emit the same signal that an XP vial would emit
+	# This will trigger ExperienceManager and all other systems that listen to XP collection
+	GameEvents.emit_experience_vial_collected(10.0)
