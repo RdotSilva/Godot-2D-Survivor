@@ -16,6 +16,8 @@ extends CanvasLayer
 @onready var toggle_freeze_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/ToggleFreezeButton
 @onready var game_timer_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/GameTimerButton
 @onready var increase_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/IncreaseXpButton
+@onready var increase_xp_100_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/IncreaseXpButton2
+@onready var increase_xp_1000_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/IncreaseXpButton3
 
 var spawning_enabled: bool = true
 var enemies_frozen: bool = false
@@ -36,6 +38,8 @@ func _ready():
 	toggle_freeze_button.pressed.connect(_on_toggle_freeze_pressed)
 	game_timer_button.pressed.connect(_on_game_timer_pressed)
 	increase_xp_button.pressed.connect(_on_increase_xp_pressed)
+	increase_xp_100_button.pressed.connect(_on_increase_xp_100_pressed)
+	increase_xp_1000_button.pressed.connect(_on_increase_xp_1000_pressed)
 	
 	# Initialize toggle button text
 	update_toggle_button_text()
@@ -169,3 +173,15 @@ func _on_increase_xp_pressed():
 	# Emit the same signal that an XP vial would emit
 	# This will trigger ExperienceManager and all other systems that listen to XP collection
 	GameEvents.emit_experience_vial_collected(10.0)
+
+
+func _on_increase_xp_100_pressed():
+	# Emit the same signal that an XP vial would emit
+	# This will trigger ExperienceManager and all other systems that listen to XP collection
+	GameEvents.emit_experience_vial_collected(100.0)
+
+
+func _on_increase_xp_1000_pressed():
+	# Emit the same signal that an XP vial would emit
+	# This will trigger ExperienceManager and all other systems that listen to XP collection
+	GameEvents.emit_experience_vial_collected(1000.0)
