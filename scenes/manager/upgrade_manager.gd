@@ -6,6 +6,10 @@ extends Node
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
 
+# Queue system for handling multiple level-ups
+var pending_level_ups: Array[int] = []
+var is_showing_upgrade_screen: bool = false
+
 var upgrade_axe = preload("res://resources/upgrades/axe.tres")
 var upgrade_axe_damage = preload("res://resources/upgrades/axe_damage.tres")
 var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
@@ -73,14 +77,41 @@ func pick_upgrades():
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):
 	apply_upgrade(upgrade)
+	# Don't process next level-up here - wait for screen to fully close
+	# The screen_closed signal will trigger process_next_level_up()
 
 
 func on_level_up(current_level: int):
+	# Add this level-up to the queue
+	pending_level_ups.append(current_level)
+	
+	# If no upgrade screen is currently showing, show the first one
+	if not is_showing_upgrade_screen:
+		process_next_level_up()
+
+
+func process_next_level_up():
+	# If there are no pending level-ups, we're done
+	if pending_level_ups.is_empty():
+		is_showing_upgrade_screen = false
+		return
+	
+	# Mark that we're showing an upgrade screen
+	is_showing_upgrade_screen = true
+	
+	# Get the next level-up from the queue
+	var current_level = pending_level_ups.pop_front()
+	
+	# Create and show the upgrade screen
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
 	add_child(upgrade_screen_instance)
 	var chosen_upgrades = pick_upgrades()
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
+	
+	# Connect signals
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)
+	# When screen fully closes, process the next level-up if there are any
+	upgrade_screen_instance.screen_closed.connect(_on_screen_closed)
 
 
 func _on_screen_closed():
