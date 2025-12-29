@@ -16,7 +16,7 @@ var confirmation_dialog: AcceptDialog
 const SAVE_FILE_PATH = "user://game.save"
 
 # Debug mode state (static so it persists across scenes)
-static var debug_mode_enabled: bool = false
+static var debug_mode_enabled: bool = true
 
 func _ready():
 	back_button.pressed.connect(on_back_pressed)
