@@ -13,6 +13,11 @@ func _ready():
 	
 	# Listen for experience vials being collected
 	GameEvents.experience_vial_collected.connect(on_experience_vial_collected)
+	
+	# Listen for level ups if experience_manager is connected
+	if experience_manager:
+		experience_manager.level_up.connect(on_level_up)
+		update_level_display()
 
 
 func on_experience_vial_collected(xp_amount: float):
