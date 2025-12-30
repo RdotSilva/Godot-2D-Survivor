@@ -1,7 +1,9 @@
 extends CanvasLayer
 
 var total_xp: float = 0
-@onready var label = $MarginContainer/Label
+@export var experience_manager: Node
+@onready var label = $MarginContainer/VBoxContainer/Label
+@onready var level_label = $MarginContainer/VBoxContainer/LevelLabel
 
 
 func _ready():
