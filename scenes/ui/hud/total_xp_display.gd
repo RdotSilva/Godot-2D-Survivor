@@ -20,5 +20,14 @@ func on_experience_vial_collected(xp_amount: float):
 	update_display()
 
 
+func on_level_up(new_level: int):
+	update_level_display()
+
+
 func update_display():
 	label.text = "Total XP: " + str(int(total_xp))
+
+
+func update_level_display():
+	if level_label and experience_manager:
+		level_label.text = "Level: " + str(experience_manager.current_level)
