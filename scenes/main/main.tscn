@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://c7vjqvh2xpful" path="res://resources/crate_spawnable.tres" id="12_nvumn"]
 [ext_resource type="PackedScene" uid="uid://bjhdjpq63hey5" path="res://scenes/ui/effects/vignette.tscn" id="12_qwlqe"]
 [ext_resource type="Resource" uid="uid://hulvuxxuv8oe" path="res://resources/table_spawnable.tres" id="13_ou6is"]
-[ext_resource type="PackedScene" uid="uid://bx8v42humkcaj" path="res://scenes/ui/hud/total_xp_display.tscn" id="19_necax"]
+[ext_resource type="PackedScene" uid="uid://bx8v42humkcaj" path="res://scenes/ui/hud/stat_display.tscn" id="19_necax"]
 [ext_resource type="PackedScene" uid="uid://cuqsbvn1m16n8" path="res://scenes/manager/debug_manager.tscn" id="20_r4lks"]
 [ext_resource type="PackedScene" uid="uid://8fxsyeuhjl0j" path="res://scenes/ui/overlays/debug_overlay.tscn" id="21_pg34l"]
 
