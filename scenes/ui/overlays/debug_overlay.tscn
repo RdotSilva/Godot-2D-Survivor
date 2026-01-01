@@ -123,6 +123,9 @@ text = "Increase XP (100)"
 layout_mode = 2
 text = "Increase XP (1000)"
 
+[node name="OtherContainer" type="VBoxContainer" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn"]
+layout_mode = 2
+
 [node name="DragHandle" type="Control" parent="DraggableContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
