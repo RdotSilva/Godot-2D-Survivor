@@ -134,6 +134,10 @@ text = "Other"
 layout_mode = 2
 text = "Reset XP"
 
+[node name="ResetLevelButton" type="Button" parent="DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/OtherContainer"]
+layout_mode = 2
+text = "Reset Level"
+
 [node name="DragHandle" type="Control" parent="DraggableContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
