@@ -190,3 +190,34 @@ func _on_increase_xp_1000_pressed():
 	# This will trigger ExperienceManager and all other systems that listen to XP collection
 	GameEvents.emit_experience_vial_collected(1000.0)
 
+
+func _on_reset_xp_pressed():
+	# Reset current experience to 0, but keep level and target_experience
+	var experience_manager = get_node_or_null("/root/Main/ExperienceManager")
+	
+	if experience_manager == null:
+		push_error("DebugOverlay: ExperienceManager not found!")
+		return
+	
+	# Clear current experience but keep level and target_experience
+	experience_manager.current_experience = 0
+	
+	# Emit experience_updated signal to update the XP bar visually
+	experience_manager.experience_updated.emit(0, experience_manager.target_experience)
+	
+	# Reset total_xp in StatDisplay
+	var stat_display = get_node_or_null("/root/Main/StatDisplay")
+	
+	if stat_display == null:
+		push_error("DebugOverlay: StatDisplay not found!")
+		return
+	
+	stat_display.total_xp = 0
+	stat_display.update_display()
+	
+	print("Debug: XP reset (level preserved)")
+
+
+func _on_reset_level_pressed():
+	# This will be implemented after testing Reset XP
+	pass
