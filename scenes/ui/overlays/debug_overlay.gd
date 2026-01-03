@@ -18,6 +18,8 @@ extends CanvasLayer
 @onready var increase_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/IncreaseXpButton
 @onready var increase_xp_100_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/IncreaseXpButton2
 @onready var increase_xp_1000_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/ControlsContainer/IncreaseXpButton3
+@onready var reset_xp_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/OtherContainer/ResetXpButton
+@onready var reset_level_button: Button = $DraggableContainer/PanelContainer/MarginContainer/MainContainer/RightColumn/OtherContainer/ResetLevelButton
 
 var spawning_enabled: bool = true
 var enemies_frozen: bool = false
@@ -40,6 +42,8 @@ func _ready():
 	increase_xp_button.pressed.connect(_on_increase_xp_pressed)
 	increase_xp_100_button.pressed.connect(_on_increase_xp_100_pressed)
 	increase_xp_1000_button.pressed.connect(_on_increase_xp_1000_pressed)
+	reset_xp_button.pressed.connect(_on_reset_xp_pressed)
+	reset_level_button.pressed.connect(_on_reset_level_pressed)
 	
 	# Initialize toggle button text
 	update_toggle_button_text()
@@ -185,3 +189,4 @@ func _on_increase_xp_1000_pressed():
 	# Emit the same signal that an XP vial would emit
 	# This will trigger ExperienceManager and all other systems that listen to XP collection
 	GameEvents.emit_experience_vial_collected(1000.0)
+
