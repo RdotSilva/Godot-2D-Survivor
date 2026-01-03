@@ -214,10 +214,32 @@ func _on_reset_xp_pressed():
 	
 	stat_display.total_xp = 0
 	stat_display.update_display()
-	
-	print("Debug: XP reset (level preserved)")
 
 
 func _on_reset_level_pressed():
-	# This will be implemented after testing Reset XP
-	pass
+	# Reset level, experience, and target_experience back to starting values
+	var experience_manager = get_node_or_null("/root/Main/ExperienceManager")
+	
+	if experience_manager == null:
+		push_error("DebugOverlay: ExperienceManager not found!")
+		return
+	
+	# Reset to starting values
+	experience_manager.current_level = 1
+	experience_manager.current_experience = 0
+	experience_manager.target_experience = experience_manager.BASE_EXPERIENCE_REQUIRED
+	
+	# Emit experience_updated signal to update the XP bar visually
+	experience_manager.experience_updated.emit(0, experience_manager.target_experience)
+	
+	# Reset total_xp in StatDisplay
+	var stat_display = get_node_or_null("/root/Main/StatDisplay")
+	
+	if stat_display == null:
+		push_error("DebugOverlay: StatDisplay not found!")
+		return
+	
+	stat_display.total_xp = 0
+	stat_display.update_display()
+	stat_display.update_level_display()
+
