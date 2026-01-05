@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3qadd0psej7"]
+
+[node name="Leaderboard" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0323587, 0.023776, 0.0174733, 0.772549)
