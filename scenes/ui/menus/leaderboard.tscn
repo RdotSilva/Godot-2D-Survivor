@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3qadd0psej7"]
 
 [node name="Leaderboard" type="CanvasLayer"]
+metadata/_edit_vertical_guides_ = [-79.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -21,6 +22,13 @@ grow_vertical = 2
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
+[node name="CloseButton" type="Button" parent="MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "X"
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -40,11 +48,5 @@ text = "Leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseButtonContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="CloseButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/CloseButtonContainer"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_horizontal = 8
-text = "X"
