@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://d3qadd0psej7"]
+[gd_scene load_steps=2 format=3 uid="uid://d3qadd0psej7"]
+
+[ext_resource type="Script" uid="uid://c3gxg3hfmn2cm" path="res://scenes/ui/menus/leaderboard.gd" id="1_6tsn1"]
 
 [node name="Leaderboard" type="CanvasLayer"]
 metadata/_edit_vertical_guides_ = [-79.0]
@@ -78,6 +80,7 @@ horizontal_alignment = 2
 
 [node name="ScoreScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+script = ExtResource("1_6tsn1")
 
 [node name="ScoreRowsContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ScoreScrollContainer"]
 layout_mode = 2
