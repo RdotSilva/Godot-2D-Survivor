@@ -75,3 +75,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Time"
 horizontal_alignment = 2
+
+[node name="ScoreScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreRowsContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ScoreScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
