@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var close_button = $MarginContainer/PanelContainer/CloseButton
 
 func _ready():
+	# TEMPORARY: Add test scores for testing (remove this later)
+	add_test_scores()
 	
 	# Wait a frame for layout to be ready
 	await get_tree().process_frame
@@ -83,3 +85,18 @@ func format_time(seconds: float) -> String:
 
 func on_close_button_pressed():
 	queue_free()
+
+# TEMPORARY: Test function to add sample scores (remove this later)
+func add_test_scores():
+	# Only add if leaderboard is empty
+	if LeaderboardManager.get_top_scores().is_empty():
+		LeaderboardManager.add_score("Player 1", 5000.0, 15, 180.0)  # 3:00
+		LeaderboardManager.add_score("Player 1", 3500.0, 12, 150.0)  # 2:30
+		LeaderboardManager.add_score("Player 1", 2800.0, 10, 120.0)  # 2:00
+		LeaderboardManager.add_score("Player 1", 2200.0, 8, 95.0)    # 1:35
+		LeaderboardManager.add_score("Player 1", 1800.0, 7, 75.0)     # 1:15
+		LeaderboardManager.add_score("Player 1", 1500.0, 6, 60.0)    # 1:00
+		LeaderboardManager.add_score("Player 1", 1200.0, 5, 45.0)    # 0:45
+		LeaderboardManager.add_score("Player 1", 900.0, 4, 35.0)     # 0:35
+		LeaderboardManager.add_score("Player 1", 600.0, 3, 25.0)      # 0:25
+		LeaderboardManager.add_score("Player 1", 400.0, 2, 15.0)     # 0:15
