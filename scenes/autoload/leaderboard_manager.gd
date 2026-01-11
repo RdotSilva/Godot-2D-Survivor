@@ -18,3 +18,10 @@ func load_save_file():
 		# Ensure we have an array
 		if leaderboard_data == null:
 			leaderboard_data = []
+
+
+func save():
+	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
+	file.store_var(leaderboard_data)
+
+
