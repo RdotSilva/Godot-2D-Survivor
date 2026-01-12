@@ -82,7 +82,7 @@ layout_mode = 2
 theme_override_constants/separation = 4
 
 [node name="CloseButton" type="Button" parent="MarginContainer/PanelContainer"]
-custom_minimum_size = Vector2(25, 25)
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
