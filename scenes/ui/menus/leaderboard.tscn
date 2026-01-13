@@ -45,7 +45,7 @@ text = "Leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseButton" type="Button" parent="MarginContainer/PanelContainer"]
+[node name="CloseButtonRemove" type="Button" parent="MarginContainer/PanelContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 8
