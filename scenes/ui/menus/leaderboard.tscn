@@ -60,3 +60,10 @@ theme_override_constants/margin_bottom = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
+theme_override_font_sizes/font_size = 28
+text = "LEADERBOARD"
+horizontal_alignment = 1
