@@ -67,3 +67,8 @@ theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
 theme_override_font_sizes/font_size = 28
 text = "LEADERBOARD"
 horizontal_alignment = 1
+
+[node name="HeaderContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 8
