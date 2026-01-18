@@ -77,3 +77,9 @@ theme_override_constants/separation = 8
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Name"
+
+[node name="XpHeaderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HeaderContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "XP"
