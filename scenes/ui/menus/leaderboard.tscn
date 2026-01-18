@@ -81,5 +81,14 @@ text = "Name"
 [node name="XpHeaderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HeaderContainer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 16
 text = "XP"
+
+[node name="LevelHeaderLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HeaderContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Level"
+horizontal_alignment = 2
