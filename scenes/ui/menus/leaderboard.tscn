@@ -99,3 +99,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 16
 text = "Time"
+
+[node name="ScoreScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HeaderContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
