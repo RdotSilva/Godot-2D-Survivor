@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3gxg3hfmn2cm" path="res://scenes/ui/menus/leaderboard.gd" id="1_6tsn1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tsn1"]
-bg_color = Color(0.0980392, 0.0980392, 0.14902, 0.501961)
+bg_color = Color(0.0980392, 0.0980392, 0.14902, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
