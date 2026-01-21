@@ -3,6 +3,7 @@ extends CanvasLayer
 signal leaderboard_closed
 
 @onready var score_rows_container = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ScoreScrollContainer/ScoreRowsContainer
+@onready var scroll_container = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ScoreScrollContainer
 @onready var close_button = $CloseButton
 
 func _ready():
