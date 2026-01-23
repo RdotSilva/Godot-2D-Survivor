@@ -3,7 +3,6 @@ extends CanvasLayer
 signal leaderboard_closed
 
 @onready var score_rows_container = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ScoreScrollContainer/ScoreRowsContainer
-@onready var scroll_container = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ScoreScrollContainer
 @onready var close_button = $CloseButton
 
 func _ready():
@@ -11,7 +10,10 @@ func _ready():
 	await get_tree().process_frame
 	
 	populate_leaderboard()
-	close_button.pressed.connect(on_close_button_pressed)
+	
+	# Connect close button signal
+	if close_button:
+		close_button.pressed.connect(on_close_button_pressed)
 
 func populate_leaderboard():
 	# Clear existing rows
@@ -82,6 +84,15 @@ func format_time(seconds: float) -> String:
 	var minutes = int(seconds) / 60
 	var secs = int(seconds) % 60
 	return "%02d:%02d" % [minutes, secs]
+
+func _input(event):
+	# Fallback: If button signal doesn't fire, manually detect clicks in button area
+	if event is InputEventMouseButton and event.pressed and close_button:
+		var mouse_pos = event.global_position
+		var button_rect = Rect2(close_button.global_position, close_button.size)
+		
+		if button_rect.has_point(mouse_pos):
+			on_close_button_pressed()
 
 func on_close_button_pressed():
 	leaderboard_closed.emit()
